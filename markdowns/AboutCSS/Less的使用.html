@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Less的使用 | 凡事</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    
+    <meta name="description" content="#Just playing around#">
+    <link rel="preload" href="/assets/css/0.styles.c027a158.css" as="style"><link rel="preload" href="/assets/js/app.7e822c96.js" as="script"><link rel="preload" href="/assets/js/2.0dd6e7dd.js" as="script"><link rel="preload" href="/assets/js/13.200c0928.js" as="script"><link rel="prefetch" href="/assets/js/10.96dd946c.js"><link rel="prefetch" href="/assets/js/11.d0d59951.js"><link rel="prefetch" href="/assets/js/12.6a73b8dd.js"><link rel="prefetch" href="/assets/js/14.d2ca0a23.js"><link rel="prefetch" href="/assets/js/15.c42265c4.js"><link rel="prefetch" href="/assets/js/16.ef1720fd.js"><link rel="prefetch" href="/assets/js/17.65efb40b.js"><link rel="prefetch" href="/assets/js/18.900fa7db.js"><link rel="prefetch" href="/assets/js/19.2ef939c2.js"><link rel="prefetch" href="/assets/js/20.49c786c8.js"><link rel="prefetch" href="/assets/js/21.1168fa74.js"><link rel="prefetch" href="/assets/js/22.3a7acf33.js"><link rel="prefetch" href="/assets/js/23.414a4422.js"><link rel="prefetch" href="/assets/js/24.eb597ef1.js"><link rel="prefetch" href="/assets/js/25.742bfcb1.js"><link rel="prefetch" href="/assets/js/26.7f7cb155.js"><link rel="prefetch" href="/assets/js/27.c244846b.js"><link rel="prefetch" href="/assets/js/28.631351e0.js"><link rel="prefetch" href="/assets/js/29.d6fb7981.js"><link rel="prefetch" href="/assets/js/3.681c2e44.js"><link rel="prefetch" href="/assets/js/30.f09f5fe9.js"><link rel="prefetch" href="/assets/js/31.2deab325.js"><link rel="prefetch" href="/assets/js/32.744a7800.js"><link rel="prefetch" href="/assets/js/33.cc1723d8.js"><link rel="prefetch" href="/assets/js/34.d22c455f.js"><link rel="prefetch" href="/assets/js/35.4558c5df.js"><link rel="prefetch" href="/assets/js/36.7a3576b7.js"><link rel="prefetch" href="/assets/js/37.6100b91a.js"><link rel="prefetch" href="/assets/js/38.8b589eba.js"><link rel="prefetch" href="/assets/js/39.91f64014.js"><link rel="prefetch" href="/assets/js/4.58872121.js"><link rel="prefetch" href="/assets/js/40.3f5de6fa.js"><link rel="prefetch" href="/assets/js/41.44440286.js"><link rel="prefetch" href="/assets/js/42.ca90a4d2.js"><link rel="prefetch" href="/assets/js/43.f6641a53.js"><link rel="prefetch" href="/assets/js/44.a02829ee.js"><link rel="prefetch" href="/assets/js/45.e079d5da.js"><link rel="prefetch" href="/assets/js/46.f1a64671.js"><link rel="prefetch" href="/assets/js/47.dd2280e6.js"><link rel="prefetch" href="/assets/js/48.71a71aaa.js"><link rel="prefetch" href="/assets/js/49.c579f43e.js"><link rel="prefetch" href="/assets/js/5.df72532b.js"><link rel="prefetch" href="/assets/js/50.2013a789.js"><link rel="prefetch" href="/assets/js/51.8249777a.js"><link rel="prefetch" href="/assets/js/52.8146bca6.js"><link rel="prefetch" href="/assets/js/53.f0cdb62f.js"><link rel="prefetch" href="/assets/js/54.0463ac99.js"><link rel="prefetch" href="/assets/js/55.13fec4c2.js"><link rel="prefetch" href="/assets/js/56.21202a43.js"><link rel="prefetch" href="/assets/js/57.b59e0297.js"><link rel="prefetch" href="/assets/js/58.9da64889.js"><link rel="prefetch" href="/assets/js/59.07acff75.js"><link rel="prefetch" href="/assets/js/6.c9c3e14a.js"><link rel="prefetch" href="/assets/js/60.6cd404ef.js"><link rel="prefetch" href="/assets/js/61.ec8f27b0.js"><link rel="prefetch" href="/assets/js/62.d987941d.js"><link rel="prefetch" href="/assets/js/63.c7b6ca1c.js"><link rel="prefetch" href="/assets/js/64.c3e67832.js"><link rel="prefetch" href="/assets/js/65.7b46b648.js"><link rel="prefetch" href="/assets/js/7.bd89bcdf.js"><link rel="prefetch" href="/assets/js/8.1c40fb34.js"><link rel="prefetch" href="/assets/js/9.ae29521e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.c027a158.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">凡事</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/markdowns/AboutVue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/markdowns/AboutReact/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/markdowns/AboutES6/" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/markdowns/AboutJS/" class="nav-link">
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/markdowns/AboutCSS/" class="nav-link router-link-active">
+  CSS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="算法与数据结构" class="dropdown-title"><span class="title">算法与数据结构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/markdowns/AboutAlgorithm/" class="nav-link">
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/markdowns/AboutDataStructure/" class="nav-link">
+  数据结构
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他技术" class="dropdown-title"><span class="title">其他技术</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/markdowns/AboutRegExp/" class="nav-link">
+  正则表达式
+</a></li><li class="dropdown-item"><!----> <a href="/markdowns/AboutWebpack/" class="nav-link">
+  Webpack
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="日常开发" class="dropdown-title"><span class="title">日常开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/markdowns/AboutWork/" class="nav-link">
+  H5开发
+</a></li><li class="dropdown-item"><!----> <a href="/markdowns/AboutMe/" class="nav-link">
+  关于
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/markdowns/AboutVue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/markdowns/AboutReact/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/markdowns/AboutES6/" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/markdowns/AboutJS/" class="nav-link">
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/markdowns/AboutCSS/" class="nav-link router-link-active">
+  CSS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="算法与数据结构" class="dropdown-title"><span class="title">算法与数据结构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/markdowns/AboutAlgorithm/" class="nav-link">
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/markdowns/AboutDataStructure/" class="nav-link">
+  数据结构
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他技术" class="dropdown-title"><span class="title">其他技术</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/markdowns/AboutRegExp/" class="nav-link">
+  正则表达式
+</a></li><li class="dropdown-item"><!----> <a href="/markdowns/AboutWebpack/" class="nav-link">
+  Webpack
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="日常开发" class="dropdown-title"><span class="title">日常开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/markdowns/AboutWork/" class="nav-link">
+  H5开发
+</a></li><li class="dropdown-item"><!----> <a href="/markdowns/AboutMe/" class="nav-link">
+  关于
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Less的使用</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/markdowns/AboutCSS/Less%E7%9A%84%E4%BD%BF%E7%94%A8.html#_1，less是什么？" class="sidebar-link">1，Less是什么？</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/markdowns/AboutCSS/Less%E7%9A%84%E4%BD%BF%E7%94%A8.html#_2，less提供的扩展" class="sidebar-link">2，Less提供的扩展</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="less的使用"><a href="#less的使用" class="header-anchor">#</a> Less的使用</h1> <blockquote><p>案例取自于Less中文网。</p></blockquote> <h2 id="_1，less是什么？"><a href="#_1，less是什么？" class="header-anchor">#</a> 1，Less是什么？</h2> <blockquote><p>Less 是一门 CSS 预处理语言，它扩展了 CSS 语言，增加了变量、Mixin、函数等特性，使 CSS 更易维护和扩展。</p></blockquote> <h2 id="_2，less提供的扩展"><a href="#_2，less提供的扩展" class="header-anchor">#</a> 2，Less提供的扩展</h2> <ul><li>变量：variable</li></ul> <p>变量的存在允许我们设置全局通用的样式或者字体颜色等等。</p> <div class="language-less extra-class"><pre class="language-less"><code><span class="token variable">@width<span class="token punctuation">:</span></span> 10px<span class="token punctuation">;</span>
+<span class="token variable">@height<span class="token punctuation">:</span></span> <span class="token variable">@width</span> <span class="token operator">+</span> 10px<span class="token punctuation">;</span>
+
+<span class="token selector">#header</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token variable">@width</span><span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token variable">@height</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/**最终可以被编译为*/</span>
+<span class="token selector">#header</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>混合：mixins</li></ul> <p>混合允许我们最大程度的复用css属性。避免写很多重复的代码。</p> <div class="language-less extra-class"><pre class="language-less"><code><span class="token selector">.bordered</span> <span class="token punctuation">{</span>
+  <span class="token property">border-top</span><span class="token punctuation">:</span> dotted 1px black<span class="token punctuation">;</span>
+  <span class="token property">border-bottom</span><span class="token punctuation">:</span> solid 2px black<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/*可以这样使用 */</span>
+<span class="token selector">#menu a</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #111<span class="token punctuation">;</span>
+  <span class="token mixin-usage function">.bordered</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.post a</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token mixin-usage function">.bordered</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>嵌套：nests</li></ul> <p>嵌套允许我们重新组织css的结构，使其更加简介，也更容易理解。</p> <div class="language-less extra-class"><pre class="language-less"><code><span class="token selector">#header</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">#header .navigation</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 12px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">#header .logo</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/* 用less重写，可以将原本属于header的navigation和logo直接写在header中 */</span>
+<span class="token selector">#header</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+  <span class="token selector">.navigation</span> <span class="token punctuation">{</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> 12px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.logo</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>运算:operations</li></ul> <p>运算符允许我们对css进行一些数学运算方面的工作。</p> <div class="language-less extra-class"><pre class="language-less"><code><span class="token comment">// 所有操作数被转换成相同的单位</span>
+<span class="token variable">@conversion-1<span class="token punctuation">:</span></span> 5cm <span class="token operator">+</span> 10mm<span class="token punctuation">;</span> <span class="token comment">// 结果是 6cm</span>
+<span class="token variable">@conversion-2<span class="token punctuation">:</span></span> 2 <span class="token operator">-</span> 3cm <span class="token operator">-</span> 5mm<span class="token punctuation">;</span> <span class="token comment">// 结果是 -1.5cm</span>
+
+<span class="token comment">// conversion is impossible</span>
+<span class="token variable">@incompatible-units<span class="token punctuation">:</span></span> 2 <span class="token operator">+</span> 5px <span class="token operator">-</span> 3cm<span class="token punctuation">;</span> <span class="token comment">// 结果是 4px</span>
+
+<span class="token comment">// example with variables</span>
+<span class="token variable">@base<span class="token punctuation">:</span></span> 5%<span class="token punctuation">;</span>
+<span class="token variable">@filler<span class="token punctuation">:</span></span> <span class="token variable">@base</span> <span class="token operator">*</span> 2<span class="token punctuation">;</span> <span class="token comment">// 结果是 10%</span>
+<span class="token variable">@other<span class="token punctuation">:</span></span> <span class="token variable">@base</span> <span class="token operator">+</span> <span class="token variable">@filler</span><span class="token punctuation">;</span> <span class="token comment">// 结果是 15%</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.7e822c96.js" defer></script><script src="/assets/js/2.0dd6e7dd.js" defer></script><script src="/assets/js/13.200c0928.js" defer></script>
+  </body>
+</html>
