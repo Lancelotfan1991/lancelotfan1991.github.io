@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>useContext的使用 | 凡事</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    
+    <meta name="description" content="#Just playing around#">
+    <link rel="preload" href="/assets/css/0.styles.c027a158.css" as="style"><link rel="preload" href="/assets/js/app.a0a1adb3.js" as="script"><link rel="preload" href="/assets/js/2.0dd6e7dd.js" as="script"><link rel="preload" href="/assets/js/45.bd4e14c4.js" as="script"><link rel="prefetch" href="/assets/js/10.5945ed9f.js"><link rel="prefetch" href="/assets/js/11.d588ef97.js"><link rel="prefetch" href="/assets/js/12.b3e9ce6e.js"><link rel="prefetch" href="/assets/js/13.9c8717ef.js"><link rel="prefetch" href="/assets/js/14.fab0c5d9.js"><link rel="prefetch" href="/assets/js/15.451d7b6a.js"><link rel="prefetch" href="/assets/js/16.3d38f1ac.js"><link rel="prefetch" href="/assets/js/17.38f1c1f0.js"><link rel="prefetch" href="/assets/js/18.916f3c88.js"><link rel="prefetch" href="/assets/js/19.c3dec4f6.js"><link rel="prefetch" href="/assets/js/20.1ae57af6.js"><link rel="prefetch" href="/assets/js/21.75a57794.js"><link rel="prefetch" href="/assets/js/22.af2c93ba.js"><link rel="prefetch" href="/assets/js/23.a5e6f284.js"><link rel="prefetch" href="/assets/js/24.a27b0ee5.js"><link rel="prefetch" href="/assets/js/25.0de76e70.js"><link rel="prefetch" href="/assets/js/26.27159596.js"><link rel="prefetch" href="/assets/js/27.c244846b.js"><link rel="prefetch" href="/assets/js/28.ed759f20.js"><link rel="prefetch" href="/assets/js/29.87c990cd.js"><link rel="prefetch" href="/assets/js/3.ec9842ff.js"><link rel="prefetch" href="/assets/js/30.6f6b045e.js"><link rel="prefetch" href="/assets/js/31.2deab325.js"><link rel="prefetch" href="/assets/js/32.002e77b1.js"><link rel="prefetch" href="/assets/js/33.b07cf5ef.js"><link rel="prefetch" href="/assets/js/34.d22c455f.js"><link rel="prefetch" href="/assets/js/35.4558c5df.js"><link rel="prefetch" href="/assets/js/36.7a3576b7.js"><link rel="prefetch" href="/assets/js/37.04be9664.js"><link rel="prefetch" href="/assets/js/38.2af350ee.js"><link rel="prefetch" href="/assets/js/39.91f64014.js"><link rel="prefetch" href="/assets/js/4.343ff8cb.js"><link rel="prefetch" href="/assets/js/40.01158a50.js"><link rel="prefetch" href="/assets/js/41.08e73780.js"><link rel="prefetch" href="/assets/js/42.0f91f38f.js"><link rel="prefetch" href="/assets/js/43.d5af08f5.js"><link rel="prefetch" href="/assets/js/44.3d9ea44b.js"><link rel="prefetch" href="/assets/js/46.19caab72.js"><link rel="prefetch" href="/assets/js/47.a03c9748.js"><link rel="prefetch" href="/assets/js/48.5ee6bccd.js"><link rel="prefetch" href="/assets/js/49.2c7e79f4.js"><link rel="prefetch" href="/assets/js/5.2a488f4b.js"><link rel="prefetch" href="/assets/js/50.cf52fa4b.js"><link rel="prefetch" href="/assets/js/51.3a9887f6.js"><link rel="prefetch" href="/assets/js/52.9c075749.js"><link rel="prefetch" href="/assets/js/53.0755b8cf.js"><link rel="prefetch" href="/assets/js/54.bf3493ca.js"><link rel="prefetch" href="/assets/js/55.3c94d7f7.js"><link rel="prefetch" href="/assets/js/56.3994a12b.js"><link rel="prefetch" href="/assets/js/57.3be4ae97.js"><link rel="prefetch" href="/assets/js/58.3fbef599.js"><link rel="prefetch" href="/assets/js/59.bbe61e81.js"><link rel="prefetch" href="/assets/js/6.c9c3e14a.js"><link rel="prefetch" href="/assets/js/60.6aebd917.js"><link rel="prefetch" href="/assets/js/61.9f198f2a.js"><link rel="prefetch" href="/assets/js/62.1fc8f21b.js"><link rel="prefetch" href="/assets/js/63.8bd4c59e.js"><link rel="prefetch" href="/assets/js/64.bfe845f7.js"><link rel="prefetch" href="/assets/js/65.c071933d.js"><link rel="prefetch" href="/assets/js/66.d687fdc8.js"><link rel="prefetch" href="/assets/js/67.b7f5dcef.js"><link rel="prefetch" href="/assets/js/68.fac17bf6.js"><link rel="prefetch" href="/assets/js/69.ca40f774.js"><link rel="prefetch" href="/assets/js/7.bd89bcdf.js"><link rel="prefetch" href="/assets/js/70.4aa2bfe4.js"><link rel="prefetch" href="/assets/js/8.1c40fb34.js"><link rel="prefetch" href="/assets/js/9.1d4dc165.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.c027a158.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">凡事</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/markdowns/AboutVue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/markdowns/AboutReact/" class="nav-link router-link-active">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/markdowns/AboutES6/" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/markdowns/AboutJS/" class="nav-link">
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/markdowns/AboutCSS/" class="nav-link">
+  CSS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="算法与数据结构" class="dropdown-title"><span class="title">算法与数据结构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/markdowns/AboutAlgorithm/" class="nav-link">
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/markdowns/AboutDataStructure/" class="nav-link">
+  数据结构
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他技术" class="dropdown-title"><span class="title">其他技术</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/markdowns/AboutRegExp/" class="nav-link">
+  正则表达式
+</a></li><li class="dropdown-item"><!----> <a href="/markdowns/AboutWebpack/" class="nav-link">
+  Webpack
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="日常开发" class="dropdown-title"><span class="title">日常开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/markdowns/AboutWork/" class="nav-link">
+  H5开发
+</a></li><li class="dropdown-item"><!----> <a href="/markdowns/AboutMe/" class="nav-link">
+  关于
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/markdowns/AboutVue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/markdowns/AboutReact/" class="nav-link router-link-active">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/markdowns/AboutES6/" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/markdowns/AboutJS/" class="nav-link">
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/markdowns/AboutCSS/" class="nav-link">
+  CSS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="算法与数据结构" class="dropdown-title"><span class="title">算法与数据结构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/markdowns/AboutAlgorithm/" class="nav-link">
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/markdowns/AboutDataStructure/" class="nav-link">
+  数据结构
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他技术" class="dropdown-title"><span class="title">其他技术</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/markdowns/AboutRegExp/" class="nav-link">
+  正则表达式
+</a></li><li class="dropdown-item"><!----> <a href="/markdowns/AboutWebpack/" class="nav-link">
+  Webpack
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="日常开发" class="dropdown-title"><span class="title">日常开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/markdowns/AboutWork/" class="nav-link">
+  H5开发
+</a></li><li class="dropdown-item"><!----> <a href="/markdowns/AboutMe/" class="nav-link">
+  关于
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>useContext的使用</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/markdowns/AboutReact/ReactHooks/useContext%E7%9A%84%E4%BD%BF%E7%94%A8.html#_1，基本使用" class="sidebar-link">1，基本使用</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="usecontext的使用"><a href="#usecontext的使用" class="header-anchor">#</a> useContext的使用</h1> <h2 id="_1，基本使用"><a href="#_1，基本使用" class="header-anchor">#</a> 1，基本使用</h2> <p>相比于class组件中使用Cousumer嵌套包裹组件，useContext提供了一种简便的写法。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> theme <span class="token operator">=</span> <span class="token function">useContext</span><span class="token punctuation">(</span>ThemeContext<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//对比类组件</span>
+<span class="token operator">&lt;</span>ThemeContext<span class="token punctuation">.</span>Consumer<span class="token operator">&gt;</span>
+    <span class="token punctuation">{</span>
+        <span class="token parameter">res</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>ThemeContext<span class="token punctuation">.</span>Consumer<span class="token operator">&gt;</span>
+</code></pre></div><p>2，示例代码</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> themes <span class="token operator">=</span> <span class="token punctuation">{</span>
+  light<span class="token operator">:</span> <span class="token punctuation">{</span>
+    foreground<span class="token operator">:</span> <span class="token string">&quot;#000000&quot;</span><span class="token punctuation">,</span>
+    background<span class="token operator">:</span> <span class="token string">&quot;#eeeeee&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  dark<span class="token operator">:</span> <span class="token punctuation">{</span>
+    foreground<span class="token operator">:</span> <span class="token string">&quot;#ffffff&quot;</span><span class="token punctuation">,</span>
+    background<span class="token operator">:</span> <span class="token string">&quot;#222222&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> ThemeContext <span class="token operator">=</span> React<span class="token punctuation">.</span><span class="token function">createContext</span><span class="token punctuation">(</span>themes<span class="token punctuation">.</span>light<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">App</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>ThemeContext<span class="token punctuation">.</span>Provider value<span class="token operator">=</span><span class="token punctuation">{</span>themes<span class="token punctuation">.</span>dark<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>Toolbar <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>ThemeContext<span class="token punctuation">.</span>Provider<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">Toolbar</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>ThemedButton <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">ThemedButton</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> theme <span class="token operator">=</span> <span class="token function">useContext</span><span class="token punctuation">(</span>ThemeContext<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>button style<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> background<span class="token operator">:</span> theme<span class="token punctuation">.</span>background<span class="token punctuation">,</span> color<span class="token operator">:</span> theme<span class="token punctuation">.</span>foreground <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+      <span class="token constant">I</span> am styled by theme context<span class="token operator">!</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.a0a1adb3.js" defer></script><script src="/assets/js/2.0dd6e7dd.js" defer></script><script src="/assets/js/45.bd4e14c4.js" defer></script>
+  </body>
+</html>
