@@ -1,0 +1,37 @@
+<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+<script src="./aframe-ar.js"></script>
+<style>
+  .arjs-loader {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .arjs-loader div {
+    text-align: center;
+    font-size: 1.25em;
+    color: white;
+  }
+</style>
+
+<body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
+    <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>Version: 0.11</div>
+	<!-- <a-scene embedded arjs='sourceType: image; sourceUrl:../../data/images/armchair.jpg;'> -->
+	<a-scene embedded arjs='sourceType: webcam;' renderer='antialias: true; alpha: true; precision: medium;'>
+
+        <a-marker type='pattern' url='./pattern-kanji.patt' preset='hanji'>
+            <a-sphere position="0 0.5 0" radius="0.5" color="#EF2D5E"></a-sphere>
+            <a-plane position="0 0 0" rotation="-90 0 0" width="1" height="1" color="#7BC8A4"></a-plane>
+        </a-marker>
+
+		<a-entity camera='zoom: 1;' look-controls wasd-controls></a-entity>
+	</a-scene>
+</body>
+</html>
