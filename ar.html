@@ -23,7 +23,7 @@
 </style>
 
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
-    <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>Version: 0.14kanji</div>
+    <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>Version: 0.15添加转换摄像头按钮</div>
     <!-- <a-scene embedded arjs='sourceType: image; sourceUrl:../../data/images/armchair.jpg;'> -->
     <a-scene
         embedded
@@ -36,7 +36,7 @@
             <a-plane position="0 0 0" rotation="-90 0 0" width="1" height="1" color="#7BC8A4"></a-plane>
         </a-marker>
 
-        <a-entity camera='zoom: 1;' look-controls wasd-controls></a-entity>
+        <a-entity id='camera' camera='zoom: 1;' look-controls wasd-controls></a-entity>
     </a-scene>
 
     <button id='switchcamera'
