@@ -3038,7 +3038,7 @@ ARjs.Source.prototype._initSourceWebcam = function (onReady, onError) {
         var userMediaConstraints = {
             audio: false,
             video: {
-                facingMode: 'environment',
+                facingMode: 'user',
                 width: {
                     ideal: _this.parameters.sourceWidth,
                     // min: 1024,
@@ -5982,7 +5982,7 @@ AFRAME.registerComponent('arjs-webcam-texture', {
     play: function() {
         if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
             const constraints = { video: {
-                facingMode: 'environment' }
+                facingMode: 'user' }
             };
             navigator.mediaDevices.getUserMedia(constraints).then( stream=> {
                 this.video.srcObject = stream;    
