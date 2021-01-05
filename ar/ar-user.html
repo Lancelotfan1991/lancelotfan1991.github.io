@@ -1,0 +1,57 @@
+<script
+    src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+<script src="./libs/aframe-ar-user.js"></script>
+<style>
+    .arjs-loader {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .arjs-loader div {
+        text-align: center;
+        font-size: 1.25em;
+        color: white;
+    }
+</style>
+
+<body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
+
+    <!-- <a-scene embedded arjs='sourceType: image; sourceUrl:../../data/images/armchair.jpg;'> -->
+    <a-scene
+        embedded
+        vr-mode-ui="enabled: false;"
+        arjs='trackingMethod: best; sourceType: webcam;debugUIEnabled: true;'
+        renderer='antialias: true; alpha: true; precision: high;'>
+
+        <a-marker type='pattern' url='./pattern-kanji.patt' preset='kanji'>
+            <a-sphere position="0 0.5 0" radius="0.5" color="#EF2D5E"></a-sphere>
+            <a-plane position="0 0 0" rotation="-90 0 0" width="1" height="1" color="#7BC8A4"></a-plane>
+        </a-marker>
+
+        <a-entity id='camera' camera='zoom: 1;' look-controls wasd-controls></a-entity>
+    </a-scene>
+
+    <button id='switchcamera'
+        style="position:fixed; right: 30px;top: 50px;padding: 10px;border: 2px;color:white;background-color: black;z-index: 10000">
+        切换摄像头
+    </button>
+
+    <div style='position: fixed; top: 10px; width:100%; text-align: left; z-index: 10000;font-size: 10px;'>Version: 0.15<br>添加转换摄像头按钮</div>
+
+    <script>
+        var front = false;
+        document.getElementById('switchcamera').onclick = function() {
+            window.location.replace('./ar.html');
+        };
+    </script>
+</body>
+
+</html>
