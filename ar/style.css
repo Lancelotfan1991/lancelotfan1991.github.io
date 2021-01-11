@@ -29,6 +29,7 @@ body{
 .info {
     position: fixed;
     top: 50px;
+    right: 10px;
     text-align: right;
     margin: 0 0 0 30px;
     max-width: 600px;
