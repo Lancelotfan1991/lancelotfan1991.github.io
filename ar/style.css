@@ -30,6 +30,8 @@ body{
     position: fixed;
     top: 50px;
     text-align: right;
+    margin: 0 0 0 30px;
+    max-width: 600px;
 }
 
 .infohead {
@@ -62,9 +64,10 @@ body{
 .content {
     position: relative;
     right: 0;
-    line-height: 40px;
+    line-height: 45px;
     padding: 20px 30px;
     margin: 10px;
+    text-align: left;
 }
 
 .functionButton {
@@ -175,4 +178,40 @@ body{
 
 .border-box {
     color: white;
+}
+
+.screenShotDiv {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.screenShotDiv {
+    color: white;
+    font-size: 24px;
+}
+
+.screenShot {
+    position: relative;
+    width: 70%;
+    height: 70%;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.hint {
+    position: fixed;
+    bottom: 100px;
+    width: 100%;
+    text-align: center;
+}
+
+.delete {
+    position: fixed;
+    bottom: 40px;
+    width: 60px;
+    height: 60px;
+    left: 50%;
+    transform: translateX(-50%);
 }

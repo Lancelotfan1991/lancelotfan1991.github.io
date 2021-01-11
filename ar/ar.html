@@ -11,8 +11,8 @@
     <script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
 </head>
 
-<body style='margin : 0px; overflow: hidden; font-family: Monospace;width: 100%;height: 100%;'>
-    <a-scene
+<body style='margin : 0px; overflow: hidden; font-family: Monospace;width: 100%; height: 100%;'>
+    <!-- <a-scene
         embedded
         vr-mode-ui="enabled: false;"
         arjs='trackingMethod: best; sourceType: webcam;debugUIEnabled: false;'
@@ -24,14 +24,14 @@
         </a-marker>
 
         <a-entity id='camera' camera='zoom: 1;' look-controls wasd-controls></a-entity>
-    </a-scene>
+    </a-scene> -->
 
     <div id='app' >
         <div class='info' v-show='infoDisplay'>
             <p class='border-box infohead'>公共开发部部门介绍</p>
             <p class='border-box title'>部门名称：{{departmentInfo[departmentIndex].department}}</p>
             <p class='border-box owner'>负责人:{{departmentInfo[departmentIndex].owner}}</p>
-            <p class='border-box content'>{{departmentInfo[departmentIndex].content}}</p>
+            <p class='border-box content' v-html="departmentInfo[departmentIndex].content"></p>
 
             <div class='functionButton'>
                 <div class='functions' v-on:click="goDetail">
@@ -49,11 +49,19 @@
             </div>
         </div>
 
-        <div class="breathe-div"></div>
-        <img class='takepicture' src='./resource/shoot.png' v-on:click="takePicture"/>
-        <img class='switchcamera' id='switchcamera' src="./resource/switch-camera.png" alt="">
+        <div id='screenShot' v-show='screenShotIcon'>
+            <div class="breathe-div"></div>
+            <img class='takepicture' src='./resource/shoot.png' v-on:click="takePicture"/>
+            <img class='switchcamera' id='switchcamera' src="./resource/switch-camera.png" alt="">
+        </div>
 
         <div style='position: fixed; bottom: 10px; width:100%; text-align: left; z-index: 10000;font-size: 15px;'>Version:0.16<br>添加信息展示和切换功能</div>
+
+        <div class='screenShotDiv' v-show='isShooted'>
+            <img class='screenShot' :src="screenShotImage" alt="">
+            <p class='hint'>长按图片可保存至手机</p>
+            <img src="./resource/delete.png" class='delete' v-on:click="hideImage"/>
+        </div>
     </div>
 
     <script>
@@ -62,15 +70,13 @@
                 el: '#app',
                 data: {
                     infoDisplay: true,
+                    screenShotIcon : false,
                     departmentIndex: 0,
                     departmentInfo: [
                         {
                             department: 'MAE',
                             owner: '朱良胜',
-                            content: `MAE是面向5G时代移动网络的自动化引擎，助力实现移动网络的三大超越：
-                            1) Beyond Efficiency: 10x运维效率提升；
-                            2) Beyond Performance: 20%的频谱效率提升：从不可能到可能；
-                            优化从静态到动态；从粗放到精细化；从非实时到实时；`,
+                            content: `MAE是面向5G时代移动网络的自动化引擎，助力实现移动网络的三大超越：<br/>1) Beyond Efficiency: 10x运维效率提升；<br/>2) Beyond Performance: 20%的频谱效率提升：从不可能到可能；优化从静态到动态；从粗放到精细化；从非实时到实时；<br/>3) Beyond New Service：5x发放效率提升；业务发放从weeks到Days；通过联合运营商开放合作，面向场景逐级演进，实现移动网络完全自动驾驶。`,
                             link: ''
                         },
                         {
@@ -103,7 +109,9 @@
                             content: 'Beyond Intelligence：从自动化到智能化，面向云化AI打造自学习自管理的网络，编织一张会思考的"网"，让沟通畅行无阻。',
                             link: ''
                         }
-                    ]
+                    ],
+                    isShooted: false,
+                    screenShotImage: ''
                 },
                 methods: {
                     changeDepartmentIndex() {
@@ -113,12 +121,15 @@
                     showInfo(){
                         console.log('showinfo')
                         this.infoDisplay = !this.infoDisplay;
+                        this.screenShotIcon = !this.infoDisplay;
                     },
                     goDetail(){
                         console.log('godetail');
                         window.location.href=this.departmentInfo[this.departmentIndex].link;
                     },
                     takePicture(){
+                        const self = this;
+                        document.getElementById('screenShot').style.display='none';
                         html2canvas(document.body,{useCORS:true}).then(function (canvas) {
                             // 获取年月日作为文件名
                             var timers=new Date();
@@ -128,26 +139,15 @@
                             var randoms=Math.random()+'';
                             // 年月日加上随机数
                             var numberFileName=fullYear+''+month+date+randoms.slice(3,10);
-                            var imgData=canvas.toDataURL("image/png");
-                            // 保存图片
-                            var saveFile = function(data, filename){
-                                var save_link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
-                                save_link.href = data;
-                                save_link.download = filename;
-            
-                                var event = document.createEvent('MouseEvents');
-                                event.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-                                save_link.dispatchEvent(event);
-                            };
-                            // 最终文件名+文件格式
-                            var filename = numberFileName + '.png';
-                            // 下载图片(保存图片)
-                            saveFile(imgData,filename);
-                            // 把截的图显示在网页上
-                            // var img = document.createElement('img');//创建一个标签
-                            // img.setAttribute('src',imgData);//给标签定义src链接
-                            // document.body.appendChild(img);  
+                            self.screenShotImage = canvas.toDataURL("image/png");
+                            self.isShooted = true;
+                            self.screenShotIcon = false;
                         })
+                    },
+                    hideImage(){
+                        this.isShooted = false;
+                        this.screenShotImage = "";
+                        this.screenShotIcon = true;
                     }
                 }
             }
