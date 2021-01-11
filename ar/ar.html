@@ -7,28 +7,13 @@
         src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
     <script src="./libs/aframe-ar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css?v=1.06">
     <script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
 </head>
 
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;width: 100%; height: 100%;'>
 
     <div id='app' >
-        <a-scene
-            embedded
-            vr-mode-ui="enabled: false;"
-            arjs='trackingMethod: best; sourceType: webcam;debugUIEnabled: false;'
-            renderer='antialias: true; alpha: true; precision: high;'>
-
-            <a-marker type='pattern' url='./pattern-kanji.patt' preset='kanji'>
-                <a-sphere position="0 0.5 0" radius="0.5" color="#EF2D5E"></a-sphere>
-                <a-plane position="0 0 0" rotation="-90 0 0" width="1" height="1" color="#7BC8A4"></a-plane>
-            </a-marker>
-
-            <a-entity id='camera' camera='zoom: 1;' look-controls wasd-controls></a-entity>
-        </a-scene>
-
-
         <div class='info' v-show='infoDisplay'>
             <p class='border-box infohead'>公共开发部部门介绍</p>
             <p class='border-box title'>部门名称：{{departmentInfo[departmentIndex].department}}</p>
@@ -57,7 +42,7 @@
             <img class='switchcamera' id='switchcamera' src="./resource/switch-camera.png" alt="">
         </div>
 
-        <div style='position: fixed; bottom: 10px; width:100%; text-align: left; z-index: 10000;font-size: 15px;'>Version:0.16<br>添加信息展示和切换功能</div>
+        <div style='position: fixed; bottom: 10px; width:100%; text-align: left; z-index: 10000;font-size: 15px;color:white'>Version:0.17<br>添加信息展示和切换功能,以及修复bug</div>
 
         <div class='screenShotDiv' v-show='isShooted'>
             <img class='screenShot' :src="screenShotImage" alt="">
@@ -65,6 +50,23 @@
             <img src="./resource/delete.png" class='delete' v-on:click="hideImage"/>
         </div>
     </div>
+
+    <div class='scene'>
+        <a-scene
+            embedded
+            vr-mode-ui="enabled: false;"
+            arjs='trackingMethod: best; sourceType: webcam;debugUIEnabled: false;'
+            renderer='antialias: true; alpha: true; precision: high;'>
+
+            <a-marker type='pattern' url='./pattern-kanji.patt' preset='kanji'>
+                <a-sphere position="0 0.5 0" radius="0.5" color="#EF2D5E"></a-sphere>
+                <a-plane position="0 0 0" rotation="-90 0 0" width="1" height="1" color="#7BC8A4"></a-plane>
+            </a-marker>
+
+            <a-entity id='camera' camera='zoom: 1;' look-controls wasd-controls></a-entity>
+        </a-scene>
+    </div>
+
 
     <script>
         var app = new Vue(
@@ -155,7 +157,6 @@
             }
         );
     </script>
-
 </body>
 
 </html>
