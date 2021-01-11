@@ -1,34 +1,21 @@
-<script
-    src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
-<script src="./libs/aframe-ar.js"></script>
-<style>
-    .arjs-loader {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: rgba(0, 0, 0, 0.8);
-        z-index: 9999;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=640,user-scalable=no">
+    <title>AR展示活动</title>
+    <script
+        src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+    <script src="./libs/aframe-ar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+</head>
 
-    .arjs-loader div {
-        text-align: center;
-        font-size: 1.25em;
-        color: white;
-    }
-</style>
-
-<body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
-
-    <!-- <a-scene embedded arjs='sourceType: image; sourceUrl:../../data/images/armchair.jpg;'> -->
+<body style='margin : 0px; overflow: hidden; font-family: Monospace;width: 100%;height: 100%;'>
     <a-scene
         embedded
         vr-mode-ui="enabled: false;"
-        arjs='trackingMethod: best; sourceType: webcam;debugUIEnabled: true;'
+        arjs='trackingMethod: best; sourceType: webcam;debugUIEnabled: false;'
         renderer='antialias: true; alpha: true; precision: high;'>
 
         <a-marker type='pattern' url='./pattern-kanji.patt' preset='kanji'>
@@ -39,18 +26,134 @@
         <a-entity id='camera' camera='zoom: 1;' look-controls wasd-controls></a-entity>
     </a-scene>
 
-    <button id='switchcamera'
-        style="position:fixed; right: 30px;top: 50px;padding: 10px;border: 2px;color:white;background-color: black;z-index: 10000">
-        切换摄像头
-    </button>
+    <div id='app' >
+        <div class='info' v-show='infoDisplay'>
+            <p class='border-box infohead'>公共开发部部门介绍</p>
+            <p class='border-box title'>部门名称：{{departmentInfo[departmentIndex].department}}</p>
+            <p class='border-box owner'>负责人:{{departmentInfo[departmentIndex].owner}}</p>
+            <p class='border-box content'>{{departmentInfo[departmentIndex].content}}</p>
 
-    <div style='position: fixed; top: 10px; width:100%; text-align: left; z-index: 10000;font-size: 10px;'>Version: 0.15<br>添加转换摄像头按钮</div>
+            <div class='functionButton'>
+                <div class='functions' v-on:click="goDetail">
+                    <img class='icon' src="./resource/link.png" />
+                    <span>查看详情</span>
+                </div>
+                <div class='functions' v-on:click="changeDepartmentIndex">
+                    <img class='icon' src="./resource/next.png" />
+                    <span>下个部门</span>
+                </div>
+                <div class='functions' v-on:click="showInfo">
+                    <img class='icon' src="./resource/fold.png" />
+                    <span>收起</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="breathe-div"></div>
+        <img class='takepicture' src='./resource/shoot.png' v-on:click="takePicture"/>
+        <img class='switchcamera' id='switchcamera' src="./resource/switch-camera.png" alt="">
+
+        <div style='position: fixed; bottom: 10px; width:100%; text-align: left; z-index: 10000;font-size: 15px;'>Version:0.16<br>添加信息展示和切换功能</div>
+    </div>
 
     <script>
-        document.getElementById('switchcamera').onclick = function() {
-            window.location.replace('./ar-user.html');
-        };
+        var app = new Vue(
+            {
+                el: '#app',
+                data: {
+                    infoDisplay: true,
+                    departmentIndex: 0,
+                    departmentInfo: [
+                        {
+                            department: 'MAE',
+                            owner: '朱良胜',
+                            content: `MAE是面向5G时代移动网络的自动化引擎，助力实现移动网络的三大超越：
+                            1) Beyond Efficiency: 10x运维效率提升；
+                            2) Beyond Performance: 20%的频谱效率提升：从不可能到可能；
+                            优化从静态到动态；从粗放到精细化；从非实时到实时；`,
+                            link: ''
+                        },
+                        {
+                            department: 'xExpress',
+                            owner: '卢江涛',
+                            content: '高效建网的xExpress系列包含Site Express、Feature Express和Radio Express，简化了原本操作复杂、数量庞大的建网工作，支持大批量、流水线式、自动化的建站和特性开通。',
+                            link: ''
+                        },
+                        {
+                            department: 'xSuite',
+                            owner: '苏建波',
+                            content: '敏捷业务的xSuite系列包含WTTx Suite、切片运维管理、室内可视化，支持快速精准的发放业务。',
+                            link: ''
+                        },
+                        {
+                            department: 'xTurbo',
+                            owner: '张永生',
+                            content: '智能运维的xTurbo系列包含Alarm Turbo、Capacity Turbo和Power Turbo，提供智能化的排障、网优、节能能力。',
+                            link: ''
+                        },
+                        {
+                            department: 'Dopra',
+                            owner: '梁继成',
+                            content: 'DOPRA业务包含SSP、VISP、VPP、FSP、SiteAI、AutoTBP，分布杭州、上海、东莞三地域，上海地域交付VISP，AutoTBP,提供轻量级弹性协议栈、IP路由、IP协议安全、拓展集中路径控制引擎、车载安全协议，构筑边缘组网极简竞争力。',
+                            link: ''
+                        },
+                        {
+                            department: 'AI',
+                            owner: '朱良胜',
+                            content: 'Beyond Intelligence：从自动化到智能化，面向云化AI打造自学习自管理的网络，编织一张会思考的"网"，让沟通畅行无阻。',
+                            link: ''
+                        }
+                    ]
+                },
+                methods: {
+                    changeDepartmentIndex() {
+                        console.log('changeIndex')
+                        this.departmentIndex = (this.departmentIndex + 1) % 5;
+                    },
+                    showInfo(){
+                        console.log('showinfo')
+                        this.infoDisplay = !this.infoDisplay;
+                    },
+                    goDetail(){
+                        console.log('godetail');
+                        window.location.href=this.departmentInfo[this.departmentIndex].link;
+                    },
+                    takePicture(){
+                        html2canvas(document.body,{useCORS:true}).then(function (canvas) {
+                            // 获取年月日作为文件名
+                            var timers=new Date();
+                            var fullYear=timers.getFullYear();
+                            var month=timers.getMonth()+1;
+                            var date=timers.getDate();
+                            var randoms=Math.random()+'';
+                            // 年月日加上随机数
+                            var numberFileName=fullYear+''+month+date+randoms.slice(3,10);
+                            var imgData=canvas.toDataURL("image/png");
+                            // 保存图片
+                            var saveFile = function(data, filename){
+                                var save_link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
+                                save_link.href = data;
+                                save_link.download = filename;
+            
+                                var event = document.createEvent('MouseEvents');
+                                event.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+                                save_link.dispatchEvent(event);
+                            };
+                            // 最终文件名+文件格式
+                            var filename = numberFileName + '.png';
+                            // 下载图片(保存图片)
+                            saveFile(imgData,filename);
+                            // 把截的图显示在网页上
+                            // var img = document.createElement('img');//创建一个标签
+                            // img.setAttribute('src',imgData);//给标签定义src链接
+                            // document.body.appendChild(img);  
+                        })
+                    }
+                }
+            }
+        );
     </script>
+
 </body>
 
 </html>
