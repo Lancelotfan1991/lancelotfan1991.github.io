@@ -7,7 +7,7 @@
         src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
     <script src="./libs/aframe-ar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <link rel="stylesheet" href="./style.css?v=1.06">
+    <link rel="stylesheet" href="./style.css?v=0.18">
     <script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
 </head>
 
@@ -42,7 +42,7 @@
             <img class='switchcamera' id='switchcamera' src="./resource/switch-camera.png" alt="">
         </div>
 
-        <div style='position: fixed; bottom: 10px; width:100%; text-align: left; z-index: 10000;font-size: 15px;color:white'>Version:0.17<br>添加信息展示和切换功能,以及修复bug</div>
+        <div style='position: fixed; bottom: 10px; width:100%; text-align: left; z-index: 10000;font-size: 15px;color:white'>{{version}}<br>{{versionInfo}}</div>
 
         <div class='screenShotDiv' v-show='isShooted'>
             <img class='screenShot' :src="screenShotImage" alt="">
@@ -73,6 +73,8 @@
             {
                 el: '#app',
                 data: {
+                    version: '0.18',
+                    versionInfo: "修复了一些截图的问题",
                     infoDisplay: true,
                     screenShotIcon : false,
                     departmentIndex: 0,
