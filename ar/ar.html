@@ -12,45 +12,7 @@
 </head>
 
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;width: 100%; height: 100%;'>
-
-    <div id='app' >
-        <div class='info' v-show='infoDisplay'>
-            <p class='border-box infohead'>公共开发部部门介绍</p>
-            <p class='border-box title'>部门名称：{{departmentInfo[departmentIndex].department}}</p>
-            <p class='border-box owner'>负责人:{{departmentInfo[departmentIndex].owner}}</p>
-            <p class='border-box content' v-html="departmentInfo[departmentIndex].content"></p>
-
-            <div class='functionButton'>
-                <div class='functions' v-on:click="goDetail">
-                    <img class='icon' src="./resource/link.png" />
-                    <span>查看详情</span>
-                </div>
-                <div class='functions' v-on:click="changeDepartmentIndex">
-                    <img class='icon' src="./resource/next.png" />
-                    <span>下个部门</span>
-                </div>
-                <div class='functions' v-on:click="showInfo">
-                    <img class='icon' src="./resource/fold.png" />
-                    <span>收起</span>
-                </div>
-            </div>
-        </div>
-
-        <div id='screenShot' v-show='screenShotIcon'>
-            <div class="breathe-div"></div>
-            <img class='takepicture' src='./resource/shoot.png' v-on:click="takePicture"/>
-            <img class='switchcamera' id='switchcamera' src="./resource/switch-camera.png" alt="">
-        </div>
-
-        <div style='position: fixed; bottom: 10px; width:100%; text-align: left; z-index: 10000;font-size: 15px;color:white'>{{version}}<br>{{versionInfo}}</div>
-
-        <div class='screenShotDiv' v-show='isShooted'>
-            <img class='screenShot' :src="screenShotImage" alt="">
-            <p class='hint'>长按图片可保存至手机</p>
-            <img src="./resource/delete.png" class='delete' v-on:click="hideImage"/>
-        </div>
-    </div>
-
+    
     <div class='scene'>
         <a-scene
             embedded
@@ -67,17 +29,43 @@
         </a-scene>
     </div>
 
+    <div id='app' >
+        <div class='info' v-show='infoDisplay'>
+            <p class='content' v-html="departmentInfo[departmentIndex].content"></p>
+
+            <div class='functionButton'>
+                <div class='functions' v-on:click="showInfo">
+                    <img class='icon' src="./resource/fold.png" />
+                    <span>收起</span>
+                </div>
+            </div>
+        </div>
+
+        <div id='screenShot' v-show='screenShotIcon'>
+            <div class="breathe-div"></div>
+            <img class='takepicture' src='./resource/shoot.png' v-on:click="takePicture"/>
+            <img class='switchcamera' id='switchcamera' src="./resource/switch-camera.png" v-on:click="switchCamera" alt="">
+        </div>
+
+        <div style='position: fixed; bottom: 10px; width:100%; text-align: left; z-index: 10000;font-size: 15px;color:white'>{{version}}<br>{{versionInfo}}</div>
+
+        <div class='screenShotDiv' v-show='isShooted'>
+            <img class='screenShot' :src="screenShotImage" alt="">
+            <p class='hint'>长按图片可保存至手机</p>
+            <img src="./resource/delete.png" class='delete' v-on:click="hideImage"/>
+        </div>
+    </div>
 
     <script>
         var app = new Vue(
             {
                 el: '#app',
                 data: {
-                    version: '0.18',
-                    versionInfo: "修复了一些截图的问题",
+                    version: '0.19',
+                    versionInfo: "删除了不需要展示的信息",
                     infoDisplay: true,
                     screenShotIcon : false,
-                    departmentIndex: 0,
+                    departmentIndex: 2,
                     departmentInfo: [
                         {
                             department: 'MAE',
@@ -129,10 +117,6 @@
                         this.infoDisplay = !this.infoDisplay;
                         this.screenShotIcon = !this.infoDisplay;
                     },
-                    goDetail(){
-                        console.log('godetail');
-                        window.location.href=this.departmentInfo[this.departmentIndex].link;
-                    },
                     takePicture(){
                         const self = this;
                         document.getElementById('screenShot').style.display='none';
@@ -154,6 +138,9 @@
                         this.isShooted = false;
                         this.screenShotImage = "";
                         this.screenShotIcon = true;
+                    },
+                    switchCamera(){
+                        window.location.href="./ar-user.html"
                     }
                 }
             }
