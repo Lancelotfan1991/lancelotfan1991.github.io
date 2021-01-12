@@ -6,7 +6,7 @@
         src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
     <script src="./libs/aframe-ar-nft.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <link rel="stylesheet" href="./style.css?v=0.35">
+    <link rel="stylesheet" href="./style.css?v=0.36">
     <script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
 </head>
 
@@ -113,27 +113,30 @@
                     takePicture(){
                         const self = this;
                         document.getElementById('screenShot').style.display='none';
-                        const canvas = document.getElementsByClassName('a-canvas')[0]
-                        html2canvas(
-                            document.body,
-                            {
-                                allowTaint: true,
-                                useCORS: true,
-                            }
-                        ).then(function (canvas) {
-                            // 获取年月日作为文件名
-                            var timers=new Date();
-                            var fullYear=timers.getFullYear();
-                            var month=timers.getMonth()+1;
-                            var date=timers.getDate();
-                            var randoms=Math.random()+'';
-                            // 年月日加上随机数
-                            var numberFileName=fullYear+''+month+date+randoms.slice(3,10);
-                            self.screenShotImage = canvas.toDataURL("image/png");
+                        // const canvas = document.getElementsByClassName('a-canvas')[0];
+                        // html2canvas(
+                        //     document.body,
+                        //     {
+                        //         allowTaint: true,
+                        //         useCORS: true,
+                        //     }
+                        // ).then(function (canvas) {
+                        //     // 获取年月日作为文件名
+                        //     var timers=new Date();
+                        //     var fullYear=timers.getFullYear();
+                        //     var month=timers.getMonth()+1;
+                        //     var date=timers.getDate();
+                        //     var randoms=Math.random()+'';
+                        //     // 年月日加上随机数
+                            
+                        //     var numberFileName=fullYear+''+month+date+randoms.slice(3,10);
+                        //     self.screenShotImage = canvas.toDataURL("image/png");
 
-                            self.isShooted = true;
-                            self.screenShotIcon = false;
-                        })
+                        //     self.isShooted = true;
+                        //     self.screenShotIcon = false;
+                        // })
+                        const capture = document.querySelector('a-scene').components.screenshot.capture('perspective');
+                        console.log(capture);
                     },
                     hideImage(){
                         this.isShooted = false;
