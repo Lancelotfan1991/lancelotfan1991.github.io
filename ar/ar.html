@@ -6,7 +6,7 @@
         src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
     <script src="./libs/aframe-ar-nft.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <link rel="stylesheet" href="./style.css?v=0.33">
+    <link rel="stylesheet" href="./style.css?v=0.35">
     <script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
 </head>
 
@@ -89,10 +89,10 @@
             <img class='switchcamera' id='switchcamera' src="./resource/switch-camera.png" v-on:click="switchCamera" alt="">
         </div>
 
-        <div style='position: fixed; bottom: 10px;left: 0px; width:100%; text-align: left; z-index: 10000;font-size: 10px;color:white'>version:{{version}}<br>{{versionInfo}}</div>
+        <div style='position: fixed; bottom: 10px;left: 0px; width:100%; text-align: left;font-size: 10px;color:white'>version:{{version}}<br>{{versionInfo}}</div>
 
         <div class='screenShotDiv' v-show='isShooted'>
-            <img class='screenShot' :src="canvasImage" alt="">
+            <img class='screenShot' :src="screenShotImage" alt="">
             <p class='hint'>长按图片可保存至手机</p>
             <img src="./resource/delete.png" class='delete' v-on:click="hideImage"/>
         </div>
@@ -104,17 +104,23 @@
                 el: '#app',
                 data: {
                     version: '0.35',
-                    versionInfo: "添加多个marker,采用界面ui的形式展现",
+                    versionInfo: "添加多个marker,采用界面ui的形式展现文案",
                     screenShotIcon : true,
                     isShooted: false,
                     screenShotImage: '',
-                    canvasImage: ''
                 },
                 methods: {
                     takePicture(){
                         const self = this;
                         document.getElementById('screenShot').style.display='none';
-                        html2canvas(document.body,{allowTaint:true,useCORS:true}).then(function (canvas) {
+                        const canvas = document.getElementsByClassName('a-canvas')[0]
+                        html2canvas(
+                            document.body,
+                            {
+                                allowTaint: true,
+                                useCORS: true,
+                            }
+                        ).then(function (canvas) {
                             // 获取年月日作为文件名
                             var timers=new Date();
                             var fullYear=timers.getFullYear();
@@ -124,9 +130,6 @@
                             // 年月日加上随机数
                             var numberFileName=fullYear+''+month+date+randoms.slice(3,10);
                             self.screenShotImage = canvas.toDataURL("image/png");
-
-                            let cameraCanvas = document.getElementsByClassName('a-canvas')[0];
-                            self.canvasImage = cameraCanvas.toDataURL("image/png");
 
                             self.isShooted = true;
                             self.screenShotIcon = false;
