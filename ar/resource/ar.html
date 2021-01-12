@@ -1,0 +1,171 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=640,user-scalable=no">
+    <title>AR展示活动</title>
+    <script
+        src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+    <script src="./libs/aframe-ar-nft.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="./style.css?v=0.18">
+    <script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+</head>
+
+<body style='margin : 0px; overflow: hidden; font-family: Monospace;width: 100%; height: 100%;'>
+    <p id='hint' style="position: absolute;top: 0;left: 0;font-size: 20px;">提示信息7</p>
+    
+    <script>
+        AFRAME.registerComponent('markerhandler', {
+            init: function () {
+                this.el.sceneEl.addEventListener('markerFound', (e) => {
+                    document.getElementById('hint').innerHTML='Marker Found ' + e.toString()
+                });
+                this.el.sceneEl.addEventListener('markerLost', () => {
+                    document.getElementById('hint').innerHTML='Marker Lost' + e.toString()
+                });
+            }
+        });
+    </script>
+
+    <a-scene
+        vr-mode-ui="enabled: false;"
+        embedded
+        arjs='trackingMethod: best; debugUIEnabled: true;detectionMode: mono_and_matrix; matrixCodeType: 4x4_BCH_13_5_5; '>
+
+        <a-marker markerhandler type='barcode' value='0'>
+            <a-text value="MAE是面向5G时代移动网络的自动化引擎，\n助力实现移动网络的三大超越。" baseline='top' scale='0.13 0.13 0.13' position='0 0 -1' wrapCount='40' width='5' font='./resource/Regular-msdf.json' lineheight='0.2'></a-text>
+        </a-marker>
+
+        <a-marker markerhandler type='barcode' value='2'>
+            <a-text value="MAE是面向5G时代移动网络的自动化引擎，\n助力实现移动网络的三大超越。" baseline='top' scale='0.13 0.13 0.13' position='0 0 -1' wrapCount='40' width='5' font='./resource/Regular-msdf.json' lineheight='0.2'></a-text>
+        </a-marker>
+
+        <a-marker markerhandler type='barcode' value='7'>
+            <a-text value="MAE是面向5G时代移动网络的自动化引擎，\n助力实现移动网络的三大超越。" baseline='top' scale='0.15 0.13 0.13' position='0 0 -1' wrapCount='40' width='5' font='./resource/Regular-msdf.json' lineheight='0.2'></a-text>
+        </a-marker>
+
+        <a-entity camera></a-entity>
+    </a-scene>
+
+    <div id='app' >
+        <div class='info' v-show='infoDisplay'>
+            <p class='content' v-html="departmentInfo[departmentIndex].content"></p>
+
+            <div class='functionButton'>
+                <div class='functions' v-on:click="showInfo">
+                    <img class='icon' src="./resource/fold.png" />
+                    <span>收起</span>
+                </div>
+            </div>
+        </div>
+
+        <div id='screenShot' v-show='screenShotIcon'>
+            <div class="breathe-div"></div>
+            <img class='takepicture' src='./resource/shoot.png' v-on:click="takePicture"/>
+            <img class='switchcamera' id='switchcamera' src="./resource/switch-camera.png" v-on:click="switchCamera" alt="">
+        </div>
+
+        <div style='position: fixed; bottom: 10px; width:100%; text-align: left; z-index: 10000;font-size: 15px;color:white'>{{version}}<br>{{versionInfo}}</div>
+
+        <div class='screenShotDiv' v-show='isShooted'>
+            <img class='screenShot' :src="screenShotImage" alt="">
+            <p class='hint'>长按图片可保存至手机</p>
+            <img src="./resource/delete.png" class='delete' v-on:click="hideImage"/>
+        </div>
+    </div>
+
+    <script>
+        var app = new Vue(
+            {
+                el: '#app',
+                data: {
+                    version: '0.26',
+                    versionInfo: "添加多个marker",
+                    infoDisplay: true,
+                    screenShotIcon : false,
+                    departmentIndex: 2,
+                    departmentInfo: [
+                        {
+                            department: 'MAE',
+                            owner: '朱良胜',
+                            content: `MAE是面向5G时代移动网络的自动化引擎，助力实现移动网络的三大超越：1) Beyond Efficiency: 10x运维效率提升；2) Beyond Performance: 20%的频谱效率提升：从不可能到可能；优化从静态到动态；从粗放到精细化；从非实时到实时；3) Beyond New Service：5x发放效率提升；业务发放从weeks到Days；通过联合运营商开放合作，面向场景逐级演进，实现移动网络完全自动驾驶。`,
+                            link: ''
+                        },
+                        {
+                            department: 'xExpress',
+                            owner: '卢江涛',
+                            content: '高效建网的xExpress系列包含Site Express、Feature Express和Radio Express，简化了原本操作复杂、数量庞大的建网工作，支持大批量、流水线式、自动化的建站和特性开通。',
+                            link: ''
+                        },
+                        {
+                            department: 'xSuite',
+                            owner: '苏建波',
+                            content: '敏捷业务的xSuite系列包含WTTx Suite、切片运维管理、室内可视化，支持快速精准的发放业务。',
+                            link: ''
+                        },
+                        {
+                            department: 'xTurbo',
+                            owner: '张永生',
+                            content: '智能运维的xTurbo系列包含Alarm Turbo、Capacity Turbo和Power Turbo，提供智能化的排障、网优、节能能力。',
+                            link: ''
+                        },
+                        {
+                            department: 'Dopra',
+                            owner: '梁继成',
+                            content: 'DOPRA业务包含SSP、VISP、VPP、FSP、SiteAI、AutoTBP，分布杭州、上海、东莞三地域，上海地域交付VISP，AutoTBP,提供轻量级弹性协议栈、IP路由、IP协议安全、拓展集中路径控制引擎、车载安全协议，构筑边缘组网极简竞争力。',
+                            link: ''
+                        },
+                        {
+                            department: 'AI',
+                            owner: '朱良胜',
+                            content: 'Beyond Intelligence：从自动化到智能化，面向云化AI打造自学习自管理的网络，编织一张会思考的"网"，让沟通畅行无阻。',
+                            link: ''
+                        }
+                    ],
+                    isShooted: false,
+                    screenShotImage: ''
+                },
+                methods: {
+                    changeDepartmentIndex() {
+                        console.log('changeIndex')
+                        this.departmentIndex = (this.departmentIndex + 1) % 5;
+                    },
+                    showInfo(){
+                        console.log('showinfo')
+                        this.infoDisplay = !this.infoDisplay;
+                        this.screenShotIcon = !this.infoDisplay;
+                    },
+                    takePicture(){
+                        const self = this;
+                        document.getElementById('screenShot').style.display='none';
+                        html2canvas(document.body,{useCORS:true}).then(function (canvas) {
+                            // 获取年月日作为文件名
+                            var timers=new Date();
+                            var fullYear=timers.getFullYear();
+                            var month=timers.getMonth()+1;
+                            var date=timers.getDate();
+                            var randoms=Math.random()+'';
+                            // 年月日加上随机数
+                            var numberFileName=fullYear+''+month+date+randoms.slice(3,10);
+                            self.screenShotImage = canvas.toDataURL("image/png");
+                            self.isShooted = true;
+                            self.screenShotIcon = false;
+                        })
+                    },
+                    hideImage(){
+                        this.isShooted = false;
+                        this.screenShotImage = "";
+                        this.screenShotIcon = true;
+                    },
+                    switchCamera(){
+                        window.location.href="./ar-user.html"
+                    }
+                }
+            }
+        );
+    </script>
+
+
+</body>
+
+</html>
