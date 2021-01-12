@@ -20,7 +20,7 @@
                 this.el.sceneEl.addEventListener('markerFound', () => {
                     document.getElementById('hint').innerHTML='Marker Found'
                 });
-                this.el.sceneEl.addEventListener('markerFalse', () => {
+                this.el.sceneEl.addEventListener('markerLost', () => {
                     document.getElementById('hint').innerHTML='Marker Lost'
                 });
             }
@@ -34,7 +34,7 @@
         >
 
         <a-marker markerhandler type='barcode' value='7'>
-            <a-text value="MAE是面向5G时代移动网络的自动化引擎。" font="./resource/Regular-msdf.json" scale="1 1 1" position="0 0 -2"></a-text>
+            <a-text value="MAE是面向5G时代移动网络的自动化引擎。" font="./resource/Regular-msdf.json" scale="1 1 1" position="0 0 0"></a-text>
         </a-marker>
 
         <a-entity camera></a-entity>
@@ -72,7 +72,7 @@
             {
                 el: '#app',
                 data: {
-                    version: '0.247',
+                    version: '0.248',
                     versionInfo: "修改scene的相关配置3",
                     infoDisplay: true,
                     screenShotIcon : false,
