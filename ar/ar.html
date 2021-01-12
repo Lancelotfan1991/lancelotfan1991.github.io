@@ -6,7 +6,7 @@
         src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
     <script src="./libs/aframe-ar-nft.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <link rel="stylesheet" href="./style.css?v=0.38">
+    <link rel="stylesheet" href="./style.css?v=0.39">
     <script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
 </head>
 
@@ -59,6 +59,7 @@
                     const marker = this.el;
                     const self = this;
                     this.el.addEventListener('markerFound', () => {
+                        document.getElementById('debuginfo').innerHTML='marker found ' + i;
                         document.getElementById('content').style.display='block';
                         document.getElementById('content').innerHTML=departMentInfo[i].content;
                     });
@@ -73,6 +74,7 @@
     <a-scene
         vr-mode-ui="enabled: false;"
         embedded
+        screenShot="width:640px;height:1138px"
         arjs='trackingMethod: best; debugUIEnabled: false;detectionMode: mono_and_matrix; matrixCodeType: 4x4_BCH_13_5_5; sourceType: webcam; '>
 
         <a-marker markerhandler0 type='barcode' value='0' id='1'></a-marker>
@@ -90,6 +92,7 @@
         </div>
 
         <div style='position: fixed; bottom: 10px;left: 0px; width:100%; text-align: left;font-size: 10px;color:white'>version:{{version}}<br>{{versionInfo}}</div>
+        <div style='position: fixed; bottom: 40px;left: 0px; width:100%; text-align: left;font-size: 10px;color:white'>debuginfo: empty</div>
 
         <div class='screenShotDiv' v-show='isShooted'>
             <img class='screenShot' :src="screenShotImage" alt="">
@@ -131,7 +134,6 @@
                             self.isShooted = true;
                             self.screenShotIcon = false;
                         })
-
                     },
                     hideImage(){
                         this.isShooted = false;
