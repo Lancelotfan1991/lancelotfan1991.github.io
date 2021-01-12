@@ -70,6 +70,10 @@ body{
         15px 10px #009807
 }
 
+.cross {
+    text-shadow: white .02em -.02em 0, white .04em -.04em 0, white .06em -.06em 0, white .08em -.08em 0, white .1em -.1em 0, white -.02em .02em 0, white -.04em .04em 0, white -.06em .06em 0, white -.08em .08em 0, white -.1em .1em 0;
+}
+
 .icon {
     width: 40px;
     height: 40px;
@@ -88,10 +92,10 @@ body{
 .switchcamera {
     position: fixed;
     bottom: 170px;
-    width: 40px;
-    height: 40px;
-    transform: translateX(-30px);
-    left: 75%;
+    width: 30px;
+    height: 30px;
+    transform: translateX(-15px);
+    left: 80%;
 }
 
 .breathe-div {
@@ -169,16 +173,17 @@ body{
 
 .hint {
     position: fixed;
-    bottom: 100px;
+    bottom: 5vh;
     width: 100%;
+    font-size: 20px;
     text-align: center;
 }
 
 .delete {
     position: fixed;
-    bottom: 40px;
-    width: 60px;
-    height: 60px;
+    bottom: 2vh;
+    width: 40px;
+    height: 40px;
     left: 50%;
     transform: translateX(-50%);
 }
