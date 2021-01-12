@@ -2,6 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <title>AR展示活动</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalabled=no,maximum-scale=1.0,minimum-scale=1.0">
     <script
         src="https://cdn.jsdelivr.net/gh/aframevr/aframe@9be0a6b94b61740c6fc4d2a1e74d744c38be4c61/dist/aframe-master.min.js"></script>
     <script src="./libs/aframe-ar-nft.js"></script>
@@ -96,7 +97,7 @@
 
         <a-marker markerhandler1 type='barcode' value='2' id='2'></a-marker>
 
-        <a-entity camera></a-entity>
+        <a-entity camera zoom='1'></a-entity>
     </a-scene>
 
     <div id='app' >
@@ -110,12 +111,10 @@
         <div id='debuginfo' style='position: fixed; bottom: 40px;left: 0px; width:100%; text-align: left;font-size: 10px;color:white'>debuginfo: empty</div>
 
         <div class='screenShotDiv' v-show='isShooted'>
-            <img class='screenShot' :src="screenShotImage" alt="">
+            <canvas id='canvas' class='screenShot'></canvas>
             <p class='hint'>长按图片可保存至手机</p>
             <img src="./resource/delete.png" class='delete' v-on:click="hideImage"/>
         </div>
-
-        <canvas id='canvas' style="position:fixed;width: 100vw;height:60vh;top:0;left: 0;"></canvas>
     </div>
 
     <script>
@@ -160,12 +159,15 @@
                         console.log(document.body.clientHeight);       //网页可见区域高(body)
                         console.log(document.body.offsetWidth);       //网页可见区域宽(body)，包括border、margin等
                         console.log(document.body.offsetHeight);      //网页可见区域宽(body)，包括border、margin等
-                        ctx.drawImage(aVideo, 0, 0);
+                        ctx.drawImage(aVideo, 0, 0, 3000, 3000, 0 ,0,2038, 1038);
+                        this.isShooted=true;
                     },
                     hideImage(){
                         this.isShooted = false;
                         this.screenShotImage = "";
                         this.screenShotIcon = true;
+                        document.getElementById('screenShot').style.display='block';
+
                     },
                     switchCamera(){
                         window.location.href="./ar-user.html"
