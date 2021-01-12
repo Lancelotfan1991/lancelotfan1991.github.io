@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalabled=no,maximum-scale=1.0,minimum-scale=1.0">
     <script
         src="https://cdn.jsdelivr.net/gh/aframevr/aframe@9be0a6b94b61740c6fc4d2a1e74d744c38be4c61/dist/aframe-master.min.js"></script>
-    <script src="./libs/aframe-ar-nft-user.js"></script>
+    <script src="./libs/aframe-ar-nft.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="./libs/look-at-camera.js"></script>
     <link rel="stylesheet" href="./style.css?v=0.39">
@@ -112,6 +112,7 @@
 
         <div class='screenShotDiv' v-show='isShooted'>
             <canvas id='canvas' class='screenShot'></canvas>
+            <img class='screenShot' :src="screenShotImage" alt="">
             <p class='hint'>长按图片可保存至手机</p>
             <img src="./resource/delete.png" class='delete' v-on:click="hideImage"/>
         </div>
@@ -133,34 +134,29 @@
                         // document.querySelector('a-scene').components.screenshot.getCanvas('equirectangular');
                         const self = this;
                         document.getElementById('screenShot').style.display='none';
-                        // const components = document.querySelector('a-scene').components;
-                        // console.log(components);
-                        // const screenShot = components.screenshot;
-                        // const canvas = screenShot.getCanvas('perspective');
                         window.console.log('1');
                         var aVideo = document.getElementById('arjs-video');
                         var aCanvas = document.getElementById('canvas');
                         var ctx = aCanvas.getContext('2d');
+                        ctx.drawImage(aVideo, 0, 0, 3000, 3000, 0 ,0,2038, 1038);
 
-                        // html2canvas(
-                        //     document.body,
-                        //     {
-                        //         allowTaint: true,
-                        //         useCORS: true,
-                        //         canvas: canvas
-                        //     }
-                        // ).then(function (canvas) {
-                        //     self.screenShotImage = canvas.toDataURL("image/png");
+                        html2canvas(
+                            document.getElementById('app'),
+                            {
+                                allowTaint: true,
+                                useCORS: true,
+                                canvas: aCanvas
+                            }
+                        ).then(function (canvas) {
+                            self.screenShotImage = canvas.toDataURL("image/png");
 
-                        //     self.isShooted = true;
-                        //     self.screenShotIcon = false;
-                        // })
+                            self.isShooted = true;
+                            self.screenShotIcon = false;
+                        })
                         console.log(document.body.clientWidth);        //网页可d见区域宽(body)
                         console.log(document.body.clientHeight);       //网页可见区域高(body)
                         console.log(document.body.offsetWidth);       //网页可见区域宽(body)，包括border、margin等
                         console.log(document.body.offsetHeight);      //网页可见区域宽(body)，包括border、margin等
-                        ctx.drawImage(aVideo, 0, 0, 3000, 3000, 0 ,0,2038, 1038);
-                        this.isShooted=true;
                     },
                     hideImage(){
                         this.isShooted = false;

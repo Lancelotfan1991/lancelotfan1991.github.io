@@ -170,7 +170,7 @@ body{
 }
 
 .screenShot {
-    position: relative;
+    position: fixed;
     width: 70%;
     height: 70%;
     left: 50%;
