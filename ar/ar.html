@@ -17,11 +17,11 @@
     <script>
         AFRAME.registerComponent('markerhandler', {
             init: function () {
-                this.el.sceneEl.addEventListener('markerFound', () => {
-                    document.getElementById('hint').innerHTML='Marker Found'
+                this.el.sceneEl.addEventListener('markerFound', (e) => {
+                    document.getElementById('hint').innerHTML='Marker Found ' + e.toString()
                 });
                 this.el.sceneEl.addEventListener('markerLost', () => {
-                    document.getElementById('hint').innerHTML='Marker Lost'
+                    document.getElementById('hint').innerHTML='Marker Lost' + e.toString()
                 });
             }
         });
@@ -32,16 +32,16 @@
         embedded
         arjs='trackingMethod: best; debugUIEnabled: true;detectionMode: mono_and_matrix; matrixCodeType: 4x4_BCH_13_5_5; '>
 
-        <a-marker markerhandler type='barcode' value='1'>
-            <a-text value="MAE是面向5G时代移动网络的自动化引擎，助力实现移动网络的三大超越。" geometry="primitive:plane" z-offset='0.001' baseline='center'></a-text>
+        <a-marker markerhandler type='barcode' value='0'>
+            <a-text value="MAE是面向5G时代移动网络的自动化引擎，\n助力实现移动网络的三大超越。" baseline='top' scale='0.13 0.13 0.13' position='0 0 -1' wrapCount='40' width='5' font='./resource/Regular-msdf.json' lineheight='0.2'></a-text>
         </a-marker>
 
         <a-marker markerhandler type='barcode' value='2'>
-            <a-text value="高效建网的xExpress系列包含Site Express、Feature Express和Radio Express，简化了原本操作复杂、数量庞大的建网工作，支持大批量、流水线式、自动化的建站和特性开通。" geometry="primitive:plane" z-offset='0.001' baseline='top' ></a-text>
+            <a-text value="MAE是面向5G时代移动网络的自动化引擎，\n助力实现移动网络的三大超越。" baseline='top' scale='0.13 0.13 0.13' position='0 0 -1' wrapCount='40' width='5' font='./resource/Regular-msdf.json' lineheight='0.2'></a-text>
         </a-marker>
 
         <a-marker markerhandler type='barcode' value='7'>
-            <a-text value="敏捷业务的xSuite系列包含WTTx Suite、切片运维管理、室内可视化，支持快速精准的发放业务。" geometry="primitive:plane" z-offset='0.001' baseline='center' position='3 0 0.1' wrapCount='30'></a-text>
+            <a-text value="MAE是面向5G时代移动网络的自动化引擎，\n助力实现移动网络的三大超越。" baseline='top' scale='0.15 0.13 0.13' position='0 0 -1' wrapCount='40' width='5' font='./resource/Regular-msdf.json' lineheight='0.2'></a-text>
         </a-marker>
 
         <a-entity camera></a-entity>
@@ -79,7 +79,7 @@
             {
                 el: '#app',
                 data: {
-                    version: '0.25',
+                    version: '0.26',
                     versionInfo: "添加多个marker",
                     infoDisplay: true,
                     screenShotIcon : false,
