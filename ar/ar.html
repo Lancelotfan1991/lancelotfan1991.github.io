@@ -9,10 +9,23 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="./style.css?v=0.18">
     <script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+
+    <script>
+        AFRAME.registerComponent('markerhandler', {
+            init: function () {
+                this.el.sceneEl.addEventListener('markerFound', () => {
+                    document.getElementById('hint').innerHTML='Marker Found'
+                });
+                this.el.sceneEl.addEventListener('markerFalse', () => {
+                    document.getElementById('hint').innerHTML='Marker Lost'
+                });
+            }
+        });
+    </script>
 </head>
 
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;width: 100%; height: 100%;'>
-    
+    <p id='hint' style="position: absolute;top: 0;left: 0;font-size: 20px;">提示信息</p>
     <div class='scene'>
         <a-scene
             embedded
@@ -20,8 +33,8 @@
             arjs='trackingMethod: best; sourceType: webcam;debugUIEnabled: false;'
             renderer='antialias: true; alpha: true; precision: high;'>
 
-            <a-marker type='barcode' value='https://lancelotfan1991.github.io/ar/ar.html'>
-                <a-text value="MAE是面向5G时代移动网络的自动化引擎。" font="./resource/Regular-msdf.json" scale="1 1 1" position="0 0 -8"></a-text>
+            <a-marker type='barcode' value='https://lancelotfan1991.github.io/ar/ar.html' emitevents='true'>
+                <a-text value="MAE是面向5G时代移动网络的自动化引擎。" font="./resource/Regular-msdf.json" scale="1 1 1" position="0 0 -2"></a-text>
             </a-marker>
 
             <a-entity id='camera' camera='zoom: 1;' look-controls wasd-controls></a-entity>
@@ -61,8 +74,8 @@
             {
                 el: '#app',
                 data: {
-                    version: '0.20',
-                    versionInfo: "删除了不需要展示的信息",
+                    version: '0.21',
+                    versionInfo: "添加二维码识别展示功能",
                     infoDisplay: true,
                     screenShotIcon : false,
                     departmentIndex: 2,
