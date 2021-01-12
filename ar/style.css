@@ -34,53 +34,17 @@ body{
     color: white;
 }
 
-/*文案部分的css */
-.info {
+.content {
     position: fixed;
     top: 50px;
-    left: 0px;
     right: 10px;
-    text-align: right;
-    margin: 0 0 0 30px;
-    max-width: 600px;
-}
-
-.infohead {
-    position: relative;
-    right: 0;
-    height: 100px;
-    line-height: 100px;
-    padding: 0 30px;
-    font-size: 30px;
-    margin: 10px;
-}
-
-.title {
-    position: relative;
-    right: 0;
-    height: 100px;
-    line-height: 100px;
-    padding: 0 30px;
-    margin: 10px;
-}
-
-.owner {
-    position: relative;
-    right: 0;
-    line-height: 100px;
-    padding: 0 30px;
-    margin: 10px;
-}
-
-.content {
-    position: relative;
-    right: 0;
-    line-height: 45px;
-    padding: 20px 30px;
+    line-height: 34px;
+    padding: 20px 20px;
     margin: 10px;
     text-align: left;
 
     color:#fff;
+    font-size: 20px;
     font-weight:800;
     text-shadow:
         1px 0px #009807,
@@ -106,25 +70,6 @@ body{
         15px 10px #009807
 }
 
-.functionButton {
-    display: flex;
-    justify-content: flex-end;
-    vertical-align: middle;
-    line-height: 50px;
-    font-size: 20px;
-    color: white;
-    padding: 10px;
-}
-
-.functions {
-    margin: 0 5px;
-    padding: 5px 5px;
-    display: flex;
-    vertical-align: middle;
-    line-height: 50px;
-    font-size: 25px;
-}
-
 .icon {
     width: 40px;
     height: 40px;
@@ -135,16 +80,16 @@ body{
     position: fixed;
     bottom: 150px;
     left: 50%;
-    transform: translateX(-75px);
-    width: 150px;
-    height: 150px;
+    transform: translateX(-50px);
+    width: 100px;
+    height: 100px;
 }
 
 .switchcamera {
     position: fixed;
-    bottom: 150px;
-    width: 60px;
-    height: 60px;
+    bottom: 170px;
+    width: 40px;
+    height: 40px;
     transform: translateX(-30px);
     left: 75%;
 }
@@ -153,9 +98,9 @@ body{
     position: fixed;
     bottom: 150px;
     left: 50%;
-    transform: translateX(-75px);
-    width: 150px;
-    height: 150px;
+    transform: translateX(-50px);
+    width: 100px;
+    height: 100px;
     border: 1px solid #2b92d4;
     border-radius: 50%;
     text-align: center;
