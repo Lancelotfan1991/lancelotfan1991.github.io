@@ -73,6 +73,7 @@
     <a-scene
         vr-mode-ui="enabled: false;"
         embedded
+        screenShot="width:640px;height:1038px"
         arjs='trackingMethod: best; debugUIEnabled: false;detectionMode: mono_and_matrix; matrixCodeType: 4x4_BCH_13_5_5; sourceType: webcam; '>
 
         <a-marker markerhandler0 type='barcode' value='0' id='1'></a-marker>
@@ -135,7 +136,11 @@
                         //     self.isShooted = true;
                         //     self.screenShotIcon = false;
                         // })
-                        const canvas = document.querySelector('a-scene').components.screenshot.getCanvas('equirectangular');
+                        const components = document.querySelector('a-scene').components;
+                        console.log(components);
+                        const screenShot = components.screenshot;
+                        const canvas = screenShot.getCanvas('perspective');
+                        console.log(canvas);
                         self.screenShotImage = canvas.toDataURL("image/png");
                         self.isShooted = true;
                         self.screenShotIcon = false;
