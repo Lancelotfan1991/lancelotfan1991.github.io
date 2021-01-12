@@ -1,7 +1,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=640,user-scalable=no">
     <title>AR展示活动</title>
     <script
         src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
@@ -94,7 +93,7 @@
     <a-scene
         vr-mode-ui="enabled: false;"
         embedded
-        arjs='trackingMethod: best; debugUIEnabled: true;detectionMode: mono_and_matrix; matrixCodeType: 4x4_BCH_13_5_5; '>
+        arjs='trackingMethod: best; debugUIEnabled: true;detectionMode: mono_and_matrix; matrixCodeType: 4x4_BCH_13_5_5; sourceType: webcam; '>
 
         <a-marker markerhandler1 type='barcode' value='0' id='1'>
             <!-- <a-text value="EMAE是面向5G时代移动网络的自动化引擎，\n助力实现移动网络的三大超越。" baseline='top' scale='0.35 0.35 0.35' position='2 0.5 -1' wrapCount='40' width='5' font='./resource/Regular-msdf.json'></a-text> -->
