@@ -18,10 +18,10 @@
         AFRAME.registerComponent('markerhandler', {
             init: function () {
                 this.el.sceneEl.addEventListener('markerFound', (e) => {
-                    document.getElementById('hint').innerHTML='Marker Found ' + e.toString()
+                    document.getElementById('hint').innerHTML='Marker Found '
                 });
                 this.el.sceneEl.addEventListener('markerLost', () => {
-                    document.getElementById('hint').innerHTML='Marker Lost' + e.toString()
+                    document.getElementById('hint').innerHTML='Marker Lost'
                 });
             }
         });
@@ -33,15 +33,15 @@
         arjs='trackingMethod: best; debugUIEnabled: true;detectionMode: mono_and_matrix; matrixCodeType: 4x4_BCH_13_5_5; '>
 
         <a-marker markerhandler type='barcode' value='0'>
-            <a-text value="MAE是面向5G时代移动网络的自动化引擎，\n助力实现移动网络的三大超越。" baseline='top' scale='0.13 0.13 0.13' position='0 0 -1' wrapCount='40' width='5' font='./resource/Regular-msdf.json' lineheight='0.2'></a-text>
+            <a-text value="MAE是面向5G时代移动网络的自动化引擎，\n助力实现移动网络的三大超越。" baseline='top' scale='0.35 0.35 0.35' position='2 0 -1' wrapCount='40' width='5' font='./resource/Regular-msdf.json'></a-text>
         </a-marker>
 
         <a-marker markerhandler type='barcode' value='2'>
-            <a-text value="MAE是面向5G时代移动网络的自动化引擎，\n助力实现移动网络的三大超越。" baseline='top' scale='0.13 0.13 0.13' position='0 0 -1' wrapCount='40' width='5' font='./resource/Regular-msdf.json' lineheight='0.2'></a-text>
+            <a-text value="MAE是面向5G时代移动网络的自动化引擎，\n助力实现移动网络的三大超越。" baseline='top' scale='0.35 0.35 0.35' position='2 0 -1' wrapCount='40' width='5' font='./resource/Regular-msdf.json' ></a-text>
         </a-marker>
 
         <a-marker markerhandler type='barcode' value='7'>
-            <a-text value="MAE是面向5G时代移动网络的自动化引擎，\n助力实现移动网络的三大超越。" baseline='top' scale='0.15 0.13 0.13' position='0 0 -1' wrapCount='40' width='5' font='./resource/Regular-msdf.json' lineheight='0.2'></a-text>
+            <a-text value="MAE是面向5G时代移动网络的自动化引擎，\n助力实现移动网络的三大超越。" baseline='top' scale='0.35 0.35 0.35' position='2 0 -1' wrapCount='40' width='5' font='./resource/Regular-msdf.json'></a-text>
         </a-marker>
 
         <a-entity camera></a-entity>
