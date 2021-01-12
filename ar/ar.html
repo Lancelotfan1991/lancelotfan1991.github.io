@@ -14,6 +14,8 @@
     <p id='hint' style="position: absolute;top: 0;left: 0;font-size: 20px;"></p>
     <p id='hint2' style="position: absolute;top: 20px;left: 0;font-size: 20px;"></p>
     
+    <p class='content' id='content'></p>
+
     <script>
         const departMentInfo = [
             {
@@ -128,8 +130,6 @@
             <img class='switchcamera' id='switchcamera' src="./resource/switch-camera.png" v-on:click="switchCamera" alt="">
         </div>
 
-        <p class='content' id='content'>Beyond Intelligence：从自动化到智能化，面向云化AI打造自学习自管理的网络，编织一张会思考的"网"，让沟通畅行无阻。</p>
-
         <div style='position: fixed; bottom: 10px;left: 0px; width:100%; text-align: left; z-index: 10000;font-size: 15px;color:white'>{{version}}<br>{{versionInfo}}</div>
 
         <div class='screenShotDiv' v-show='isShooted'>
@@ -144,11 +144,10 @@
             {
                 el: '#app',
                 data: {
-                    version: '0.32',
+                    version: '0.33',
                     versionInfo: "添加多个marker,采用界面ui的形式展现",
                     infoDisplay: true,
                     screenShotIcon : false,
-                    departmentIndex: 2,
                     departmentInfo: departMentInfo,
                     isShooted: false,
                     screenShotImage: ''
