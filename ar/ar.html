@@ -25,19 +25,19 @@
 </head>
 
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;width: 100%; height: 100%;'>
-    <p id='hint' style="position: absolute;top: 0;left: 0;font-size: 20px;">提示信息3</p>
+    <p id='hint' style="position: absolute;top: 0;left: 0;font-size: 20px;">提示信息4</p>
     <div class='scene'>
         <a-scene
             embedded
             vr-mode-ui="enabled: false;"
-            arjs='trackingMethod: best; sourceType: webcam;debugUIEnabled: false;'
-            renderer='antialias: true; alpha: true; precision: high;'>
+            arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'
+            renderer='antialias: true; alpha: true; precision: high;logarithmicDepthBuffer: true;'>
 
             <a-marker markerhandler type='barcode' value='7' emitevents='true' size='0.2'>
                 <a-text value="MAE是面向5G时代移动网络的自动化引擎。" font="./resource/Regular-msdf.json" scale="1 1 1" position="0 0 -2"></a-text>
             </a-marker>
 
-            <a-entity id='camera' camera='zoom: 1;' look-controls wasd-controls></a-entity>
+            <a-entity id='camera' camera='zoom: 1;'></a-entity>
         </a-scene>
 
     </div>
@@ -74,8 +74,8 @@
             {
                 el: '#app',
                 data: {
-                    version: '0.23',
-                    versionInfo: "添加二维码识别展示功能和handler",
+                    version: '0.24',
+                    versionInfo: "修改scene的相关配置",
                     infoDisplay: true,
                     screenShotIcon : false,
                     departmentIndex: 2,
