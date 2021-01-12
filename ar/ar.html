@@ -30,11 +30,18 @@
     <a-scene
         vr-mode-ui="enabled: false;"
         embedded
-        arjs='trackingMethod: best; debugUIEnabled: true;detectionMode: mono_and_matrix; matrixCodeType: 4x4_BCH_13_5_5; '
-        >
+        arjs='trackingMethod: best; debugUIEnabled: true;detectionMode: mono_and_matrix; matrixCodeType: 4x4_BCH_13_5_5; '>
+
+        <a-marker markerhandler type='barcode' value='1'>
+            <a-text value="MAE是面向5G时代移动网络的自动化引擎，助力实现移动网络的三大超越：1) Beyond Efficiency: 10x运维效率提升；2) Beyond Performance: 20%的频谱效率提升：从不可能到可能；优化从静态到动态；从粗放到精细化；从非实时到实时；3) Beyond New Service：5x发放效率提升；业务发放从weeks到Days；通过联合运营商开放合作，面向场景逐级演进，实现移动网络完全自动驾驶。" geometry="primitive:plane" z-offset='0.001' baseline='top'></a-text>
+        </a-marker>
+
+        <a-marker markerhandler type='barcode' value='2'>
+            <a-text value="高效建网的xExpress系列包含Site Express、Feature Express和Radio Express，简化了原本操作复杂、数量庞大的建网工作，支持大批量、流水线式、自动化的建站和特性开通。" geometry="primitive:plane" z-offset='0.001' baseline='top'></a-text>
+        </a-marker>
 
         <a-marker markerhandler type='barcode' value='7'>
-            <a-text value="MAE是面向5G时代移动网络的自动化引擎。" font="./resource/Regular-msdf.json" scale="1 1 1" position="0 0 0"></a-text>
+            <a-text value="敏捷业务的xSuite系列包含WTTx Suite、切片运维管理、室内可视化，支持快速精准的发放业务。" geometry="primitive:plane" z-offset='0.001' baseline='top'></a-text>
         </a-marker>
 
         <a-entity camera></a-entity>
@@ -72,8 +79,8 @@
             {
                 el: '#app',
                 data: {
-                    version: '0.248',
-                    versionInfo: "修改scene的相关配置3",
+                    version: '0.25',
+                    versionInfo: "添加多个marker",
                     infoDisplay: true,
                     screenShotIcon : false,
                     departmentIndex: 2,
@@ -81,7 +88,7 @@
                         {
                             department: 'MAE',
                             owner: '朱良胜',
-                            content: `MAE是面向5G时代移动网络的自动化引擎，助力实现移动网络的三大超越：<br/>1) Beyond Efficiency: 10x运维效率提升；<br/>2) Beyond Performance: 20%的频谱效率提升：从不可能到可能；优化从静态到动态；从粗放到精细化；从非实时到实时；<br/>3) Beyond New Service：5x发放效率提升；业务发放从weeks到Days；通过联合运营商开放合作，面向场景逐级演进，实现移动网络完全自动驾驶。`,
+                            content: `MAE是面向5G时代移动网络的自动化引擎，助力实现移动网络的三大超越：1) Beyond Efficiency: 10x运维效率提升；2) Beyond Performance: 20%的频谱效率提升：从不可能到可能；优化从静态到动态；从粗放到精细化；从非实时到实时；3) Beyond New Service：5x发放效率提升；业务发放从weeks到Days；通过联合运营商开放合作，面向场景逐级演进，实现移动网络完全自动驾驶。`,
                             link: ''
                         },
                         {
