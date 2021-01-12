@@ -10,8 +10,9 @@
     <script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
 </head>
 
-<body style='margin : 0px; overflow: hidden; font-family: Monospace;width: 100%; height: 100%;'>
+<body style='margin : 0px; overflow: hidden;'>
     <p id='hint' style="position: absolute;top: 0;left: 0;font-size: 20px;"></p>
+    <p id='hint2' style="position: absolute;top: 20px;left: 0;font-size: 20px;"></p>
     
     <script>
         const departMentInfo = [
@@ -57,13 +58,13 @@
             init: function () {
                 var marker = this.el;
 
-                this.el.sceneEl.addEventListener('markerFound', () => {
+                this.el.addEventListener('markerFound', () => {
                     var markerId = marker.id;
                     document.getElementById('hint').innerHTML='Marker Found' + markerId;
                     document.getElementById('content').style.display='block';
                     document.getElementById('content').innerHTML=departMentInfo[Number(markerId)].content;
                 });
-                this.el.sceneEl.addEventListener('markerLost', () => {
+                this.el.addEventListener('markerLost', () => {
                     var markerId = marker.id;
                     document.getElementById('hint').innerHTML='Marker Lost' + markerId;
                     document.getElementById('content').style.display='none';
@@ -75,15 +76,15 @@
             init: function () {
                 var marker = this.el;
 
-                this.el.sceneEl.addEventListener('markerFound', () => {
+                this.el.addEventListener('markerFound', () => {
                     var markerId = marker.id;
-                    document.getElementById('hint').innerHTML='Marker Found' + markerId;
+                    document.getElementById('hint2').innerHTML='Marker Found' + markerId;
                     document.getElementById('content').style.display='block';
                     document.getElementById('content').innerHTML=departMentInfo[Number(markerId)].content;
                 });
-                this.el.sceneEl.addEventListener('markerLost', () => {
+                this.el.addEventListener('markerLost', () => {
                     var markerId = marker.id;
-                    document.getElementById('hint').innerHTML='Marker Lost' + markerId;
+                    document.getElementById('hint2').innerHTML='Marker Lost' + markerId;
                     document.getElementById('content').style.display='none';
                 });
             }
@@ -93,7 +94,7 @@
     <a-scene
         vr-mode-ui="enabled: false;"
         embedded
-        arjs='trackingMethod: best; debugUIEnabled: true;detectionMode: mono_and_matrix; matrixCodeType: 4x4_BCH_13_5_5; sourceType: webcam; '>
+        arjs='trackingMethod: best; debugUIEnabled: false;detectionMode: mono_and_matrix; matrixCodeType: 4x4_BCH_13_5_5; sourceType: webcam; '>
 
         <a-marker markerhandler1 type='barcode' value='0' id='1'>
             <!-- <a-text value="EMAE是面向5G时代移动网络的自动化引擎，\n助力实现移动网络的三大超越。" baseline='top' scale='0.35 0.35 0.35' position='2 0.5 -1' wrapCount='40' width='5' font='./resource/Regular-msdf.json'></a-text> -->
@@ -121,15 +122,6 @@
     </a-scene>
 
     <div id='app' >
-        <div class='info' v-show='infoDisplay'>
-            <div class='functionButton'>
-                <div class='functions' v-on:click="showInfo">
-                    <img class='icon' src="./resource/fold.png" />
-                    <span>收起</span>
-                </div>
-            </div>
-        </div>
-
         <div id='screenShot' v-show='screenShotIcon'>
             <div class="breathe-div"></div>
             <img class='takepicture' src='./resource/shoot.png' v-on:click="takePicture"/>
@@ -138,7 +130,7 @@
 
         <p class='content' id='content'>Beyond Intelligence：从自动化到智能化，面向云化AI打造自学习自管理的网络，编织一张会思考的"网"，让沟通畅行无阻。</p>
 
-        <div style='position: fixed; bottom: 10px; width:100%; text-align: left; z-index: 10000;font-size: 15px;color:white'>{{version}}<br>{{versionInfo}}</div>
+        <div style='position: fixed; bottom: 10px;left: 0px; width:100%; text-align: left; z-index: 10000;font-size: 15px;color:white'>{{version}}<br>{{versionInfo}}</div>
 
         <div class='screenShotDiv' v-show='isShooted'>
             <img class='screenShot' :src="screenShotImage" alt="">
@@ -152,7 +144,7 @@
             {
                 el: '#app',
                 data: {
-                    version: '0.31',
+                    version: '0.32',
                     versionInfo: "添加多个marker,采用界面ui的形式展现",
                     infoDisplay: true,
                     screenShotIcon : false,
