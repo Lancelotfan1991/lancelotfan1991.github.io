@@ -22,6 +22,8 @@
                 this.el.sceneEl.addEventListener('markerFound', () => {
                     var markerId = marker.id;
                     document.getElementById('hint').innerHTML='Marker Found' + markerId;
+                    document.getElementById('content').style.display='block';
+                    document.getElementById('content').innerHTML=departMentInfo[markerId].content;
                 });
                 this.el.sceneEl.addEventListener('markerLost', () => {
                     var markerId = marker.id;
@@ -63,8 +65,6 @@
 
     <div id='app' >
         <div class='info' v-show='infoDisplay'>
-            <p class='content' id='content' v-html="departmentInfo[departmentIndex].content"></p>
-
             <div class='functionButton'>
                 <div class='functions' v-on:click="showInfo">
                     <img class='icon' src="./resource/fold.png" />
@@ -79,6 +79,8 @@
             <img class='switchcamera' id='switchcamera' src="./resource/switch-camera.png" v-on:click="switchCamera" alt="">
         </div>
 
+        <p class='content' id='content'></p>
+
         <div style='position: fixed; bottom: 10px; width:100%; text-align: left; z-index: 10000;font-size: 15px;color:white'>{{version}}<br>{{versionInfo}}</div>
 
         <div class='screenShotDiv' v-show='isShooted'>
@@ -86,9 +88,50 @@
             <p class='hint'>长按图片可保存至手机</p>
             <img src="./resource/delete.png" class='delete' v-on:click="hideImage"/>
         </div>
+
+        
     </div>
 
     <script>
+        const departMentInfo = [
+            {
+                department: 'MAE',
+                owner: '朱良胜',
+                content: `MAE是面向5G时代移动网络的自动化引擎，助力实现移动网络的三大超越：1) Beyond Efficiency: 10x运维效率提升；2) Beyond Performance: 20%的频谱效率提升：从不可能到可能；优化从静态到动态；从粗放到精细化；从非实时到实时；3) Beyond New Service：5x发放效率提升；业务发放从weeks到Days；通过联合运营商开放合作，面向场景逐级演进，实现移动网络完全自动驾驶。`,
+                link: ''
+            },
+            {
+                department: 'xExpress',
+                owner: '卢江涛',
+                content: '高效建网的xExpress系列包含Site Express、Feature Express和Radio Express，简化了原本操作复杂、数量庞大的建网工作，支持大批量、流水线式、自动化的建站和特性开通。',
+                link: ''
+            },
+            {
+                department: 'xSuite',
+                owner: '苏建波',
+                content: '敏捷业务的xSuite系列包含WTTx Suite、切片运维管理、室内可视化，支持快速精准的发放业务。',
+                link: ''
+            },
+            {
+                department: 'xTurbo',
+                owner: '张永生',
+                content: '智能运维的xTurbo系列包含Alarm Turbo、Capacity Turbo和Power Turbo，提供智能化的排障、网优、节能能力。',
+                link: ''
+            },
+            {
+                department: 'Dopra',
+                owner: '梁继成',
+                content: 'DOPRA业务包含SSP、VISP、VPP、FSP、SiteAI、AutoTBP，分布杭州、上海、东莞三地域，上海地域交付VISP，AutoTBP,提供轻量级弹性协议栈、IP路由、IP协议安全、拓展集中路径控制引擎、车载安全协议，构筑边缘组网极简竞争力。',
+                link: ''
+            },
+            {
+                department: 'AI',
+                owner: '朱良胜',
+                content: 'Beyond Intelligence：从自动化到智能化，面向云化AI打造自学习自管理的网络，编织一张会思考的"网"，让沟通畅行无阻。',
+                link: ''
+            }
+        ];
+
         const app = new Vue(
             {
                 el: '#app',
@@ -98,44 +141,7 @@
                     infoDisplay: true,
                     screenShotIcon : false,
                     departmentIndex: 2,
-                    departmentInfo: [
-                        {
-                            department: 'MAE',
-                            owner: '朱良胜',
-                            content: `MAE是面向5G时代移动网络的自动化引擎，助力实现移动网络的三大超越：1) Beyond Efficiency: 10x运维效率提升；2) Beyond Performance: 20%的频谱效率提升：从不可能到可能；优化从静态到动态；从粗放到精细化；从非实时到实时；3) Beyond New Service：5x发放效率提升；业务发放从weeks到Days；通过联合运营商开放合作，面向场景逐级演进，实现移动网络完全自动驾驶。`,
-                            link: ''
-                        },
-                        {
-                            department: 'xExpress',
-                            owner: '卢江涛',
-                            content: '高效建网的xExpress系列包含Site Express、Feature Express和Radio Express，简化了原本操作复杂、数量庞大的建网工作，支持大批量、流水线式、自动化的建站和特性开通。',
-                            link: ''
-                        },
-                        {
-                            department: 'xSuite',
-                            owner: '苏建波',
-                            content: '敏捷业务的xSuite系列包含WTTx Suite、切片运维管理、室内可视化，支持快速精准的发放业务。',
-                            link: ''
-                        },
-                        {
-                            department: 'xTurbo',
-                            owner: '张永生',
-                            content: '智能运维的xTurbo系列包含Alarm Turbo、Capacity Turbo和Power Turbo，提供智能化的排障、网优、节能能力。',
-                            link: ''
-                        },
-                        {
-                            department: 'Dopra',
-                            owner: '梁继成',
-                            content: 'DOPRA业务包含SSP、VISP、VPP、FSP、SiteAI、AutoTBP，分布杭州、上海、东莞三地域，上海地域交付VISP，AutoTBP,提供轻量级弹性协议栈、IP路由、IP协议安全、拓展集中路径控制引擎、车载安全协议，构筑边缘组网极简竞争力。',
-                            link: ''
-                        },
-                        {
-                            department: 'AI',
-                            owner: '朱良胜',
-                            content: 'Beyond Intelligence：从自动化到智能化，面向云化AI打造自学习自管理的网络，编织一张会思考的"网"，让沟通畅行无阻。',
-                            link: ''
-                        }
-                    ],
+                    departmentInfo: departMentInfo,
                     isShooted: false,
                     screenShotImage: ''
                 },
@@ -178,8 +184,6 @@
             }
         );
     </script>
-
-    <p class='content' id='content'></p>
 </body>
 
 </html>
