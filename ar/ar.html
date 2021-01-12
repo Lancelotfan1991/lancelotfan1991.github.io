@@ -135,8 +135,10 @@
                         //     self.isShooted = true;
                         //     self.screenShotIcon = false;
                         // })
-                        const capture = document.querySelector('a-scene').components.screenshot.capture('perspective');
-                        console.log(capture);
+                        const canvas = document.querySelector('a-scene').components.screenshot.getCanvas('equirectangular');
+                        self.screenShotImage = canvas.toDataURL("image/png");
+                        self.isShooted = true;
+                        self.screenShotIcon = false;
                     },
                     hideImage(){
                         this.isShooted = false;
