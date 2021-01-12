@@ -30,10 +30,10 @@
     <a-scene
         vr-mode-ui="enabled: false;"
         embedded
-        arjs='trackingMethod: best; debugUIEnabled: true; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'
-        renderer='logarithmicDepthBuffer: true;'>
+        arjs='trackingMethod: best; debugUIEnabled: true;'
+        >
 
-        <a-marker markerhandler type='barcode' value='7'>
+        <a-marker markerhandler type='barcode' value='7' preset='custom'>
             <!-- <a-text value="MAE是面向5G时代移动网络的自动化引擎。" font="./resource/Regular-msdf.json" scale="1 1 1" position="0 0 -2"></a-text> -->
         </a-marker>
 
@@ -72,8 +72,8 @@
             {
                 el: '#app',
                 data: {
-                    version: '0.245',
-                    versionInfo: "修改scene的相关配置2",
+                    version: '0.246',
+                    versionInfo: "修改scene的相关配置3",
                     infoDisplay: true,
                     screenShotIcon : false,
                     departmentIndex: 2,
