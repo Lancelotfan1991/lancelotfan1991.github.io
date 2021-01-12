@@ -11,9 +11,6 @@
 </head>
 
 <body style='margin : 0px; overflow: hidden;'>
-    <p id='hint' style="position: absolute;top: 0;left: 0;font-size: 20px;"></p>
-    <p id='hint2' style="position: absolute;top: 20px;left: 0;font-size: 20px;"></p>
-    
     <p class='content' id='content'></p>
 
     <script>
@@ -56,41 +53,21 @@
             }
         ];
 
-        AFRAME.registerComponent('markerhandler1', {
-            init: function () {
-                var marker = this.el;
+        for(let i = 0; i < 7; i ++) {
+            AFRAME.registerComponent('markerhandler' + i, {
+                init: function () {
+                    var marker = this.el;
 
-                this.el.addEventListener('markerFound', () => {
-                    var markerId = marker.id;
-                    document.getElementById('hint').innerHTML='Marker Found' + markerId;
-                    document.getElementById('content').style.display='block';
-                    document.getElementById('content').innerHTML=departMentInfo[Number(markerId)].content;
-                });
-                this.el.addEventListener('markerLost', () => {
-                    var markerId = marker.id;
-                    document.getElementById('hint').innerHTML='Marker Lost' + markerId;
-                    document.getElementById('content').style.display='none';
-                });
-            }
-        });
-
-        AFRAME.registerComponent('markerhandler2', {
-            init: function () {
-                var marker = this.el;
-
-                this.el.addEventListener('markerFound', () => {
-                    var markerId = marker.id;
-                    document.getElementById('hint2').innerHTML='Marker Found' + markerId;
-                    document.getElementById('content').style.display='block';
-                    document.getElementById('content').innerHTML=departMentInfo[Number(markerId)].content;
-                });
-                this.el.addEventListener('markerLost', () => {
-                    var markerId = marker.id;
-                    document.getElementById('hint2').innerHTML='Marker Lost' + markerId;
-                    document.getElementById('content').style.display='none';
-                });
-            }
-        });
+                    this.el.addEventListener('markerFound', () => {
+                        document.getElementById('content').style.display='block';
+                        document.getElementById('content').innerHTML=departMentInfo[i].content;
+                    });
+                    this.el.addEventListener('markerLost', () => {
+                        document.getElementById('content').style.display='none';
+                    });
+                }
+            });
+        }
     </script>
 
     <a-scene
@@ -98,27 +75,9 @@
         embedded
         arjs='trackingMethod: best; debugUIEnabled: false;detectionMode: mono_and_matrix; matrixCodeType: 4x4_BCH_13_5_5; sourceType: webcam; '>
 
-        <a-marker markerhandler1 type='barcode' value='0' id='1'>
-            <!-- <a-text value="EMAE是面向5G时代移动网络的自动化引擎，\n助力实现移动网络的三大超越。" baseline='top' scale='0.35 0.35 0.35' position='2 0.5 -1' wrapCount='40' width='5' font='./resource/Regular-msdf.json'></a-text> -->
-            <!-- <a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:blue;'>
-				<a-torus-knot radius='0.26' radius-tubular='0.05'
-				animation="property: rotation; to:360 0 0; dur: 5000; easing: linear; loop: true">
-				</a-torus-knot>
-			</a-box> -->
-        </a-marker>
+        <a-marker markerhandler0 type='barcode' value='0' id='1'></a-marker>
 
-        <a-marker markerhandler2 type='barcode' value='2' id='2'>
-            <!-- <a-text value="MMAE是面向5G时代移动网络的自动化引擎，\n助力实现移动网络的三大超越。" baseline='top' scale='0.35 0.35 0.35' position='2 1 -1' wrapCount='40' width='5' font='./resource/Regular-msdf.json' ></a-text> -->
-            <!-- <a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:red;'>
-				<a-torus-knot radius='0.26' radius-tubular='0.05'
-				animation="property: rotation; to:360 0 0; dur: 5000; easing: linear; loop: true">
-				</a-torus-knot>
-			</a-box> -->
-        </a-marker>
-
-        <a-marker markerhandler type='barcode' value='7' id='3'>
-            <!-- <a-text value="AMAE是面向5G时代移动网络的自动化引擎，\n助力实现移动网络的三大超越。" baseline='top' scale='0.35 0.35 0.35' position='2 0.5 1' wrapCount='40' width='5' font='./resource/Regular-msdf.json'></a-text> -->
-        </a-marker>
+        <a-marker markerhandler1 type='barcode' value='2' id='2'></a-marker>
 
         <a-entity camera></a-entity>
     </a-scene>
@@ -130,10 +89,10 @@
             <img class='switchcamera' id='switchcamera' src="./resource/switch-camera.png" v-on:click="switchCamera" alt="">
         </div>
 
-        <div style='position: fixed; bottom: 10px;left: 0px; width:100%; text-align: left; z-index: 10000;font-size: 15px;color:white'>{{version}}<br>{{versionInfo}}</div>
+        <div style='position: fixed; bottom: 10px;left: 0px; width:100%; text-align: left; z-index: 10000;font-size: 150px;color:white'>version:{{version}}<br>{{versionInfo}}</div>
 
         <div class='screenShotDiv' v-show='isShooted'>
-            <img class='screenShot' :src="screenShotImage" alt="">
+            <img class='screenShot' :src="canvasImage" alt="">
             <p class='hint'>长按图片可保存至手机</p>
             <img src="./resource/delete.png" class='delete' v-on:click="hideImage"/>
         </div>
@@ -144,19 +103,18 @@
             {
                 el: '#app',
                 data: {
-                    version: '0.34',
+                    version: '0.35',
                     versionInfo: "添加多个marker,采用界面ui的形式展现",
-                    infoDisplay: true,
-                    screenShotIcon : false,
-                    departmentInfo: departMentInfo,
+                    screenShotIcon : true,
                     isShooted: false,
-                    screenShotImage: ''
+                    screenShotImage: '',
+                    canvasImage: ''
                 },
                 methods: {
                     takePicture(){
                         const self = this;
                         document.getElementById('screenShot').style.display='none';
-                        html2canvas(document.body,{useCORS:true}).then(function (canvas) {
+                        html2canvas(document.body,{allowTaint:true,useCORS:true}).then(function (canvas) {
                             // 获取年月日作为文件名
                             var timers=new Date();
                             var fullYear=timers.getFullYear();
@@ -166,6 +124,10 @@
                             // 年月日加上随机数
                             var numberFileName=fullYear+''+month+date+randoms.slice(3,10);
                             self.screenShotImage = canvas.toDataURL("image/png");
+
+                            let cameraCanvas = document.getElementsByClassName('a-canvas')[0];
+                            self.canvasImage = cameraCanvas.toDataURL("image/png");
+
                             self.isShooted = true;
                             self.screenShotIcon = false;
                         })
