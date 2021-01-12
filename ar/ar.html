@@ -12,16 +12,20 @@
 </head>
 
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;width: 100%; height: 100%;'>
-    <p id='hint' style="position: absolute;top: 0;left: 0;font-size: 20px;">提示信息7</p>
+    <p id='hint' style="position: absolute;top: 0;left: 0;font-size: 20px;"></p>
     
     <script>
         AFRAME.registerComponent('markerhandler', {
             init: function () {
-                this.el.sceneEl.addEventListener('markerFound', (e) => {
-                    document.getElementById('hint').innerHTML='Marker Found '
+                var marker = this.el;
+
+                this.el.sceneEl.addEventListener('markerFound', () => {
+                    var markerId = marker.id;
+                    document.getElementById('hint').innerHTML='Marker Found' + markerId;
                 });
                 this.el.sceneEl.addEventListener('markerLost', () => {
-                    document.getElementById('hint').innerHTML='Marker Lost'
+                    var markerId = marker.id;
+                    document.getElementById('hint').innerHTML='Marker Lost' + markerId;
                 });
             }
         });
@@ -32,16 +36,26 @@
         embedded
         arjs='trackingMethod: best; debugUIEnabled: true;detectionMode: mono_and_matrix; matrixCodeType: 4x4_BCH_13_5_5; '>
 
-        <a-marker markerhandler type='barcode' value='0'>
-            <a-text value="EMAE是面向5G时代移动网络的自动化引擎，\n助力实现移动网络的三大超越。" baseline='top' scale='0.35 0.35 0.35' position='2 0.5 -1' wrapCount='40' width='5' font='./resource/Regular-msdf.json'></a-text>
+        <a-marker markerhandler type='barcode' value='0' id='1'>
+            <!-- <a-text value="EMAE是面向5G时代移动网络的自动化引擎，\n助力实现移动网络的三大超越。" baseline='top' scale='0.35 0.35 0.35' position='2 0.5 -1' wrapCount='40' width='5' font='./resource/Regular-msdf.json'></a-text> -->
+            <a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:blue;'>
+				<a-torus-knot radius='0.26' radius-tubular='0.05'
+				animation="property: rotation; to:360 0 0; dur: 5000; easing: linear; loop: true">
+				</a-torus-knot>
+			</a-box>
         </a-marker>
 
-        <a-marker markerhandler type='barcode' value='2'>
-            <a-text value="MMAE是面向5G时代移动网络的自动化引擎，\n助力实现移动网络的三大超越。" baseline='top' scale='0.35 0.35 0.35' position='2 1 -1' wrapCount='40' width='5' font='./resource/Regular-msdf.json' ></a-text>
+        <a-marker markerhandler type='barcode' value='2' id='2'>
+            <!-- <a-text value="MMAE是面向5G时代移动网络的自动化引擎，\n助力实现移动网络的三大超越。" baseline='top' scale='0.35 0.35 0.35' position='2 1 -1' wrapCount='40' width='5' font='./resource/Regular-msdf.json' ></a-text> -->
+            <a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:red;'>
+				<a-torus-knot radius='0.26' radius-tubular='0.05'
+				animation="property: rotation; to:360 0 0; dur: 5000; easing: linear; loop: true">
+				</a-torus-knot>
+			</a-box>
         </a-marker>
 
-        <a-marker markerhandler type='barcode' value='7'>
-            <a-text value="AMAE是面向5G时代移动网络的自动化引擎，\n助力实现移动网络的三大超越。" baseline='top' scale='0.35 0.35 0.35' position='2 0.5 1' wrapCount='40' width='5' font='./resource/Regular-msdf.json'></a-text>
+        <a-marker markerhandler type='barcode' value='7' id='3'>
+            <!-- <a-text value="AMAE是面向5G时代移动网络的自动化引擎，\n助力实现移动网络的三大超越。" baseline='top' scale='0.35 0.35 0.35' position='2 0.5 1' wrapCount='40' width='5' font='./resource/Regular-msdf.json'></a-text> -->
         </a-marker>
 
         <a-entity camera></a-entity>
@@ -49,7 +63,7 @@
 
     <div id='app' >
         <div class='info' v-show='infoDisplay'>
-            <p class='content' v-html="departmentInfo[departmentIndex].content"></p>
+            <p class='content' id='content' v-html="departmentInfo[departmentIndex].content"></p>
 
             <div class='functionButton'>
                 <div class='functions' v-on:click="showInfo">
@@ -75,12 +89,12 @@
     </div>
 
     <script>
-        var app = new Vue(
+        const app = new Vue(
             {
                 el: '#app',
                 data: {
-                    version: '0.29',
-                    versionInfo: "添加多个marker",
+                    version: '0.3',
+                    versionInfo: "添加多个marker,采用界面ui的形式展现",
                     infoDisplay: true,
                     screenShotIcon : false,
                     departmentIndex: 2,
@@ -165,7 +179,7 @@
         );
     </script>
 
-
+    <p class='content' id='content'></p>
 </body>
 
 </html>
