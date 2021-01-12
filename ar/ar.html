@@ -5,33 +5,22 @@
     <title>AR展示活动</title>
     <script
         src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
-    <script src="./libs/aframe-ar.js"></script>
+    <script src="./libs/aframe-ar-nft.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="./style.css?v=0.18">
     <script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
 
-    <script>
-        AFRAME.registerComponent('markerhandler', {
-            init: function () {
-                this.el.sceneEl.addEventListener('markerFound', () => {
-                    document.getElementById('hint').innerHTML='Marker Found'
-                });
-                this.el.sceneEl.addEventListener('markerFalse', () => {
-                    document.getElementById('hint').innerHTML='Marker Lost'
-                });
-            }
-        });
-    </script>
+
 </head>
 
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;width: 100%; height: 100%;'>
-    <p id='hint' style="position: absolute;top: 0;left: 0;font-size: 20px;">提示信息4</p>
+    <p id='hint' style="position: absolute;top: 0;left: 0;font-size: 20px;">提示信息5</p>
     <div class='scene'>
         <a-scene
             embedded
             vr-mode-ui="enabled: false;"
             arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'
-            renderer='antialias: true; alpha: true; precision: high;logarithmicDepthBuffer: true;'>
+            renderer='logarithmicDepthBuffer: true;'>
 
             <a-marker markerhandler type='barcode' value='7' emitevents='true' size='0.2'>
                 <a-text value="MAE是面向5G时代移动网络的自动化引擎。" font="./resource/Regular-msdf.json" scale="1 1 1" position="0 0 -2"></a-text>
@@ -74,8 +63,8 @@
             {
                 el: '#app',
                 data: {
-                    version: '0.24',
-                    versionInfo: "修改scene的相关配置",
+                    version: '0.242',
+                    versionInfo: "修改scene的相关配置1",
                     infoDisplay: true,
                     screenShotIcon : false,
                     departmentIndex: 2,
@@ -158,6 +147,19 @@
                 }
             }
         );
+    </script>
+
+    <script>
+        AFRAME.registerComponent('markerhandler', {
+            init: function () {
+                this.el.sceneEl.addEventListener('markerFound', () => {
+                    document.getElementById('hint').innerHTML='Marker Found'
+                });
+                this.el.sceneEl.addEventListener('markerFalse', () => {
+                    document.getElementById('hint').innerHTML='Marker Lost'
+                });
+            }
+        });
     </script>
 </body>
 
