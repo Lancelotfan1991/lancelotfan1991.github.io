@@ -52,6 +52,17 @@
                 link: ''
             }
         ];
+        var canvas = 
+        AFRAME.registerComponent('shot', {
+            init: function() {
+                document.getElementById('takePicture').addEventListener(
+                    'mousedown',
+                    ()=>{
+                        document.querySelector('a-scene').components.screenshot.capture('perspective')
+                    }
+                )
+            }
+        });    
 
         for(let i = 0; i < 2; i ++) {
             AFRAME.registerComponent('markerhandler' + i, {
@@ -73,6 +84,7 @@
 
     <a-scene
         vr-mode-ui="enabled: false;"
+        shot
         embedded
         screenShot="width:640;height:1138"
         arjs='trackingMethod: best; debugUIEnabled: false;detectionMode: mono_and_matrix; matrixCodeType: 4x4_BCH_13_5_5; sourceType: webcam; '>
