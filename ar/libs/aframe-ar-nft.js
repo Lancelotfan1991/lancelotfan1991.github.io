@@ -1492,10 +1492,10 @@ ARjs.Source = THREEx.ArToolkitSource = function (parameters) {
 
         // resolution of at which we initialize in the source image
         sourceWidth: 640,
-        sourceHeight: 480,
+        sourceHeight: 1138,
         // resolution displayed for the source
         displayWidth: 640,
-        displayHeight: 480,
+        displayHeight: 1138,
     }
     //////////////////////////////////////////////////////////////////////////////
     //		setParameters
@@ -1663,12 +1663,12 @@ ARjs.Source.prototype._initSourceWebcam = function (onReady, onError) {
                 width: {
                     ideal: _this.parameters.sourceWidth,
                     // min: 1024,
-                    // max: 1920
+                    max: 640
                 },
                 height: {
                     ideal: _this.parameters.sourceHeight,
                     // min: 776,
-                    // max: 1080
+                    max: 1138
                 }
             }
         };

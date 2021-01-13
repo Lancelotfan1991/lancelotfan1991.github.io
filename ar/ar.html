@@ -133,19 +133,16 @@
                 methods: {
                     takePicture(){
                         // document.querySelector('a-scene').components.screenshot.getCanvas('equirectangular');
+
                         const self = this;
                         document.getElementById('screenShot').style.display='none';
                         var aVideo = document.getElementById('arjs-video');
                         var aCanvas = document.getElementById('canvas');
                         var ctx = aCanvas.getContext('2d');
-                        const startWidth = (aVideo.videoWidth-aVideo.width)/2;
-                        const startHeight = (aVideo.videoHeight-aVideo.height)/2;
-
-                        this.versionInfo = 'startWidth:' + startWidth + '; startHeight' + startHeight;
-                        ctx.drawImage(aVideo, 0, 0,3000,2000,0,0,2048,1500);
-                        // self.screenShotImage = canvas.toDataURL("image/png");
-                        // self.isShooted = true;
-                        // self.screenShotIcon = false;
+                        console.log(aVideo.videoWidth);
+                        console.log(aVideo.style.width);
+                        
+                        ctx.drawImage(aVideo, 0, 0, 640*5, 1138*5, 0 , 0, 2048, 1038);
 
                         html2canvas(
                             document.getElementById('app'),
