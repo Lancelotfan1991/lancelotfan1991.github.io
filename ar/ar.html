@@ -124,7 +124,7 @@
             {
                 el: '#app',
                 data: {
-                    version: '0.43',
+                    version: '0.44',
                     versionInfo: "添加多个marker,采用界面ui的形式展现文案,并捕获摄像机",
                     screenShotIcon : true,
                     isShooted: false,
@@ -142,7 +142,7 @@
                         const startHeight = (aVideo.videoHeight-aVideo.height)/2;
 
                         this.versionInfo = 'startWidth:' + startWidth + '; startHeight' + startHeight;
-                        ctx.drawImage(aVideo, startWidth, startHeight,3000,2000,0,0,2048,1500);
+                        ctx.drawImage(aVideo, 0, 0,3000,2000,0,0,2048,1500);
                         // self.screenShotImage = canvas.toDataURL("image/png");
                         // self.isShooted = true;
                         // self.screenShotIcon = false;
