@@ -122,7 +122,7 @@
             {
                 el: '#app',
                 data: {
-                    version: '0.44',
+                    version: '0.45',
                     versionInfo: "添加多个marker,采用界面ui的形式展现文案,并捕获摄像机",
                     screenShotIcon : true,
                     isShooted: false,
@@ -142,7 +142,7 @@
                         aCanvas.height = aCanvas.height;
 
                         ctx.drawImage(aVideo, 0, 0, 640*5, 1138*5, 0, 0, 2038, 1038);
-                        self.screenShotImage = aCanvas.toDataURL("image/png");
+                        self.screenShotImage = aCanvas.toDataURL("image/png",1.0);
                         self.isShooted=true;
                         self.screenShotIcon=false;
                         // html2canvas(
