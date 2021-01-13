@@ -2,13 +2,11 @@
 <head>
     <meta charset="UTF-8">
     <title>AR展示活动</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalabled=no,maximum-scale=1.0,minimum-scale=1.0">
     <script
-        src="https://cdn.jsdelivr.net/gh/aframevr/aframe@9be0a6b94b61740c6fc4d2a1e74d744c38be4c61/dist/aframe-master.min.js"></script>
+        src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
     <script src="./libs/aframe-ar-nft.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="./libs/look-at-camera.js"></script>
-    <link rel="stylesheet" href="./style.css?v=0.39">
+    <link rel="stylesheet" href="./style.css?v=0.40">
     <script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
 </head>
 
@@ -54,18 +52,17 @@
                 link: ''
             }
         ];
-
-        // AFRAME.registerComponent('shot', {
-        //     init: function() {
-        //         document.getElementById('takePicture').addEventListener(
-        //             'mousedown',
-        //             ()=>{
-        //                 document.querySelector('a-scene').components.screenshot.getCanvas('perspective');
-        //                 document.querySelector('a-scene').components.screenshot.capture('perspective')
-        //             }
-        //         )
-        //     }
-        // });    
+        var canvas = 
+        AFRAME.registerComponent('shot', {
+            init: function() {
+                document.getElementById('takePicture').addEventListener(
+                    'mousedown',
+                    ()=>{
+                        document.querySelector('a-scene').components.screenshot.capture('perspective')
+                    }
+                )
+            }
+        });    
 
         for(let i = 0; i < 2; i ++) {
             AFRAME.registerComponent('markerhandler' + i, {
@@ -89,15 +86,14 @@
         vr-mode-ui="enabled: false;"
         shot
         embedded
-        arjs='trackingMethod: best; debugUIEnabled: false;detectionMode: mono_and_matrix; matrixCodeType: 4x4_BCH_13_5_5; sourceType: webcam; '>
-        
-        <a-box height='2' color='red' width='1'></a-box>
+        screenShot="width:640;height:1138"
+        arjs='trackingMethod: best; debugUIEnabled: false;detectionMode: mono_and_matrix; matrixCodeType: 4x4_BCH_13_5_5; '>
 
         <a-marker markerhandler0 type='barcode' value='0' id='1'></a-marker>
 
         <a-marker markerhandler1 type='barcode' value='2' id='2'></a-marker>
 
-        <a-entity camera zoom='1'></a-entity>
+        <a-entity camera></a-entity>
     </a-scene>
 
     <div id='app' >
@@ -111,7 +107,6 @@
         <div id='debuginfo' style='position: fixed; bottom: 40px;left: 0px; width:100%; text-align: left;font-size: 10px;color:white'>debuginfo: empty</div>
 
         <div class='screenShotDiv' v-show='isShooted'>
-            <canvas id='canvas' class='screenShot'></canvas>
             <img class='screenShot' :src="screenShotImage" alt="">
             <p class='hint'>长按图片可保存至手机</p>
             <img src="./resource/delete.png" class='delete' v-on:click="hideImage"/>
@@ -123,7 +118,7 @@
             {
                 el: '#app',
                 data: {
-                    version: '0.40',
+                    version: '0.38',
                     versionInfo: "添加多个marker,采用界面ui的形式展现文案,并捕获摄像机",
                     screenShotIcon : true,
                     isShooted: false,
@@ -131,20 +126,19 @@
                 },
                 methods: {
                     takePicture(){
-                        // document.querySelector('a-scene').components.screenshot.getCanvas('equirectangular');
                         const self = this;
                         document.getElementById('screenShot').style.display='none';
-                        var aVideo = document.getElementById('arjs-video');
-                        var aCanvas = document.getElementById('canvas');
-                        var ctx = aCanvas.getContext('2d');
-                        ctx.drawImage(aVideo, 0, 0, 3000, 3000, 0 ,0, 2038, 1038);
+                        const components = document.querySelector('a-scene').components;
+                        console.log(components);
+                        const screenShot = components.screenshot;
+                        const canvas = screenShot.getCanvas('perspective');
 
                         html2canvas(
-                            document.getElementById('app'),
+                            document.body,
                             {
                                 allowTaint: true,
                                 useCORS: true,
-                                canvas: aCanvas
+                                canvas: canvas
                             }
                         ).then(function (canvas) {
                             self.screenShotImage = canvas.toDataURL("image/png");
@@ -152,16 +146,11 @@
                             self.isShooted = true;
                             self.screenShotIcon = false;
                         })
-                        console.log(document.body.clientWidth);        //网页可d见区域宽(body)
-                        console.log(document.body.clientHeight);       //网页可见区域高(body)
-                        console.log(document.body.offsetWidth);       //网页可见区域宽(body)，包括border、margin等
-                        console.log(document.body.offsetHeight);      //网页可见区域宽(body)，包括border、margin等
                     },
                     hideImage(){
                         this.isShooted = false;
                         this.screenShotImage = "";
                         this.screenShotIcon = true;
-                        document.getElementById('screenShot').style.display='block';
                     },
                     switchCamera(){
                         window.location.href="./ar-user.html"
