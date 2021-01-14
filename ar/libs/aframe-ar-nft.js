@@ -1592,7 +1592,7 @@ ARjs.Source.prototype._initSourceVideo = function (onReady) {
     var domElement = document.createElement('video');
     domElement.src = this.parameters.sourceUrl;
 
-    domElement.style.objectFit = 'initial';
+    domElement.style.objectFit = 'contain';
 
     domElement.autoplay = true;
     domElement.webkitPlaysinline = true;
@@ -1605,11 +1605,6 @@ ARjs.Source.prototype._initSourceVideo = function (onReady) {
         document.body.removeEventListener('click', onClick);
         domElement.play()
     });
-
-    domElement.width = this.parameters.sourceWidth;
-    domElement.height = this.parameters.sourceHeight;
-    domElement.style.width = this.parameters.displayWidth + 'px';
-    domElement.style.height = this.parameters.displayHeight + 'px';
 
     domElement.onloadeddata = onReady;
     return domElement
@@ -1661,14 +1656,10 @@ ARjs.Source.prototype._initSourceWebcam = function (onReady, onError) {
             video: {
                 facingMode: 'environment',
                 width: {
-                    ideal: _this.parameters.sourceWidth,
-                    // min: 1024,
-                    max: 640
+                    ideal: window.innerWidth,
                 },
                 height: {
-                    ideal: _this.parameters.sourceHeight,
-                    // min: 776,
-                    max: 1138
+                    ideal: window.innerHeight,
                 }
             }
         };
