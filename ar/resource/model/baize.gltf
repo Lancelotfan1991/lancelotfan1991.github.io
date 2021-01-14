@@ -1,0 +1,4358 @@
+{
+    "asset": {
+        "generator": "FBX2glTF v0.9.7",
+        "version": "2.0"
+    },
+    "scene": 0,
+    "buffers": [
+        {
+            "byteLength": 5797320,
+            "uri": "buffer.bin"
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteLength": 3168,
+            "byteOffset": 0,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 3876,
+            "byteOffset": 3168,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 3876,
+            "byteOffset": 7044,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 2584,
+            "byteOffset": 10920,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 33444,
+            "byteOffset": 13504,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 35328,
+            "byteOffset": 46948,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 35328,
+            "byteOffset": 82276,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 23552,
+            "byteOffset": 117604,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 396,
+            "byteOffset": 141156,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 816,
+            "byteOffset": 141552,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 816,
+            "byteOffset": 142368,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 544,
+            "byteOffset": 143184,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 396,
+            "byteOffset": 143728,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 816,
+            "byteOffset": 144124,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 816,
+            "byteOffset": 144940,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 544,
+            "byteOffset": 145756,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 72,
+            "byteOffset": 146300,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 288,
+            "byteOffset": 146372,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 288,
+            "byteOffset": 146660,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 192,
+            "byteOffset": 146948,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 3168,
+            "byteOffset": 147140,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 3876,
+            "byteOffset": 150308,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 3876,
+            "byteOffset": 154184,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 2584,
+            "byteOffset": 158060,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 3168,
+            "byteOffset": 160644,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 3876,
+            "byteOffset": 163812,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 3876,
+            "byteOffset": 167688,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 2584,
+            "byteOffset": 171564,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 95400,
+            "byteOffset": 174148,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 173556,
+            "byteOffset": 269548,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 173556,
+            "byteOffset": 443104,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 115704,
+            "byteOffset": 616660,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 648,
+            "byteOffset": 732364,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1272,
+            "byteOffset": 733012,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1272,
+            "byteOffset": 734284,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 848,
+            "byteOffset": 735556,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1800,
+            "byteOffset": 736404,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 10764,
+            "byteOffset": 738204,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 10764,
+            "byteOffset": 748968,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 7176,
+            "byteOffset": 759732,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 7248,
+            "byteOffset": 766908,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 10992,
+            "byteOffset": 774156,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 10992,
+            "byteOffset": 785148,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 7328,
+            "byteOffset": 796140,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 5760,
+            "byteOffset": 803468,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 14616,
+            "byteOffset": 809228,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 14616,
+            "byteOffset": 823844,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 9744,
+            "byteOffset": 838460,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 504,
+            "byteOffset": 848204,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1632,
+            "byteOffset": 848708,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1632,
+            "byteOffset": 850340,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1088,
+            "byteOffset": 851972,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 192,
+            "byteOffset": 853060,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 816,
+            "byteOffset": 853252,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 816,
+            "byteOffset": 854068,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 544,
+            "byteOffset": 854884,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1953768,
+            "byteOffset": 855428,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1027272,
+            "byteOffset": 2809196,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1027272,
+            "byteOffset": 3836468,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 684848,
+            "byteOffset": 4863740,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 6336,
+            "byteOffset": 5548588,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 7752,
+            "byteOffset": 5554924,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 7752,
+            "byteOffset": 5562676,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 5168,
+            "byteOffset": 5570428,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 6336,
+            "byteOffset": 5575596,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 7752,
+            "byteOffset": 5581932,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 7752,
+            "byteOffset": 5589684,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 5168,
+            "byteOffset": 5597436,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 6336,
+            "byteOffset": 5602604,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 7752,
+            "byteOffset": 5608940,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 7752,
+            "byteOffset": 5616692,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 5168,
+            "byteOffset": 5624444,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 6336,
+            "byteOffset": 5629612,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 7752,
+            "byteOffset": 5635948,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 7752,
+            "byteOffset": 5643700,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 5168,
+            "byteOffset": 5651452,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 6336,
+            "byteOffset": 5656620,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 7752,
+            "byteOffset": 5662956,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 7752,
+            "byteOffset": 5670708,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 5168,
+            "byteOffset": 5678460,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1836,
+            "byteOffset": 5683628,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 4104,
+            "byteOffset": 5685464,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 4104,
+            "byteOffset": 5689568,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 2736,
+            "byteOffset": 5693672,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 4320,
+            "byteOffset": 5696408,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 5388,
+            "byteOffset": 5700728,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 5388,
+            "byteOffset": 5706116,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 3592,
+            "byteOffset": 5711504,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 3708,
+            "byteOffset": 5715096,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 6456,
+            "byteOffset": 5718804,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 6456,
+            "byteOffset": 5725260,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 4304,
+            "byteOffset": 5731716,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 3456,
+            "byteOffset": 5736020,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 8172,
+            "byteOffset": 5739476,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 8172,
+            "byteOffset": 5747648,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 5448,
+            "byteOffset": 5755820,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 84,
+            "byteOffset": 5761268,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 504,
+            "byteOffset": 5761352,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 504,
+            "byteOffset": 5761856,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 336,
+            "byteOffset": 5762360,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 288,
+            "byteOffset": 5762696,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 5762984,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 732,
+            "byteOffset": 5763716,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 488,
+            "byteOffset": 5764448,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 6336,
+            "byteOffset": 5764936,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 7752,
+            "byteOffset": 5771272,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 7752,
+            "byteOffset": 5779024,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 5168,
+            "byteOffset": 5786776,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 480,
+            "byteOffset": 5791944,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1044,
+            "byteOffset": 5792424,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1044,
+            "byteOffset": 5793468,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 696,
+            "byteOffset": 5794512,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 192,
+            "byteOffset": 5795208,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 720,
+            "byteOffset": 5795400,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 720,
+            "byteOffset": 5796120,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 480,
+            "byteOffset": 5796840,
+            "target": 34962
+        }
+    ],
+    "scenes": [
+        {
+            "name": "Root Scene",
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "accessors": [
+        {
+            "componentType": 5123,
+            "type": "SCALAR",
+            "count": 1584,
+            "bufferView": 0,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 323,
+            "bufferView": 1,
+            "byteOffset": 0,
+            "min": [
+                -0.118455223739147,
+                -0.141527652740479,
+                -0.0606965012848377
+            ],
+            "max": [
+                0.118455223739147,
+                0.141527652740479,
+                0.0606965012848377
+            ]
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 323,
+            "bufferView": 2,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC2",
+            "count": 323,
+            "bufferView": 3,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5123,
+            "type": "SCALAR",
+            "count": 16722,
+            "bufferView": 4,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 2944,
+            "bufferView": 5,
+            "byteOffset": 0,
+            "min": [
+                -0.201515823602676,
+                -3.65005850791931,
+                1.36098456382751
+            ],
+            "max": [
+                0.162459582090378,
+                -0.0228039193898439,
+                4.61592245101929
+            ]
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 2944,
+            "bufferView": 6,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC2",
+            "count": 2944,
+            "bufferView": 7,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5123,
+            "type": "SCALAR",
+            "count": 198,
+            "bufferView": 8,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 68,
+            "bufferView": 9,
+            "byteOffset": 0,
+            "min": [
+                -0.162489786744118,
+                -0.162489786744118,
+                -1.13686835180517e-15
+            ],
+            "max": [
+                0.162489786744118,
+                0.162489786744118,
+                5.68434175902586e-16
+            ]
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 68,
+            "bufferView": 10,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC2",
+            "count": 68,
+            "bufferView": 11,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5123,
+            "type": "SCALAR",
+            "count": 198,
+            "bufferView": 12,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 68,
+            "bufferView": 13,
+            "byteOffset": 0,
+            "min": [
+                -0.162489786744118,
+                -0.162489786744118,
+                -4.54747340722069e-15
+            ],
+            "max": [
+                0.162489786744118,
+                0.162489786744118,
+                0.0
+            ]
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 68,
+            "bufferView": 14,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC2",
+            "count": 68,
+            "bufferView": 15,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5123,
+            "type": "SCALAR",
+            "count": 36,
+            "bufferView": 16,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 24,
+            "bufferView": 17,
+            "byteOffset": 0,
+            "min": [
+                -1.01531565189362,
+                -0.169342175126076,
+                -0.132192328572273
+            ],
+            "max": [
+                1.01531565189362,
+                0.169342175126076,
+                0.132192328572273
+            ]
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 24,
+            "bufferView": 18,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC2",
+            "count": 24,
+            "bufferView": 19,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5123,
+            "type": "SCALAR",
+            "count": 1584,
+            "bufferView": 20,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 323,
+            "bufferView": 21,
+            "byteOffset": 0,
+            "min": [
+                -0.174660921096802,
+                -0.208680972456932,
+                -0.0894963145256042
+            ],
+            "max": [
+                0.174660921096802,
+                0.208680972456932,
+                0.0894963145256042
+            ]
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 323,
+            "bufferView": 22,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC2",
+            "count": 323,
+            "bufferView": 23,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5123,
+            "type": "SCALAR",
+            "count": 1584,
+            "bufferView": 24,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 323,
+            "bufferView": 25,
+            "byteOffset": 0,
+            "min": [
+                -0.174660921096802,
+                -0.208680972456932,
+                -0.0894963145256042
+            ],
+            "max": [
+                0.174660921096802,
+                0.208680972456932,
+                0.0894963145256042
+            ]
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 323,
+            "bufferView": 26,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC2",
+            "count": 323,
+            "bufferView": 27,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5123,
+            "type": "SCALAR",
+            "count": 47700,
+            "bufferView": 28,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 14463,
+            "bufferView": 29,
+            "byteOffset": 0,
+            "min": [
+                -4.24783945083618,
+                1.3244993686676,
+                -3.25040340423584
+            ],
+            "max": [
+                4.24783945083618,
+                7.92237520217896,
+                3.50101137161255
+            ]
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 14463,
+            "bufferView": 30,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC2",
+            "count": 14463,
+            "bufferView": 31,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5123,
+            "type": "SCALAR",
+            "count": 324,
+            "bufferView": 32,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 106,
+            "bufferView": 33,
+            "byteOffset": 0,
+            "min": [
+                -0.231643632054329,
+                -1.20892333984375,
+                -0.169850632548332
+            ],
+            "max": [
+                1.057701587677,
+                -0.0906756296753883,
+                0.169850632548332
+            ]
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 106,
+            "bufferView": 34,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC2",
+            "count": 106,
+            "bufferView": 35,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5123,
+            "type": "SCALAR",
+            "count": 900,
+            "bufferView": 36,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 897,
+            "bufferView": 37,
+            "byteOffset": 0,
+            "min": [
+                -0.293023973703384,
+                -0.734912395477295,
+                -0.690076410770416
+            ],
+            "max": [
+                4.36673879623413,
+                2.03185486793518,
+                3.70688557624817
+            ]
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 897,
+            "bufferView": 38,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC2",
+            "count": 897,
+            "bufferView": 39,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5123,
+            "type": "SCALAR",
+            "count": 3624,
+            "bufferView": 40,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 916,
+            "bufferView": 41,
+            "byteOffset": 0,
+            "min": [
+                -1.63879096508026,
+                -1.23542261123657,
+                -0.0811213031411171
+            ],
+            "max": [
+                6.63483428955078,
+                1.12200248241425,
+                1.10458278656006
+            ]
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 916,
+            "bufferView": 42,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC2",
+            "count": 916,
+            "bufferView": 43,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5123,
+            "type": "SCALAR",
+            "count": 2880,
+            "bufferView": 44,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 1218,
+            "bufferView": 45,
+            "byteOffset": 0,
+            "min": [
+                -1.48889660835266,
+                -5.90098428726196,
+                -4.06612539291382
+            ],
+            "max": [
+                1.88675177097321,
+                0.181199550628662,
+                1.14193046092987
+            ]
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 1218,
+            "bufferView": 46,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC2",
+            "count": 1218,
+            "bufferView": 47,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5123,
+            "type": "SCALAR",
+            "count": 252,
+            "bufferView": 48,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 136,
+            "bufferView": 49,
+            "byteOffset": 0,
+            "min": [
+                -2.24545454978943,
+                -3.76495599746704,
+                -1.14633047580719
+            ],
+            "max": [
+                2.24545454978943,
+                1.71096229553223,
+                1.65306174755096
+            ]
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 136,
+            "bufferView": 50,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC2",
+            "count": 136,
+            "bufferView": 51,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5123,
+            "type": "SCALAR",
+            "count": 96,
+            "bufferView": 52,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 68,
+            "bufferView": 53,
+            "byteOffset": 0,
+            "min": [
+                -0.857595503330231,
+                -1.554936170578,
+                -0.899656057357788
+            ],
+            "max": [
+                0.857595503330231,
+                2.27085757255554,
+                1.30434226989746
+            ]
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 68,
+            "bufferView": 54,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC2",
+            "count": 68,
+            "bufferView": 55,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5125,
+            "type": "SCALAR",
+            "count": 488442,
+            "bufferView": 56,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 85606,
+            "bufferView": 57,
+            "byteOffset": 0,
+            "min": [
+                -4.47058963775635,
+                -6.71549892425537,
+                -5.49860239028931
+            ],
+            "max": [
+                3.08066129684448,
+                0.752394378185272,
+                2.13613486289978
+            ]
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 85606,
+            "bufferView": 58,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC2",
+            "count": 85606,
+            "bufferView": 59,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5123,
+            "type": "SCALAR",
+            "count": 3168,
+            "bufferView": 60,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 646,
+            "bufferView": 61,
+            "byteOffset": 0,
+            "min": [
+                -0.675982296466827,
+                -0.797750174999237,
+                -0.335545241832733
+            ],
+            "max": [
+                3.27810549736023,
+                0.868168532848358,
+                1.49821317195892
+            ]
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 646,
+            "bufferView": 62,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC2",
+            "count": 646,
+            "bufferView": 63,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5123,
+            "type": "SCALAR",
+            "count": 3168,
+            "bufferView": 64,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 646,
+            "bufferView": 65,
+            "byteOffset": 0,
+            "min": [
+                -4.13513278961182,
+                -0.179345712065697,
+                -0.179345712065697
+            ],
+            "max": [
+                0.179345712065697,
+                0.179345712065697,
+                0.179345712065697
+            ]
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 646,
+            "bufferView": 66,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC2",
+            "count": 646,
+            "bufferView": 67,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5123,
+            "type": "SCALAR",
+            "count": 3168,
+            "bufferView": 68,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 646,
+            "bufferView": 69,
+            "byteOffset": 0,
+            "min": [
+                -4.62589359283447,
+                -0.179345712065697,
+                -0.179345712065697
+            ],
+            "max": [
+                0.179345712065697,
+                0.179345712065697,
+                0.179345712065697
+            ]
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 646,
+            "bufferView": 70,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC2",
+            "count": 646,
+            "bufferView": 71,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5123,
+            "type": "SCALAR",
+            "count": 3168,
+            "bufferView": 72,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 646,
+            "bufferView": 73,
+            "byteOffset": 0,
+            "min": [
+                -4.13513278961182,
+                -0.179345712065697,
+                -0.179345712065697
+            ],
+            "max": [
+                0.179345712065697,
+                0.179345712065697,
+                0.179345712065697
+            ]
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 646,
+            "bufferView": 74,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC2",
+            "count": 646,
+            "bufferView": 75,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5123,
+            "type": "SCALAR",
+            "count": 3168,
+            "bufferView": 76,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 646,
+            "bufferView": 77,
+            "byteOffset": 0,
+            "min": [
+                -4.62589359283447,
+                -0.179345712065697,
+                -0.179345712065697
+            ],
+            "max": [
+                0.179345712065697,
+                0.179345712065697,
+                0.179345712065697
+            ]
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 646,
+            "bufferView": 78,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC2",
+            "count": 646,
+            "bufferView": 79,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5123,
+            "type": "SCALAR",
+            "count": 918,
+            "bufferView": 80,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 342,
+            "bufferView": 81,
+            "byteOffset": 0,
+            "min": [
+                -4.59579467773438,
+                -2.07242393493652,
+                -0.531180024147034
+            ],
+            "max": [
+                1.36674416065216,
+                2.34156894683838,
+                0.531180024147034
+            ]
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 342,
+            "bufferView": 82,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC2",
+            "count": 342,
+            "bufferView": 83,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5123,
+            "type": "SCALAR",
+            "count": 2160,
+            "bufferView": 84,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 449,
+            "bufferView": 85,
+            "byteOffset": 0,
+            "min": [
+                -1.72767651081085,
+                -0.371101498603821,
+                -1.1806138753891
+            ],
+            "max": [
+                1.72767651081085,
+                0.748895406723022,
+                0.796400964260101
+            ]
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 449,
+            "bufferView": 86,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC2",
+            "count": 449,
+            "bufferView": 87,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5123,
+            "type": "SCALAR",
+            "count": 1854,
+            "bufferView": 88,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 538,
+            "bufferView": 89,
+            "byteOffset": 0,
+            "min": [
+                -0.82088965177536,
+                2.15911221504211,
+                -3.05213046073914
+            ],
+            "max": [
+                0.82088965177536,
+                2.9814350605011,
+                -1.78958475589752
+            ]
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 538,
+            "bufferView": 90,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC2",
+            "count": 538,
+            "bufferView": 91,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5123,
+            "type": "SCALAR",
+            "count": 1728,
+            "bufferView": 92,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 681,
+            "bufferView": 93,
+            "byteOffset": 0,
+            "min": [
+                -0.830675542354584,
+                2.15088796615601,
+                -3.06605458259583
+            ],
+            "max": [
+                0.830675542354584,
+                2.99064421653748,
+                -2.61442518234253
+            ]
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 681,
+            "bufferView": 94,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC2",
+            "count": 681,
+            "bufferView": 95,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5123,
+            "type": "SCALAR",
+            "count": 42,
+            "bufferView": 96,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 42,
+            "bufferView": 97,
+            "byteOffset": 0,
+            "min": [
+                -0.157301232218742,
+                -0.734912395477295,
+                1.61818885803223
+            ],
+            "max": [
+                4.24712228775024,
+                0.869723975658417,
+                3.56052851676941
+            ]
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 42,
+            "bufferView": 98,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC2",
+            "count": 42,
+            "bufferView": 99,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5123,
+            "type": "SCALAR",
+            "count": 144,
+            "bufferView": 100,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 61,
+            "bufferView": 101,
+            "byteOffset": 0,
+            "min": [
+                -1.775923371315,
+                -1.11654591560364,
+                -1.5878039598465
+            ],
+            "max": [
+                1.775923371315,
+                1.6698203086853,
+                1.65306174755096
+            ]
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 61,
+            "bufferView": 102,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC2",
+            "count": 61,
+            "bufferView": 103,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5123,
+            "type": "SCALAR",
+            "count": 3168,
+            "bufferView": 104,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 646,
+            "bufferView": 105,
+            "byteOffset": 0,
+            "min": [
+                -0.340042233467102,
+                -0.428665786981583,
+                -0.125433519482613
+            ],
+            "max": [
+                3.15488314628601,
+                0.503731429576874,
+                1.28904116153717
+            ]
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 646,
+            "bufferView": 106,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC2",
+            "count": 646,
+            "bufferView": 107,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5123,
+            "type": "SCALAR",
+            "count": 240,
+            "bufferView": 108,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 87,
+            "bufferView": 109,
+            "byteOffset": 0,
+            "min": [
+                -0.62461906671524,
+                -0.302442342042923,
+                -0.659932494163513
+            ],
+            "max": [
+                0.576343476772308,
+                0.302442342042923,
+                0.523295342922211
+            ]
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 87,
+            "bufferView": 110,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC2",
+            "count": 87,
+            "bufferView": 111,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5123,
+            "type": "SCALAR",
+            "count": 96,
+            "bufferView": 112,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 60,
+            "bufferView": 113,
+            "byteOffset": 0,
+            "min": [
+                -2.48009157180786,
+                -4.4578161239624,
+                -0.794402122497559
+            ],
+            "max": [
+                2.48009157180786,
+                -3.56290245056152,
+                1.04165816307068
+            ]
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 60,
+            "bufferView": 114,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC2",
+            "count": 60,
+            "bufferView": 115,
+            "byteOffset": 0
+        }
+    ],
+    "samplers": [
+        {}
+    ],
+    "materials": [
+        {
+            "name": "材质",
+            "alphaMode": "OPAQUE",
+            "extras": {
+                "fromFBX": {
+                    "shadingModel": "Phong",
+                    "isTruePBR": false
+                }
+            },
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.800000011920929,
+                    0.800000011920929,
+                    0.800000011920929,
+                    1.0
+                ],
+                "metallicFactor": 0.400000005960464,
+                "roughnessFactor": 0.242535620927811
+            }
+        },
+        {
+            "name": "材质.1",
+            "alphaMode": "OPAQUE",
+            "extras": {
+                "fromFBX": {
+                    "shadingModel": "Phong",
+                    "isTruePBR": false
+                }
+            },
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.352941185235977,
+                    0.26274511218071,
+                    0.26274511218071,
+                    1.0
+                ],
+                "metallicFactor": 0.400000005960464,
+                "roughnessFactor": 0.242535620927811
+            }
+        },
+        {
+            "name": "材质.5",
+            "alphaMode": "OPAQUE",
+            "extras": {
+                "fromFBX": {
+                    "shadingModel": "Phong",
+                    "isTruePBR": false
+                }
+            },
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.133333340287209,
+                    0.345098048448563,
+                    0.811764717102051,
+                    1.0
+                ],
+                "metallicFactor": 0.400000005960464,
+                "roughnessFactor": 0.242535620927811
+            }
+        },
+        {
+            "name": "材质.4",
+            "alphaMode": "OPAQUE",
+            "extras": {
+                "fromFBX": {
+                    "shadingModel": "Phong",
+                    "isTruePBR": false
+                }
+            },
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.741116762161255,
+                    0.741116762161255,
+                    0.741116762161255,
+                    1.0
+                ],
+                "metallicFactor": 0.400000005960464,
+                "roughnessFactor": 0.242535620927811
+            }
+        },
+        {
+            "name": "材质.3",
+            "alphaMode": "OPAQUE",
+            "extras": {
+                "fromFBX": {
+                    "shadingModel": "Phong",
+                    "isTruePBR": false
+                }
+            },
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.909803926944733,
+                    0.30588236451149,
+                    0.313725501298904,
+                    1.0
+                ],
+                "metallicFactor": 0.400000005960464,
+                "roughnessFactor": 0.242535620927811
+            }
+        },
+        {
+            "name": "材质.2",
+            "alphaMode": "OPAQUE",
+            "extras": {
+                "fromFBX": {
+                    "shadingModel": "Phong",
+                    "isTruePBR": false
+                }
+            },
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.717647075653076,
+                    0.223529413342476,
+                    0.250980406999588,
+                    1.0
+                ],
+                "metallicFactor": 0.400000005960464,
+                "roughnessFactor": 0.242535620927811
+            }
+        },
+        {
+            "name": "DefaultMaterial",
+            "alphaMode": "OPAQUE",
+            "extras": {
+                "fromFBX": {
+                    "shadingModel": "Lambert",
+                    "isTruePBR": false
+                }
+            },
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    1.0
+                ],
+                "metallicFactor": 0.200000002980232,
+                "roughnessFactor": 0.800000011920929
+            }
+        },
+        {
+            "name": "材质.6",
+            "alphaMode": "OPAQUE",
+            "extras": {
+                "fromFBX": {
+                    "shadingModel": "Phong",
+                    "isTruePBR": false
+                }
+            },
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    1.0,
+                    0.458823531866074,
+                    0.164705887436867,
+                    1.0
+                ],
+                "metallicFactor": 0.400000005960464,
+                "roughnessFactor": 0.242535620927811
+            }
+        },
+        {
+            "name": "材质.1",
+            "alphaMode": "OPAQUE",
+            "extras": {
+                "fromFBX": {
+                    "shadingModel": "Phong",
+                    "isTruePBR": false
+                }
+            },
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.10196078568697,
+                    0.0549019612371922,
+                    0.0509803928434849,
+                    1.0
+                ],
+                "metallicFactor": 0.400000005960464,
+                "roughnessFactor": 0.242535620927811
+            }
+        }
+    ],
+    "meshes": [
+        {
+            "name": "眼白_2",
+            "primitives": [
+                {
+                    "material": 0,
+                    "mode": 4,
+                    "attributes": {
+                        "NORMAL": 2,
+                        "POSITION": 1,
+                        "TEXCOORD_0": 3
+                    },
+                    "indices": 0
+                }
+            ]
+        },
+        {
+            "name": "扫描",
+            "primitives": [
+                {
+                    "material": 0,
+                    "mode": 4,
+                    "attributes": {
+                        "NORMAL": 6,
+                        "POSITION": 5,
+                        "TEXCOORD_0": 7
+                    },
+                    "indices": 4
+                }
+            ]
+        },
+        {
+            "name": "封顶_1",
+            "primitives": [
+                {
+                    "material": 0,
+                    "mode": 4,
+                    "attributes": {
+                        "NORMAL": 10,
+                        "POSITION": 9,
+                        "TEXCOORD_0": 11
+                    },
+                    "indices": 8
+                }
+            ]
+        },
+        {
+            "name": "封顶_2",
+            "primitives": [
+                {
+                    "material": 0,
+                    "mode": 4,
+                    "attributes": {
+                        "NORMAL": 14,
+                        "POSITION": 13,
+                        "TEXCOORD_0": 15
+                    },
+                    "indices": 12
+                }
+            ]
+        },
+        {
+            "name": "牙齿",
+            "primitives": [
+                {
+                    "material": 0,
+                    "mode": 4,
+                    "attributes": {
+                        "NORMAL": 18,
+                        "POSITION": 17,
+                        "TEXCOORD_0": 19
+                    },
+                    "indices": 16
+                }
+            ]
+        },
+        {
+            "name": "眼白",
+            "primitives": [
+                {
+                    "material": 0,
+                    "mode": 4,
+                    "attributes": {
+                        "NORMAL": 22,
+                        "POSITION": 21,
+                        "TEXCOORD_0": 23
+                    },
+                    "indices": 20
+                }
+            ]
+        },
+        {
+            "name": "眼白_1",
+            "primitives": [
+                {
+                    "material": 0,
+                    "mode": 4,
+                    "attributes": {
+                        "NORMAL": 26,
+                        "POSITION": 25,
+                        "TEXCOORD_0": 27
+                    },
+                    "indices": 24
+                }
+            ]
+        },
+        {
+            "name": "头_2",
+            "primitives": [
+                {
+                    "material": 0,
+                    "mode": 4,
+                    "attributes": {
+                        "NORMAL": 30,
+                        "POSITION": 29,
+                        "TEXCOORD_0": 31
+                    },
+                    "indices": 28
+                },
+                {
+                    "material": 5,
+                    "mode": 4,
+                    "attributes": {
+                        "NORMAL": 90,
+                        "POSITION": 89,
+                        "TEXCOORD_0": 91
+                    },
+                    "indices": 88
+                },
+                {
+                    "material": 6,
+                    "mode": 4,
+                    "attributes": {
+                        "NORMAL": 94,
+                        "POSITION": 93,
+                        "TEXCOORD_0": 95
+                    },
+                    "indices": 92
+                }
+            ]
+        },
+        {
+            "name": "立方体_2",
+            "primitives": [
+                {
+                    "material": 0,
+                    "mode": 4,
+                    "attributes": {
+                        "NORMAL": 34,
+                        "POSITION": 33,
+                        "TEXCOORD_0": 35
+                    },
+                    "indices": 32
+                }
+            ]
+        },
+        {
+            "name": "手",
+            "primitives": [
+                {
+                    "material": 0,
+                    "mode": 4,
+                    "attributes": {
+                        "NORMAL": 38,
+                        "POSITION": 37,
+                        "TEXCOORD_0": 39
+                    },
+                    "indices": 36
+                },
+                {
+                    "material": 7,
+                    "mode": 4,
+                    "attributes": {
+                        "NORMAL": 98,
+                        "POSITION": 97,
+                        "TEXCOORD_0": 99
+                    },
+                    "indices": 96
+                }
+            ]
+        },
+        {
+            "name": "翅膀",
+            "primitives": [
+                {
+                    "material": 0,
+                    "mode": 4,
+                    "attributes": {
+                        "NORMAL": 42,
+                        "POSITION": 41,
+                        "TEXCOORD_0": 43
+                    },
+                    "indices": 40
+                }
+            ]
+        },
+        {
+            "name": "耳朵",
+            "primitives": [
+                {
+                    "material": 0,
+                    "mode": 4,
+                    "attributes": {
+                        "NORMAL": 46,
+                        "POSITION": 45,
+                        "TEXCOORD_0": 47
+                    },
+                    "indices": 44
+                }
+            ]
+        },
+        {
+            "name": "身体_2",
+            "primitives": [
+                {
+                    "material": 0,
+                    "mode": 4,
+                    "attributes": {
+                        "NORMAL": 50,
+                        "POSITION": 49,
+                        "TEXCOORD_0": 51
+                    },
+                    "indices": 48
+                },
+                {
+                    "material": 7,
+                    "mode": 4,
+                    "attributes": {
+                        "NORMAL": 102,
+                        "POSITION": 101,
+                        "TEXCOORD_0": 103
+                    },
+                    "indices": 100
+                },
+                {
+                    "material": 8,
+                    "mode": 4,
+                    "attributes": {
+                        "NORMAL": 114,
+                        "POSITION": 113,
+                        "TEXCOORD_0": 115
+                    },
+                    "indices": 112
+                }
+            ]
+        },
+        {
+            "name": "圆柱",
+            "primitives": [
+                {
+                    "material": 1,
+                    "mode": 4,
+                    "attributes": {
+                        "NORMAL": 54,
+                        "POSITION": 53,
+                        "TEXCOORD_0": 55
+                    },
+                    "indices": 52
+                }
+            ]
+        },
+        {
+            "name": "头发_2",
+            "primitives": [
+                {
+                    "material": 1,
+                    "mode": 4,
+                    "attributes": {
+                        "NORMAL": 58,
+                        "POSITION": 57,
+                        "TEXCOORD_0": 59
+                    },
+                    "indices": 56
+                }
+            ]
+        },
+        {
+            "name": "眼睛",
+            "primitives": [
+                {
+                    "material": 1,
+                    "mode": 4,
+                    "attributes": {
+                        "NORMAL": 62,
+                        "POSITION": 61,
+                        "TEXCOORD_0": 63
+                    },
+                    "indices": 60
+                }
+            ]
+        },
+        {
+            "name": "球体_1",
+            "primitives": [
+                {
+                    "material": 2,
+                    "mode": 4,
+                    "attributes": {
+                        "NORMAL": 66,
+                        "POSITION": 65,
+                        "TEXCOORD_0": 67
+                    },
+                    "indices": 64
+                }
+            ]
+        },
+        {
+            "name": "球体",
+            "primitives": [
+                {
+                    "material": 2,
+                    "mode": 4,
+                    "attributes": {
+                        "NORMAL": 70,
+                        "POSITION": 69,
+                        "TEXCOORD_0": 71
+                    },
+                    "indices": 68
+                }
+            ]
+        },
+        {
+            "name": "球体_2",
+            "primitives": [
+                {
+                    "material": 2,
+                    "mode": 4,
+                    "attributes": {
+                        "NORMAL": 74,
+                        "POSITION": 73,
+                        "TEXCOORD_0": 75
+                    },
+                    "indices": 72
+                }
+            ]
+        },
+        {
+            "name": "球体_3",
+            "primitives": [
+                {
+                    "material": 2,
+                    "mode": 4,
+                    "attributes": {
+                        "NORMAL": 78,
+                        "POSITION": 77,
+                        "TEXCOORD_0": 79
+                    },
+                    "indices": 76
+                }
+            ]
+        },
+        {
+            "name": "立方体",
+            "primitives": [
+                {
+                    "material": 3,
+                    "mode": 4,
+                    "attributes": {
+                        "NORMAL": 82,
+                        "POSITION": 81,
+                        "TEXCOORD_0": 83
+                    },
+                    "indices": 80
+                }
+            ]
+        },
+        {
+            "name": "舌头",
+            "primitives": [
+                {
+                    "material": 4,
+                    "mode": 4,
+                    "attributes": {
+                        "NORMAL": 86,
+                        "POSITION": 85,
+                        "TEXCOORD_0": 87
+                    },
+                    "indices": 84
+                }
+            ]
+        },
+        {
+            "name": "眼珠",
+            "primitives": [
+                {
+                    "material": 8,
+                    "mode": 4,
+                    "attributes": {
+                        "NORMAL": 106,
+                        "POSITION": 105,
+                        "TEXCOORD_0": 107
+                    },
+                    "indices": 104
+                }
+            ]
+        },
+        {
+            "name": "鼻子",
+            "primitives": [
+                {
+                    "material": 8,
+                    "mode": 4,
+                    "attributes": {
+                        "NORMAL": 110,
+                        "POSITION": 109,
+                        "TEXCOORD_0": 111
+                    },
+                    "indices": 108
+                }
+            ]
+        }
+    ],
+    "cameras": [
+        {
+            "name": "",
+            "type": "perspective",
+            "perspective": {
+                "znear": 0.00100000004749745,
+                "zfar": 10000.0,
+                "aspectRatio": 1.77777779102325,
+                "yfov": 0.548334896564484
+            }
+        }
+    ],
+    "nodes": [
+        {
+            "name": "RootNode",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                1,
+                2,
+                3,
+                9,
+                17,
+                19,
+                68,
+                69,
+                70,
+                71,
+                72,
+                75,
+                77,
+                87,
+                89,
+                90
+            ]
+        },
+        {
+            "name": "Cinema4D_编辑器",
+            "translation": [
+                1.3784544467926,
+                10.8294801712036,
+                -32.3302612304688
+            ],
+            "rotation": [
+                -0.000844154506921768,
+                -0.99846363067627,
+                -0.0530804097652435,
+                0.0158789157867432
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "camera": 0
+        },
+        {
+            "name": "眼白_2",
+            "translation": [
+                -1.46049249172211,
+                9.37317752838135,
+                -2.81032037734985
+            ],
+            "rotation": [
+                -0.09361582249403,
+                0.099493034183979,
+                0.0397495925426483,
+                0.989826858043671
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "mesh": 0
+        },
+        {
+            "name": "尾巴",
+            "translation": [
+                0.0,
+                7.42128276824951,
+                1.77628946304321
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                4,
+                6
+            ]
+        },
+        {
+            "name": "细分曲面_2",
+            "translation": [
+                0.0,
+                0.111601665616035,
+                1.77628946304321
+            ],
+            "rotation": [
+                0.402861088514328,
+                0.0,
+                0.0,
+                0.915261149406433
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                5
+            ]
+        },
+        {
+            "name": "圆柱",
+            "translation": [
+                0.0,
+                0.583749055862427,
+                0.941612660884857
+            ],
+            "rotation": [
+                -0.202995076775551,
+                -0.0,
+                0.0,
+                0.979179739952087
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "mesh": 13
+        },
+        {
+            "name": "扫描",
+            "translation": [
+                0.0,
+                -0.111601665616035,
+                -1.77628946304321
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                7,
+                8
+            ],
+            "mesh": 1
+        },
+        {
+            "name": "封顶_1",
+            "translation": [
+                0.0,
+                -3.44626760482788,
+                1.39036130905151
+            ],
+            "rotation": [
+                -0.695243179798126,
+                0.707499921321869,
+                0.0904483869671822,
+                0.0888814553618431
+            ],
+            "scale": [
+                0.71875,
+                0.71875,
+                0.71875
+            ],
+            "mesh": 2
+        },
+        {
+            "name": "封顶_2",
+            "translation": [
+                0.0,
+                -0.0357290990650654,
+                4.58256387710571
+            ],
+            "rotation": [
+                0.348491549491882,
+                -0.35213240981102,
+                0.617413282394409,
+                0.611029624938965
+            ],
+            "scale": [
+                0.15625,
+                0.15625,
+                0.15625
+            ],
+            "mesh": 3
+        },
+        {
+            "name": "角",
+            "translation": [
+                0.0,
+                7.48859930038452,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                10
+            ]
+        },
+        {
+            "name": "角_2",
+            "translation": [
+                1.54381942749023,
+                5.3134503364563,
+                -0.1197315081954
+            ],
+            "rotation": [
+                0.0,
+                -0.0,
+                -0.0718973502516747,
+                0.997412025928497
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                11,
+                12,
+                13,
+                15,
+                16
+            ]
+        },
+        {
+            "name": "球体_1",
+            "translation": [
+                0.453897804021835,
+                -0.105500057339668,
+                0.0500384122133255
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0718973502516747,
+                0.997412025928497
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "mesh": 16
+        },
+        {
+            "name": "球体",
+            "translation": [
+                0.657414555549622,
+                0.201060354709625,
+                0.0500384122133255
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0718973502516747,
+                0.997412025928497
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "mesh": 17
+        },
+        {
+            "name": "细分曲面_2_2",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                14
+            ]
+        },
+        {
+            "name": "立方体",
+            "translation": [
+                0.0,
+                0.169833287596703,
+                0.412654042243958
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "mesh": 20
+        },
+        {
+            "name": "球体_2",
+            "translation": [
+                0.453897804021835,
+                -0.105500057339668,
+                0.782947242259979
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0718973502516747,
+                0.997412025928497
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "mesh": 18
+        },
+        {
+            "name": "球体_3",
+            "translation": [
+                0.657414555549622,
+                0.201060354709625,
+                0.782947242259979
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0718973502516747,
+                0.997412025928497
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "mesh": 19
+        },
+        {
+            "name": "头发",
+            "translation": [
+                3.22738575935364,
+                8.67785549163818,
+                0.831324338912964
+            ],
+            "rotation": [
+                0.803277790546417,
+                0.515337586402893,
+                0.241572454571724,
+                0.175541266798973
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                18
+            ]
+        },
+        {
+            "name": "头发_2",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                -5.55111512312578e-17,
+                2.77555756156289e-17,
+                2.08166817117217e-17,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "mesh": 14
+        },
+        {
+            "name": "头发BF",
+            "translation": [
+                -0.138452783226967,
+                10.3633880615234,
+                0.993762850761414
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                20,
+                22,
+                24,
+                26,
+                28,
+                30,
+                32,
+                34,
+                36,
+                38,
+                40,
+                42,
+                44,
+                46,
+                48,
+                50,
+                52,
+                54,
+                56,
+                58,
+                60,
+                62,
+                64,
+                66
+            ]
+        },
+        {
+            "name": "细分曲面_23",
+            "translation": [
+                3.36583852767944,
+                -1.68553352355957,
+                -0.162438482046127
+            ],
+            "rotation": [
+                0.803277790546417,
+                0.515337586402893,
+                0.241572454571724,
+                0.175541266798973
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                21
+            ]
+        },
+        {
+            "name": "圆柱_1",
+            "translation": [
+                0.00152050307951868,
+                0.0353923179209232,
+                -0.0703801587224007
+            ],
+            "rotation": [
+                -7.9715680181866e-17,
+                0.5735764503479,
+                -7.9715680181866e-17,
+                0.819152057170868
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "细分曲面_22",
+            "translation": [
+                2.91055941581726,
+                -0.0712394416332245,
+                0.409937262535095
+            ],
+            "rotation": [
+                0.206330955028534,
+                0.13560962677002,
+                0.96355789899826,
+                -0.102925792336464
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                23
+            ]
+        },
+        {
+            "name": "圆柱_1_2",
+            "translation": [
+                0.00129281298723072,
+                0.0300924386829138,
+                -0.0598409697413445
+            ],
+            "rotation": [
+                1.09609067694691e-16,
+                0.5735764503479,
+                1.09609067694691e-16,
+                0.819152057170868
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "细分曲面_3",
+            "translation": [
+                2.7465193271637,
+                -1.98979508876801,
+                0.185409039258957
+            ],
+            "rotation": [
+                -0.164760127663612,
+                2.92909895921388e-16,
+                0.986333668231964,
+                -4.3557965216415e-16
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                25
+            ]
+        },
+        {
+            "name": "圆柱_1_3",
+            "translation": [
+                0.00129281298723072,
+                0.0300924386829138,
+                -0.0598409697413445
+            ],
+            "rotation": [
+                2.67742376536536e-16,
+                0.5735764503479,
+                -1.94764783893073e-16,
+                0.819152057170868
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "细分曲面_21",
+            "translation": [
+                2.03986310958862,
+                -2.12817430496216,
+                1.59393858909607
+            ],
+            "rotation": [
+                0.819152057170868,
+                -9.5311330216051e-17,
+                -0.5735764503479,
+                1.44248943293799e-16
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                27
+            ]
+        },
+        {
+            "name": "圆柱_1_4",
+            "translation": [
+                -0.00764456205070019,
+                0.0203247107565403,
+                -0.0170148443430662
+            ],
+            "rotation": [
+                1.25637644209152e-16,
+                0.5735764503479,
+                -1.51356929458524e-17,
+                0.819152057170868
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "细分曲面_20",
+            "translation": [
+                -1.54626274108887,
+                -1.60633873939514,
+                1.12170076370239
+            ],
+            "rotation": [
+                0.810159146785736,
+                0.121046513319016,
+                -0.567279517650604,
+                0.0847576782107353
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                29
+            ]
+        },
+        {
+            "name": "圆柱_1_5",
+            "translation": [
+                -0.00476297736167908,
+                0.0929586738348007,
+                -0.0227548386901617
+            ],
+            "rotation": [
+                1.25608752444717e-16,
+                0.5735764503479,
+                -5.40688923501002e-17,
+                0.819152057170868
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "细分曲面_19",
+            "translation": [
+                -0.184226989746094,
+                -2.04101848602295,
+                1.42278242111206
+            ],
+            "rotation": [
+                0.819151997566223,
+                -0.00018469980568625,
+                -0.5735764503479,
+                -0.00012932819663547
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                31
+            ]
+        },
+        {
+            "name": "圆柱_1_6",
+            "translation": [
+                -0.00456666294485331,
+                0.0891272202134132,
+                -0.0218169558793306
+            ],
+            "rotation": [
+                -1.47883234106945e-17,
+                0.5735764503479,
+                5.41649445628298e-17,
+                0.819152057170868
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "细分曲面_18",
+            "translation": [
+                0.673900425434113,
+                -1.60633873939514,
+                1.42278242111206
+            ],
+            "rotation": [
+                0.817976713180542,
+                0.0438651591539383,
+                -0.572753489017487,
+                0.0307147167623043
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                33
+            ]
+        },
+        {
+            "name": "圆柱_1_7",
+            "translation": [
+                -0.00542876729741693,
+                0.105952844023705,
+                -0.0259356070309877
+            ],
+            "rotation": [
+                -4.11391924906144e-17,
+                0.5735764503479,
+                -1.06727229997561e-16,
+                0.819152057170868
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "细分曲面_17",
+            "translation": [
+                -0.936363399028778,
+                -0.511231482028961,
+                1.86737179756165
+            ],
+            "rotation": [
+                0.817976713180542,
+                0.0438651591539383,
+                -0.572753489017487,
+                0.0307147167623043
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                35
+            ]
+        },
+        {
+            "name": "圆柱_1_8",
+            "translation": [
+                -0.00428463099524379,
+                0.0836228281259537,
+                -0.0204695668071508
+            ],
+            "rotation": [
+                2.03542993298331e-17,
+                0.5735764503479,
+                -1.58256260968094e-16,
+                0.819152057170868
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "细分曲面_16",
+            "translation": [
+                -1.82106649875641,
+                0.52880322933197,
+                1.46287500858307
+            ],
+            "rotation": [
+                0.819018542766571,
+                -0.014787033200264,
+                -0.573482990264893,
+                -0.0103539917618036
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                37
+            ]
+        },
+        {
+            "name": "圆柱_1_9",
+            "translation": [
+                -0.0801704451441765,
+                0.158446401357651,
+                -0.0750580951571465
+            ],
+            "rotation": [
+                -1.65790089638329e-17,
+                0.5735764503479,
+                4.54920484844399e-17,
+                0.819152057170868
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "细分曲面_15",
+            "translation": [
+                -0.478135049343109,
+                1.42770051956177,
+                2.16769170761108
+            ],
+            "rotation": [
+                0.815436601638794,
+                -0.0779309421777725,
+                -0.570974826812744,
+                -0.0545678362250328
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                39
+            ]
+        },
+        {
+            "name": "圆柱_1_10",
+            "translation": [
+                0.0973436683416367,
+                0.0202403757721186,
+                -0.00513572990894318
+            ],
+            "rotation": [
+                -2.93909745523728e-17,
+                0.5735764503479,
+                7.14047318697497e-17,
+                0.819152057170868
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "细分曲面_14",
+            "translation": [
+                3.0744616985321,
+                -0.0309185292571783,
+                1.19016861915588
+            ],
+            "rotation": [
+                0.819152057170868,
+                -9.5311330216051e-17,
+                -0.5735764503479,
+                1.44248943293799e-16
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                41
+            ]
+        },
+        {
+            "name": "圆柱_1_11",
+            "translation": [
+                0.000924171356018633,
+                0.0225227233022451,
+                -0.0447880439460278
+            ],
+            "rotation": [
+                1.25637644209152e-16,
+                0.5735764503479,
+                -1.51356929458524e-17,
+                0.819152057170868
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "细分曲面_12",
+            "translation": [
+                2.33829641342163,
+                0.440394312143326,
+                2.09477281570435
+            ],
+            "rotation": [
+                0.819152057170868,
+                -9.5311330216051e-17,
+                -0.5735764503479,
+                1.44248943293799e-16
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                43
+            ]
+        },
+        {
+            "name": "圆柱_1_12",
+            "translation": [
+                0.00120771466754377,
+                0.0281116329133511,
+                -0.0559019930660725
+            ],
+            "rotation": [
+                1.25637644209152e-16,
+                0.5735764503479,
+                -1.51356929458524e-17,
+                0.819152057170868
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "细分曲面_8",
+            "translation": [
+                0.661740243434906,
+                0.831071078777313,
+                2.21684694290161
+            ],
+            "rotation": [
+                0.819152057170868,
+                -9.5311330216051e-17,
+                -0.5735764503479,
+                1.44248943293799e-16
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                45
+            ]
+        },
+        {
+            "name": "圆柱_1_13",
+            "translation": [
+                0.00120771466754377,
+                0.0281116329133511,
+                -0.0559019930660725
+            ],
+            "rotation": [
+                -1.22257347474897e-16,
+                0.5735764503479,
+                1.79565343446134e-17,
+                0.819152057170868
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "细分曲面_8_2",
+            "translation": [
+                -2.92701292037964,
+                -1.98979508876801,
+                -0.386730939149857
+            ],
+            "rotation": [
+                0.819152057170868,
+                -2.22670879910407e-16,
+                -0.5735764503479,
+                -3.76393483055107e-17
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                47
+            ]
+        },
+        {
+            "name": "圆柱_1_14",
+            "translation": [
+                0.00129281298723072,
+                0.0300924386829138,
+                -0.0598409697413445
+            ],
+            "rotation": [
+                7.83880354463837e-17,
+                0.5735764503479,
+                4.97887256797833e-17,
+                0.819152057170868
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "细分曲面_13",
+            "translation": [
+                -2.45233869552612,
+                1.1462641954422,
+                -0.438796073198318
+            ],
+            "rotation": [
+                -0.381023705005646,
+                0.00470416247844696,
+                0.651323020458221,
+                0.656183779239655
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                49
+            ]
+        },
+        {
+            "name": "圆柱_1_15",
+            "translation": [
+                0.00152050307951868,
+                0.0353923179209232,
+                -0.0703801587224007
+            ],
+            "rotation": [
+                -2.92520763691464e-16,
+                0.5735764503479,
+                2.72591851917803e-16,
+                0.819152057170868
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "细分曲面_11",
+            "translation": [
+                -3.0501446723938,
+                -1.68553352355957,
+                -0.640418171882629
+            ],
+            "rotation": [
+                -0.198934823274612,
+                -0.240179643034935,
+                0.786373734474182,
+                0.533249497413635
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                51
+            ]
+        },
+        {
+            "name": "圆柱_1_16",
+            "translation": [
+                0.00152050307951868,
+                0.0353923179209232,
+                -0.0703801587224007
+            ],
+            "rotation": [
+                -1.86187212108474e-16,
+                0.5735764503479,
+                2.65902885672895e-16,
+                0.819152057170868
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "细分曲面_10",
+            "translation": [
+                -1.89969825744629,
+                1.33175945281982,
+                -2.10233736038208
+            ],
+            "rotation": [
+                -0.579227983951569,
+                -0.405579775571823,
+                0.405579775571823,
+                0.579227983951569
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                53
+            ]
+        },
+        {
+            "name": "圆柱_1_17",
+            "translation": [
+                0.00129281298723072,
+                0.0300924386829138,
+                -0.0598409697413445
+            ],
+            "rotation": [
+                1.02498742263194e-16,
+                0.5735764503479,
+                -8.22995277176856e-17,
+                0.819152057170868
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "细分曲面_9",
+            "translation": [
+                -1.26033008098602,
+                1.20481705665588,
+                -2.68847322463989
+            ],
+            "rotation": [
+                0.388506352901459,
+                0.640675902366638,
+                -0.461503326892853,
+                -0.474986165761948
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                55
+            ]
+        },
+        {
+            "name": "圆柱_1_18",
+            "translation": [
+                0.00129281298723072,
+                0.0300924386829138,
+                -0.0598409697413445
+            ],
+            "rotation": [
+                -9.96446002273325e-18,
+                0.5735764503479,
+                -9.96446002273325e-18,
+                0.819152057170868
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "细分曲面_7",
+            "translation": [
+                -1.5151150226593,
+                1.39405691623688,
+                -2.68847322463989
+            ],
+            "rotation": [
+                -0.579227983951569,
+                -0.405579775571823,
+                0.405579775571823,
+                0.579227983951569
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                57
+            ]
+        },
+        {
+            "name": "圆柱_1_19",
+            "translation": [
+                0.00129281298723072,
+                0.0300924386829138,
+                -0.0598409697413445
+            ],
+            "rotation": [
+                1.02498742263194e-16,
+                0.5735764503479,
+                -8.22995277176856e-17,
+                0.819152057170868
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "细分曲面_6",
+            "translation": [
+                1.67264342308044,
+                1.63058817386627,
+                -1.44083189964294
+            ],
+            "rotation": [
+                0.673257172107697,
+                0.558723986148834,
+                -0.216159224510193,
+                -0.433390736579895
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                59
+            ]
+        },
+        {
+            "name": "圆柱_2",
+            "translation": [
+                -0.24294900894165,
+                0.0116522861644626,
+                0.629308640956879
+            ],
+            "rotation": [
+                -5.55111512312578e-17,
+                6.93889390390723e-18,
+                -2.77555756156289e-17,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "细分曲面_5",
+            "translation": [
+                1.2834734916687,
+                1.72279381752014,
+                -2.32791066169739
+            ],
+            "rotation": [
+                0.673257172107697,
+                0.558723986148834,
+                -0.216159224510193,
+                -0.433390736579895
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                61
+            ]
+        },
+        {
+            "name": "圆柱_3",
+            "translation": [
+                -0.165224522352219,
+                0.0136100668460131,
+                0.778189599514008
+            ],
+            "rotation": [
+                0.0,
+                -4.16333634234434e-17,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "细分曲面_4",
+            "translation": [
+                0.44705593585968,
+                1.93205761909485,
+                -2.48475480079651
+            ],
+            "rotation": [
+                -0.579227983951569,
+                -0.405579775571823,
+                0.405579775571823,
+                0.579227983951569
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                63
+            ]
+        },
+        {
+            "name": "圆柱_4",
+            "translation": [
+                -0.179717496037483,
+                0.0148038975894451,
+                0.846449851989746
+            ],
+            "rotation": [
+                -0.0,
+                2.77555756156289e-17,
+                3.24028287147827e-33,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "细分曲面_8_3",
+            "translation": [
+                -2.47700786590576,
+                -0.071033887565136,
+                0.893360555171967
+            ],
+            "rotation": [
+                -0.689571499824524,
+                0.170242503285408,
+                0.701861500740051,
+                0.0538426451385021
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                65
+            ]
+        },
+        {
+            "name": "圆柱_1_20",
+            "translation": [
+                0.00129281298723072,
+                0.0300924386829138,
+                -0.0598409697413445
+            ],
+            "rotation": [
+                -3.74552992957286e-16,
+                0.5735764503479,
+                1.66108984308081e-17,
+                0.819152057170868
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "细分曲面_2_3",
+            "translation": [
+                -0.6666499376297,
+                1.82664465904236,
+                -2.68847322463989
+            ],
+            "rotation": [
+                -0.579227983951569,
+                -0.405579775571823,
+                0.405579775571823,
+                0.579227983951569
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                67
+            ]
+        },
+        {
+            "name": "圆柱_5",
+            "translation": [
+                -0.160184592008591,
+                0.0131949102506042,
+                0.754452049732208
+            ],
+            "rotation": [
+                -3.69778549322349e-32,
+                -0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "牙齿",
+            "translation": [
+                0.0,
+                7.62922286987305,
+                -2.68730401992798
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "mesh": 4
+        },
+        {
+            "name": "舌头",
+            "translation": [
+                0.0,
+                6.49213981628418,
+                -1.463951587677
+            ],
+            "rotation": [
+                0.268499493598938,
+                0.0,
+                0.0,
+                0.963279843330383
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "mesh": 21
+        },
+        {
+            "name": "眼白",
+            "translation": [
+                -1.351597905159,
+                9.80153179168701,
+                -2.80979490280151
+            ],
+            "rotation": [
+                0.121594846248627,
+                0.0160250887274742,
+                0.0178596340119839,
+                0.99228972196579
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "mesh": 5
+        },
+        {
+            "name": "眼白_1",
+            "translation": [
+                1.78116250038147,
+                9.83416557312012,
+                -2.64099264144897
+            ],
+            "rotation": [
+                0.213196739554405,
+                -0.334171265363693,
+                -0.00909380242228508,
+                0.918038129806519
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "mesh": 6
+        },
+        {
+            "name": "头部",
+            "translation": [
+                0.0,
+                7.30968141555786,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                73
+            ]
+        },
+        {
+            "name": "头",
+            "translation": [
+                0.0,
+                -2.7309296131134,
+                -0.0520855635404587
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                74
+            ]
+        },
+        {
+            "name": "头_2",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "mesh": 7
+        },
+        {
+            "name": "胡须",
+            "translation": [
+                -0.0465484149754047,
+                5.81173706054688,
+                -1.53142035007477
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                76
+            ]
+        },
+        {
+            "name": "立方体_2",
+            "translation": [
+                -0.401918828487396,
+                0.430730730295181,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "mesh": 8
+        },
+        {
+            "name": "身体",
+            "translation": [
+                0.0,
+                4.57875156402588,
+                -0.0520855635404587
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                78
+            ]
+        },
+        {
+            "name": "对称",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                79
+            ]
+        },
+        {
+            "name": "空白",
+            "translation": [
+                0.0,
+                1.46422803401947,
+                0.0173618551343679
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                80,
+                81,
+                82,
+                83,
+                84,
+                85,
+                86
+            ]
+        },
+        {
+            "name": "手",
+            "translation": [
+                -2.00723147392273,
+                -0.543776333332062,
+                -2.9540855884552
+            ],
+            "rotation": [
+                -0.0859845578670502,
+                0.00754895946010947,
+                -0.0871315449476242,
+                0.992450356483459
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "mesh": 9
+        },
+        {
+            "name": "翅膀",
+            "translation": [
+                -2.42442154884338,
+                -0.759483098983765,
+                1.09217822551727
+            ],
+            "rotation": [
+                0.0,
+                -0.0615415349602699,
+                0.0,
+                0.998104512691498
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "mesh": 10
+        },
+        {
+            "name": "耳朵",
+            "translation": [
+                3.01271724700928,
+                4.34911298751831,
+                -0.254046529531479
+            ],
+            "rotation": [
+                -0.212348684668541,
+                0.237370565533638,
+                -0.692254066467285,
+                0.647570490837097
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "mesh": 11
+        },
+        {
+            "name": "眼睛",
+            "translation": [
+                -1.4495906829834,
+                3.59965515136719,
+                -2.47506523132324
+            ],
+            "rotation": [
+                0.095146968960762,
+                0.174337908625603,
+                0.00436332728713751,
+                0.980068504810333
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "mesh": 15
+        },
+        {
+            "name": "眼珠",
+            "translation": [
+                -1.53487026691437,
+                3.61439752578735,
+                -2.69379091262817
+            ],
+            "rotation": [
+                0.095146968960762,
+                0.174337908625603,
+                0.00436332728713751,
+                0.980068504810333
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "mesh": 22
+        },
+        {
+            "name": "鼻子",
+            "translation": [
+                0.024137806147337,
+                2.27719616889954,
+                -2.88576221466064
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "mesh": 23
+        },
+        {
+            "name": "身体_2",
+            "translation": [
+                0.0,
+                -1.46422803401947,
+                0.133030980825424
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "mesh": 12
+        },
+        {
+            "name": "翅膀BF",
+            "translation": [
+                0.0678489655256271,
+                7.30968141555786,
+                5.60556268692017
+            ],
+            "rotation": [
+                -6.12323426292584e-17,
+                1.0,
+                -6.12323426292584e-17,
+                -6.12323426292584e-17
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                88
+            ]
+        },
+        {
+            "name": "多边形",
+            "translation": [
+                2.12949371337891,
+                -1.96027970314026,
+                3.15078568458557
+            ],
+            "rotation": [
+                -6.12323426292584e-17,
+                1.0,
+                -6.12323426292584e-17,
+                6.12323426292584e-17
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "身体BF",
+            "translation": [
+                0.0,
+                4.57875156402588,
+                -0.0520855635404587
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "头BF",
+            "translation": [
+                0.0,
+                9.44570064544678,
+                -0.215153113007545
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    ]
+}
