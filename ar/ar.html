@@ -52,6 +52,12 @@
                 owner: '朱良胜',
                 content: 'Beyond Intelligence：从自动化到智能化，面向云化AI打造自学习自管理的网络，编织一张会思考的"网"，让沟通畅行无阻。',
                 link: ''
+            },
+            {
+                department: 'AI',
+                owner: '朱良胜',
+                content: 'Beyond Intelligence：从自动化到智能化，面向云化AI打造自学习自管理的网络，编织一张会思考的"网"，让沟通畅行无阻。',
+                link: ''
             }
         ];
 
@@ -67,7 +73,7 @@
         //     }
         // });    
 
-        for(let i = 0; i < 6; i ++) {
+        for(let i = 0; i < 7; i ++) {
             AFRAME.registerComponent('markerhandler' + i, {
                 init: function () {
                     const marker = this.el;
@@ -91,16 +97,17 @@
         embedded
         arjs='trackingMethod: best; debugUIEnabled: false;sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 4x4_BCH_13_5_5;'>
         
-        <!-- <a-marker markerhandler0 type='barcode' value='0' id='1'></a-marker>
+        <a-marker markerhandler6 type='barcode' value='0' id='1'>
+          <a-entity
+              gltf-model='./resource/model/baize.gltf'
+              scale="0.2 0.2 0.2"
+              position="0 -2 -5"
+              rotation='0 180 0'
+              >
+          </a-entity>
+        </a-marker>
 
-        <a-marker markerhandler1 type='barcode' value='2' id='2'></a-marker> -->
-        <a-entity
-            gltf-model='./resource/model/baize.gltf'
-            scale="0.2 0.2 0.2"
-            position="0 -1 -5"
-            rotation='0 180 0'
-            >
-        </a-entity>
+        <a-marker markerhandler1 type='barcode' value='2' id='2'></a-marker>
         
         <a-nft
         markerhandler
