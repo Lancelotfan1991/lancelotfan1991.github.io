@@ -73,7 +73,7 @@
         //     }
         // });    
 
-        for(let i = 0; i < 7; i ++) {
+        for(let i = 0; i < 6; i ++) {
             AFRAME.registerComponent('markerhandler' + i, {
                 init: function () {
                     const marker = this.el;
@@ -98,18 +98,6 @@
         embedded
         arjs='trackingMethod: best; debugUIEnabled: false;sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 4x4_BCH_13_5_5;'>
         
-        <a-marker markerhandler6 type='barcode' value='0' id='1'>
-          <a-entity
-              gltf-model='./resource/model/baize.gltf'
-              scale="0.2 0.2 0.2"
-              position="0 -2 -5"
-              rotation='0 180 0'
-              >
-          </a-entity>
-        </a-marker>
-
-        <a-marker markerhandler1 type='barcode' value='2' id='2'></a-marker>
-        
         <a-nft
           markerhandler0
           type="nft"
@@ -119,6 +107,27 @@
           smoothTolerance=".01"
           smoothThreshold="5"
         ></a-nft>
+
+        <a-nft
+          markerhandler1
+          type="nft"
+          url="./ar/resource/fset/Snipaste_2021-01-14_16-22-54"
+          smooth="true"
+          smoothCount="10"
+          smoothTolerance=".01"
+          smoothThreshold="5"
+        ></a-nft>
+
+        <a-nft
+          markerhandler1
+          type="nft"
+          url="./ar/resource/fset/xepress"
+          smooth="true"
+          smoothCount="10"
+          smoothTolerance=".01"
+          smoothThreshold="5"
+        ></a-nft>
+
         <a-entity camera></a-entity>
     </a-scene>
 
@@ -145,8 +154,8 @@
             {
                 el: '#app',
                 data: {
-                    version: '0.50',
-                    versionInfo: "采用图片识别的方案",
+                    version: '0.51',
+                    versionInfo: "采用图片识别的方案,更新识别图",
                     screenShotIcon : true,
                     isShooted: false,
                     screenShotImage: '',
