@@ -84,6 +84,7 @@
                         document.getElementById('content').innerHTML=departMentInfo[i].content;
                     });
                     this.el.addEventListener('markerLost', () => {
+                        document.getElementById('debuginfo').innerHTML='marker found ' + i;
                         document.getElementById('content').style.display='none';
                     });
                 }
@@ -110,59 +111,9 @@
         <a-marker markerhandler1 type='barcode' value='2' id='2'></a-marker>
         
         <a-nft
-        markerhandler
+          markerhandler0
           type="nft"
-          url="./ar/resource/fset/MAE"
-          smooth="true"
-          smoothCount="10"
-          smoothTolerance=".01"
-          smoothThreshold="5"
-        ></a-nft>
-
-        <a-nft
-          markhandler1
-          type="nft"
-          url="./ar/resource/fset/Xpress"
-          smooth="true"
-          smoothCount="10"
-          smoothTolerance=".01"
-          smoothThreshold="5"
-        ></a-nft>
-
-        <a-nft
-          markhandler2
-          type="nft"
-          url="./ar/resource/fset/Xsuite"
-          smooth="true"
-          smoothCount="10"
-          smoothTolerance=".01"
-          smoothThreshold="5"
-        ></a-nft>
-
-        <a-nft
-          type="nft"
-          markhandler3
-          url="resource/fset/xTurbo"
-          smooth="true"
-          smoothCount="10"
-          smoothTolerance=".01"
-          smoothThreshold="5"
-        ></a-nft>
-
-        <a-nft
-          markhandler4
-          type="nft"
-          url="resource/fset/Dopra"
-          smooth="true"
-          smoothCount="10"
-          smoothTolerance=".01"
-          smoothThreshold="5"
-        ></a-nft>
-
-        <a-nft
-          markhandler5
-          type="nft"
-          url="resource/fset/AI"
+          url="./ar/resource/fset/Snipaste_2021-01-14_15-59-49"
           smooth="true"
           smoothCount="10"
           smoothTolerance=".01"
