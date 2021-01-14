@@ -1386,13 +1386,13 @@ ARjs.Profile.prototype.performance = function (label) {
 
         this.contextParameters.maxDetectionRate = 60
     } else if (label === 'phone-normal') {
-        this.contextParameters.canvasWidth = 80 * 4
-        this.contextParameters.canvasHeight = 60 * 4
+        this.contextParameters.canvasWidth = window.innerWidth
+        this.contextParameters.canvasHeight = window.innerHeight
 
         this.contextParameters.maxDetectionRate = 30
     } else if (label === 'phone-slow') {
-        this.contextParameters.canvasWidth = 80 * 3
-        this.contextParameters.canvasHeight = 60 * 3
+        this.contextParameters.canvasWidth = window.innerWidth
+        this.contextParameters.canvasHeight = window.innerHeight
 
         this.contextParameters.maxDetectionRate = 30
     } else {
