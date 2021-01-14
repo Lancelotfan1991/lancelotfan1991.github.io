@@ -1386,13 +1386,13 @@ ARjs.Profile.prototype.performance = function (label) {
 
         this.contextParameters.maxDetectionRate = 60
     } else if (label === 'phone-normal') {
-        this.contextParameters.canvasWidth = 80
-        this.contextParameters.canvasHeight = 60
+        this.contextParameters.canvasWidth = 80 * 4
+        this.contextParameters.canvasHeight = 60 * 4
 
         this.contextParameters.maxDetectionRate = 30
     } else if (label === 'phone-slow') {
-        this.contextParameters.canvasWidth = 80
-        this.contextParameters.canvasHeight = 60
+        this.contextParameters.canvasWidth = 80 * 3
+        this.contextParameters.canvasHeight = 60 * 3
 
         this.contextParameters.maxDetectionRate = 30
     } else {
@@ -1606,6 +1606,11 @@ ARjs.Source.prototype._initSourceVideo = function (onReady) {
         domElement.play()
     });
 
+    domElement.width = this.parameters.sourceWidth;
+    domElement.height = this.parameters.sourceHeight;
+    domElement.style.width = this.parameters.displayWidth + 'px';
+    domElement.style.height = this.parameters.displayHeight + 'px';
+
     domElement.onloadeddata = onReady;
     return domElement
 }
@@ -1656,10 +1661,14 @@ ARjs.Source.prototype._initSourceWebcam = function (onReady, onError) {
             video: {
                 facingMode: 'environment',
                 width: {
-                    ideal: window.innerWidth,
+                    ideal: 750,
+                    min: 1024,
+                    max: 1920
                 },
                 height: {
-                    ideal: window.innerHeight,
+                    ideal: 667,
+                    min: 667,
+                    max: 1920
                 }
             }
         };

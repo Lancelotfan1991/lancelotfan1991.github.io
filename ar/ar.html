@@ -121,7 +121,7 @@
           smoothThreshold="5"
         ></a-nft>
 
-        <a-entity camera></a-entity>
+        <a-entity camera zoom='1'></a-entity>
     </a-scene>
 
     <div id='app' >
@@ -143,6 +143,7 @@
     </div>
 
     <script>
+        
         const app = new Vue(
             {
                 el: '#app',
@@ -170,7 +171,7 @@
                         let width = aCanvas.width;
                         let height = aCanvas.height;
                         let pixelRatio = window.devicePixelRatio;
-                        let startX = -Number(aVideo.style.marginLeft.replace('px',''))/pixelRatio;
+                        let startX = -Number(aVideo.style.marginLeft.replace('px',''));
                         let startY = -Number(aVideo.style.marginTop.replace('px',''));
                         let videoWidth = Number(aVideo.style.width.replace('px',''));
                         let videoHeight = Number(aVideo.style.height.replace('px',''));
@@ -182,9 +183,9 @@
                         console.log('videoHeight', aVideo.style.height);
 
                         ctx.drawImage(aVideo, 
-                            0, 0,
-                            3500,
-                            3000, 0, 0, aCanvas.width, aCanvas.height);
+                            startX, 0,
+                            videoWidth - 2 * startX,
+                            videoHeight - 2 * startY, 0, 0, aCanvas.width, aCanvas.height);
                         
                         self.screenShotImage = aCanvas.toDataURL("image/png", 1.0);
                         self.isShooted=true;
@@ -217,7 +218,7 @@
                 }
             }
         );
-    </script>
+    </script>    
 </body>
 
 </html>
