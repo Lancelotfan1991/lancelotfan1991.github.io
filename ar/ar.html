@@ -89,16 +89,16 @@
         vr-mode-ui="enabled: false;"
         renderer="logarithmicDepthBuffer: true;"
         embedded
-        arjs='trackingMethod: best; debugUIEnabled: false;sourceType: webcam; '>
+        arjs='trackingMethod: best; debugUIEnabled: false;sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 4x4_BCH_13_5_5;'>
         
         <!-- <a-marker markerhandler0 type='barcode' value='0' id='1'></a-marker>
 
         <a-marker markerhandler1 type='barcode' value='2' id='2'></a-marker> -->
 
         <a-nft
-          markhandler0
+        markerhandler
           type="nft"
-          url="./resource/fset/MAE"
+          url="./ar/resource/fset/MAE"
           smooth="true"
           smoothCount="10"
           smoothTolerance=".01"
@@ -108,7 +108,7 @@
         <a-nft
           markhandler1
           type="nft"
-          url="./resource/fset/Xpress"
+          url="./ar/resource/fset/Xpress"
           smooth="true"
           smoothCount="10"
           smoothTolerance=".01"
@@ -118,7 +118,7 @@
         <a-nft
           markhandler2
           type="nft"
-          url="./resource/fset/Xsuite"
+          url="./ar/resource/fset/Xsuite"
           smooth="true"
           smoothCount="10"
           smoothTolerance=".01"
@@ -128,7 +128,7 @@
         <a-nft
           type="nft"
           markhandler3
-          url="./resource/fset/xTurbo"
+          url="resource/fset/xTurbo"
           smooth="true"
           smoothCount="10"
           smoothTolerance=".01"
@@ -138,7 +138,7 @@
         <a-nft
           markhandler4
           type="nft"
-          url="./resource/fset/Dopra"
+          url="resource/fset/Dopra"
           smooth="true"
           smoothCount="10"
           smoothTolerance=".01"
@@ -148,7 +148,7 @@
         <a-nft
           markhandler5
           type="nft"
-          url="./resource/fset/AI"
+          url="resource/fset/AI"
           smooth="true"
           smoothCount="10"
           smoothTolerance=".01"
