@@ -45,15 +45,18 @@ body{
     position: fixed;
     top: 50px;
     right: 10px;
-    line-height: 34px;
+    line-height: 30px;
     padding: 20px 20px;
     margin: 10px;
     text-align: left;
 
     color:#fff;
+    font-family: 'Microsoft YaHei';
     font-size: 20px;
     font-weight:800;
-    text-shadow:
+    -webkit-text-stroke: 1px #0093df;
+    opacity: 0.7;
+    /* text-shadow:
         1px 0px #009807,
         1px 2px #006705,
         3px 1px #009807,
@@ -74,7 +77,7 @@ body{
         11px 10px #006705,
         13px 9px #009807,
         12px 11px #006705,
-        15px 10px #009807
+        15px 10px #009807 */
 }
 
 .cross {

@@ -1,5 +1,5 @@
 <html lang="en">
-<head>
+<head class="a-fullscreen">
     <meta charset="UTF-8">
     <title>AR展示活动</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1.0">
@@ -7,9 +7,10 @@
         src="https://cdn.jsdelivr.net/gh/aframevr/aframe@9be0a6b94b61740c6fc4d2a1e74d744c38be4c61/dist/aframe-master.min.js"></script>
     <script src="./libs/aframe-ar-nft-user.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="./libs/look-at-camera.js"></script>
     <link rel="stylesheet" href="./style.css?v=0.39">
     <script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <script src="./libs/super-hand.js"></script>
+    <script src="./libs/aframe-extras.js"></script>
 </head>
 
 <body style='margin : 0px; overflow: hidden;width: 100%; height: 100%;'>
@@ -77,8 +78,7 @@
                         document.getElementById('content').style.display='none';
                     });
                 }
-            });
-
+            });  
     </script>
 
     <a-scene
@@ -92,9 +92,11 @@
           <a-asset-item id="tree" src="./resource/model/baize3new.gltf"></a-asset-item>
         </a-assets>
 
-        <a-entity gltf-model="#tree" scale='0.0008 0.0008 0.0008' position='0.5 -1 -5' rotation='0 -180 0'></a-entity>
+        <a-entity gltf-model="#tree" 
+          stretchable draggable dropppable
+        scale='0.0008 0.0008 0.0008' position='0.5 1 -5' rotation='0 -180 0'></a-entity>
 
-        <a-entity camera ></a-entity>
+        <!-- <a-box hoverable grabbable stretchable draggable dropppable color="blue" position="0 1 -5"></a-box> -->
     </a-scene>
 
     <div id='app' >
