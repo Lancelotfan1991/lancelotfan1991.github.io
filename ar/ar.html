@@ -173,21 +173,11 @@
     </div>
 
     <script>
-        canvas2Image(canvas, width, height) {
-          const retCanvas = document.createElement('canvas');
-          const retCtx = retCanvas.getContext('2d');
-          retCanvas.width = width;
-          retCanvas.height = height;
-          retCtx.drawImage(canvas, 0, 0, width, height, 0, 0, width, height);
-          
-          return retCanvas.toDataURL('image/jpeg');  // 可以根据需要更改格式
-        }  
-      
         const app = new Vue(
             {
                 el: '#app',
                 data: {
-                    version: '0.58',
+                    version: '0.60',
                     versionInfo: "更新了所有图片的识别",
                     screenShotIcon : true,
                     isShooted: false,
@@ -197,71 +187,56 @@
                 methods: {
                     takePicture(){
                         // document.querySelector('a-scene').components.screenshot.getCanvas('equirectangular');
-
                         const self = this;
                         document.getElementById('screenShot').style.display='none';
                       
                         const aVideo = document.getElementById('arjs-video');
                         const aCanvas = document.getElementById('canvas');
                         const ctx = aCanvas.getContext('2d');
-                        
-                        // 设备分辨率
-                        const pixelRatio = window.devicePixelRatio;
-                        
-                        const width = document.body.offsetWidth;  // 可见屏幕的宽
-                        const height = document.body.offsetHeight;  // 可见屏幕的高
-                        
                         // canvas在设置高度时，会清空重新渲染，如果不这么做，那么多次拍照，得到的都是同一张照片
                         aCanvas.height = aCanvas.height;
                         
-                        // 将Canvas画布放大scale倍，然后放在小的屏幕里，解决模糊问题
-                        aCanvas.width = width * pixelRatio;
-                        aCanvas.height = height * pixelRatio;
-                        aCanvas.getContext('2d').scale(pixelRatio, pixelRatio);
+                        let width = aCanvas.width;
+                        let height = aCanvas.height;
+                        let pixelRatio = window.devicePixelRatio;
+                        let startX = -Number(aVideo.style.marginLeft.replace('px',''));
+                        let startY = -Number(aVideo.style.marginTop.replace('px',''));
+                        let videoWidth = Number(aVideo.style.width.replace('px',''));
+                        let videoHeight = Number(aVideo.style.height.replace('px',''));
+                        console.log('pixel', window.devicePixelRatio);
+                        console.log(startX);
+                        console.log(startY);
+                        console.log('videoStyleWidth', videoWidth);
+                        console.log('videoWidth', aVideo.style.width);
+                        console.log('videoHeight', aVideo.style.height);
                         
-                        html2canvas(aVideo, {
-                          canvas: aCanvas,
-                          scale: pixelRatio,
-                          useCORS: true,
-                          logging: true,
-                          width: width + 'px',
-                          hegiht: height + 'px',
-                        }).then((canvas) => {
-                          const context = canvas.getContext('2d');
-                          // 关闭抗锯齿形
-                          context.mozImageSmoothingEnabled = false;
-                          context.webkitImageSmoothingEnabled = false;
-                          context.msImageSmoothingEnabled = false;
-                          context.imageSmoothingEnabled = false;
-                          // canvas转化为图片
-                          this.screenShotImage = canvas2Image(canvas, canvas.width, canvas.height);
-                        }
-                      
-                      
-//                         let startX = -Number(aVideo.style.marginLeft.replace('px',''));
-//                         let startY = -Number(aVideo.style.marginTop.replace('px',''));
-//                         let videoWidth = Number(aVideo.style.width.replace('px',''));
-//                         let videoHeight = Number(aVideo.style.height.replace('px',''));
-//                         console.log('pixel', window.devicePixelRatio);
-//                         console.log(startX);
-//                         console.log(startY);
-//                         console.log('videoStyleWidth', videoWidth);
-//                         console.log('videoWidth', aVideo.style.width);
-//                         console.log('videoHeight', aVideo.style.height);
+                        ctx.mozImageSmoothingEnabled = false;
+                        ctx.webkitImageSmoothingEnabled = false;
+                        ctx.msImageSmoothingEnabled = false;
+                        ctx.imageSmoothingEnabled = false;
+                        ctx.drawImage(aVideo, 
+                            startX, 0,
+                            videoWidth - 2 * startX,
+                            videoHeight - 2 * startY, 0, 0, aCanvas.width, aCanvas.height);
                         
-//                         this.debuginfo = 'pixel' + window.devicePixelRatio + 'clientWidth:' + document.documentElement.clientWidth;
-//                         ctx.mozImageSmoothingEnabled = false;
-//                         ctx.webkitImageSmoothingEnabled = false;
-//                         ctx.msImageSmoothingEnabled = false;
-//                         ctx.imageSmoothingEnabled = false;
-//                         ctx.drawImage(aVideo, 
-//                             startX, startY,
-//                             videoWidth - 2 * startX,
-//                             videoHeight - 2 * startY, 0, 0, aCanvas.width * 3, aCanvas.height * 3);
-                        
-//                         self.screenShotImage = aCanvas.toDataURL("image/png", 1.0);
+                        self.screenShotImage = aCanvas.toDataURL("image/png", 1.0);
                         self.isShooted=true;
                         self.screenShotIcon=false;
+                        // html2canvas(
+                        //     document.getElementById('app'),
+                        //     {
+                        //         allowTaint: true,
+                        //         useCORS: true,
+                        //         canvas: aCanvas,
+                        //         width:640,
+                        //         height:1138
+                        //     }
+                        // ).then(function (canvas) {
+                        //     self.screenShotImage = canvas.toDataURL("image/png");
+
+                        //     self.isShooted = true;
+                        //     self.screenShotIcon = false;
+                        // });
                     },
                     hideImage(){
                         this.isShooted = false;
