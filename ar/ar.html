@@ -178,7 +178,7 @@
             {
                 el: '#app',
                 data: {
-                    version: '0.57',
+                    version: '0.58',
                     versionInfo: "更新了所有图片的识别",
                     screenShotIcon : true,
                     isShooted: false,
@@ -214,7 +214,10 @@
                         console.log('videoHeight', aVideo.style.height);
 
                         this.debuginfo = 'pixel' + window.devicePixelRatio + 'clientWidth:' + document.documentElement.clientWidth;
-
+                        ctx.mozImageSmoothingEnabled = false;
+                        ctx.webkitImageSmoothingEnabled = false;
+                        ctx.msImageSmoothingEnabled = false;
+                        ctx.imageSmoothingEnabled = false;
                         ctx.drawImage(aVideo, 
                             startX, 0,
                             videoWidth - 2 * startX,
@@ -223,21 +226,6 @@
                         self.screenShotImage = aCanvas.toDataURL("image/png", 1.0);
                         self.isShooted=true;
                         self.screenShotIcon=false;
-                        // html2canvas(
-                        //     document.getElementById('app'),
-                        //     {
-                        //         allowTaint: true,
-                        //         useCORS: true,
-                        //         canvas: aCanvas,
-                        //         width:640,
-                        //         height:1138
-                        //     }
-                        // ).then(function (canvas) {
-                        //     self.screenShotImage = canvas.toDataURL("image/png");
-
-                        //     self.isShooted = true;
-                        //     self.screenShotIcon = false;
-                        // });
                     },
                     hideImage(){
                         this.isShooted = false;
