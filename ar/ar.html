@@ -94,7 +94,7 @@
         <a-nft
           markerhandler0
           type="nft"
-          url="./ar/resource/fset/Snipaste_2021-01-14_15-59-49"
+          url="./ar/resource/nft-marker/mae/mae"
           smooth="true"
           smoothCount="10"
           smoothTolerance=".01"
@@ -104,7 +104,7 @@
         <a-nft
           markerhandler1
           type="nft"
-          url="./ar/resource/fset/Snipaste_2021-01-14_16-22-54"
+          url="./ar/resource/fset/xepress"
           smooth="true"
           smoothCount="10"
           smoothTolerance=".01"
@@ -114,14 +114,44 @@
         <a-nft
           markerhandler2
           type="nft"
-          url="./ar/resource/fset/xepress"
+          url="./ar/resource/fset/Snipaste_2021-01-14_16-22-54"
           smooth="true"
           smoothCount="10"
           smoothTolerance=".01"
           smoothThreshold="5"
         ></a-nft>
 
-        <a-entity camera zoom='1'></a-entity>
+        <a-nft
+          markerhandler3
+          type="nft"
+          url="./ar/resource/nft-marker/xturbo/xturbo"
+          smooth="true"
+          smoothCount="10"
+          smoothTolerance=".01"
+          smoothThreshold="5"
+        ></a-nft>
+
+        <a-nft
+          markerhandler4
+          type="nft"
+          url="./ar/resource/nft-marker/dopra/dopra"
+          smooth="true"
+          smoothCount="10"
+          smoothTolerance=".01"
+          smoothThreshold="5"
+        ></a-nft>
+
+        <a-nft
+          markerhandler5
+          type="nft"
+          url="./ar/resource/nft-marker/ai/ai"
+          smooth="true"
+          smoothCount="10"
+          smoothTolerance=".01"
+          smoothThreshold="5"
+        ></a-nft>
+
+        <a-entity camera zoom='0.5'></a-entity>
     </a-scene>
 
     <div id='app' >
@@ -132,7 +162,7 @@
         </div>
 
         <div style='position: fixed; bottom: 10px;left: 0px; width:100%; text-align: left;font-size: 10px;color:white'>version:{{version}}<br>{{versionInfo}}</div>
-        <div id='debuginfo' style='position: fixed; bottom: 40px;left: 0px; width:100%; text-align: left;font-size: 10px;color:white'>debuginfo: empty</div>
+        <div id='debuginfo' style='position: fixed; bottom: 40px;left: 0px; width:100%; text-align: left;font-size: 10px;color:white'>debuginfo: empty + {{debuginfo}}</div>
 
         <div class='screenShotDiv' v-show='isShooted'>
             <canvas id='canvas' class='screenShot'></canvas>
@@ -148,11 +178,12 @@
             {
                 el: '#app',
                 data: {
-                    version: '0.56',
-                    versionInfo: "采用图片识别的方案,更新识别图",
+                    version: '0.57',
+                    versionInfo: "更新了所有图片的识别",
                     screenShotIcon : true,
                     isShooted: false,
                     screenShotImage: '',
+                    debuginfo: ""
                 },
                 methods: {
                     takePicture(){
@@ -181,6 +212,8 @@
                         console.log('videoStyleWidth', videoWidth);
                         console.log('videoWidth', aVideo.style.width);
                         console.log('videoHeight', aVideo.style.height);
+
+                        this.debuginfo = 'pixel' + window.devicePixelRatio + 'clientWidth:' + document.documentElement.clientWidth;
 
                         ctx.drawImage(aVideo, 
                             startX, 0,
