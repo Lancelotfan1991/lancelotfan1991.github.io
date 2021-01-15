@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <title>AR展示活动</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1.0,minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1.0">
     <script
         src="https://cdn.jsdelivr.net/gh/aframevr/aframe@9be0a6b94b61740c6fc4d2a1e74d744c38be4c61/dist/aframe-master.min.js"></script>
     <script src="./libs/aframe-ar-nft-user.js"></script>
@@ -12,89 +12,86 @@
     <script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
 </head>
 
-<body style='margin : 0px; overflow: hidden;'>
+<body style='margin : 0px; overflow: hidden;width: 100%; height: 100%;'>
     <p class='content' id='content'></p>
     
     <script>
         const departMentInfo = [
             {
                 department: 'MAE',
-                owner: '朱良胜',
                 content: `MAE是面向5G时代移动网络的自动化引擎，助力实现移动网络的三大超越：1) Beyond Efficiency: 10x运维效率提升；2) Beyond Performance: 20%的频谱效率提升：从不可能到可能；优化从静态到动态；从粗放到精细化；从非实时到实时；3) Beyond New Service：5x发放效率提升；业务发放从weeks到Days；通过联合运营商开放合作，面向场景逐级演进，实现移动网络完全自动驾驶。`,
                 link: ''
             },
             {
                 department: 'xExpress',
-                owner: '卢江涛',
                 content: '高效建网的xExpress系列包含Site Express、Feature Express和Radio Express，简化了原本操作复杂、数量庞大的建网工作，支持大批量、流水线式、自动化的建站和特性开通。',
                 link: ''
             },
             {
                 department: 'xSuite',
-                owner: '苏建波',
                 content: '敏捷业务的xSuite系列包含WTTx Suite、切片运维管理、室内可视化，支持快速精准的发放业务。',
                 link: ''
             },
             {
                 department: 'xTurbo',
-                owner: '张永生',
                 content: '智能运维的xTurbo系列包含Alarm Turbo、Capacity Turbo和Power Turbo，提供智能化的排障、网优、节能能力。',
                 link: ''
             },
             {
                 department: 'Dopra',
-                owner: '梁继成',
                 content: 'DOPRA业务包含SSP、VISP、VPP、FSP、SiteAI、AutoTBP，分布杭州、上海、东莞三地域，上海地域交付VISP，AutoTBP,提供轻量级弹性协议栈、IP路由、IP协议安全、拓展集中路径控制引擎、车载安全协议，构筑边缘组网极简竞争力。',
                 link: ''
             },
             {
                 department: 'AI',
-                owner: '朱良胜',
                 content: 'Beyond Intelligence：从自动化到智能化，面向云化AI打造自学习自管理的网络，编织一张会思考的"网"，让沟通畅行无阻。',
                 link: ''
             }
         ];
 
-        // AFRAME.registerComponent('shot', {
-        //     init: function() {
-        //         document.getElementById('takePicture').addEventListener(
-        //             'mousedown',
-        //             ()=>{
-        //                 document.querySelector('a-scene').components.screenshot.getCanvas('perspective');
-        //                 document.querySelector('a-scene').components.screenshot.capture('perspective')
-        //             }
-        //         )
-        //     }
-        // });    
-
-        for(let i = 0; i < 2; i ++) {
+        for(let i = 0; i < 6; i ++) {
             AFRAME.registerComponent('markerhandler' + i, {
                 init: function () {
                     const marker = this.el;
-                    const self = this;
                     this.el.addEventListener('markerFound', () => {
                         document.getElementById('debuginfo').innerHTML='marker found ' + i;
                         document.getElementById('content').style.display='block';
                         document.getElementById('content').innerHTML=departMentInfo[i].content;
                     });
                     this.el.addEventListener('markerLost', () => {
+                        document.getElementById('debuginfo').innerHTML='marker found ' + i;
                         document.getElementById('content').style.display='none';
                     });
                 }
             });
         }
+
+        AFRAME.registerComponent('markerhandlerbaize', {
+                init: function () {
+                    const marker = this.el;
+                    this.el.addEventListener('markerFound', () => {
+                        document.getElementById('debuginfo').innerHTML='marker baize found ';
+                    });
+                    this.el.addEventListener('markerLost', () => {
+                        document.getElementById('debuginfo').innerHTML='marker found ';
+                        document.getElementById('content').style.display='none';
+                    });
+                }
+            });
     </script>
 
     <a-scene
         vr-mode-ui="enabled: false;"
+        renderer="logarithmicDepthBuffer: true;"
         embedded
-        arjs='trackingMethod: best; debugUIEnabled: false;detectionMode: mono_and_matrix; matrixCodeType: 4x4_BCH_13_5_5; sourceType: webcam; '>
+        arjs='trackingMethod: best; debugUIEnabled: false;sourceType: webcam;'>
         
-        <a-marker markerhandler0 type='barcode' value='0' id='1'></a-marker>
+        <a-assets>
+          <a-asset-item id="tree" src="./resource/model/baize.gltf"></a-asset-item>
+        </a-assets>
+        <a-entity gltf-model="#tree" scale='0.08 0.08 0.08' position='0.5 -1 -5' rotation='0 -180 0'></a-entity>
 
-        <a-marker markerhandler1 type='barcode' value='2' id='2'></a-marker>
-
-        <a-entity camera zoom='1'></a-entity>
+        <a-entity camera ></a-entity>
     </a-scene>
 
     <div id='app' >
@@ -104,7 +101,6 @@
             <img class='switchcamera' id='switchcamera' src="./resource/switch-camera.png" v-on:click="switchCamera" alt="">
         </div>
 
-        <div style='position: fixed; bottom: 10px;left: 0px; width:100%; text-align: left;font-size: 10px;color:white'>version:{{version}}<br>{{versionInfo}}</div>
         <div id='debuginfo' style='position: fixed; bottom: 40px;left: 0px; width:100%; text-align: left;font-size: 10px;color:white'>debuginfo: empty</div>
 
         <div class='screenShotDiv' v-show='isShooted'>
@@ -116,50 +112,54 @@
     </div>
 
     <script>
-
-        window.console.log('availWidth', window.screen.availWidth);
         const app = new Vue(
             {
                 el: '#app',
                 data: {
-                    version: '0.45',
-                    versionInfo: "添加多个marker,采用界面ui的形式展现文案,并捕获摄像机",
-                    screenShotIcon : true,
+                    screenShotIcon: true,
                     isShooted: false,
                     screenShotImage: '',
                 },
                 methods: {
                     takePicture(){
-                        // document.querySelector('a-scene').components.screenshot.getCanvas('equirectangular');
-
                         const self = this;
                         document.getElementById('screenShot').style.display='none';
-                        var aVideo = document.getElementById('arjs-video');
-                        var aCanvas = document.getElementById('canvas');
-                        var ctx = aCanvas.getContext('2d');
-
+                      
+                        const aVideo = document.getElementById('arjs-video');
+                        const aCanvas = document.getElementById('canvas');
+                        const ctx = aCanvas.getContext('2d');
                         // canvas在设置高度时，会清空重新渲染，如果不这么做，那么多次拍照，得到的都是同一张照片
-                        aCanvas.height = aCanvas.height;
-
-                        ctx.drawImage(aVideo, 0, 0, 640*5, 1138*5, 0, 0, 2038, 1038);
-                        self.screenShotImage = aCanvas.toDataURL("image/png",1.0);
-                        self.isShooted=true;
-                        self.screenShotIcon=false;
-                        // html2canvas(
-                        //     document.getElementById('app'),
-                        //     {
-                        //         allowTaint: true,
-                        //         useCORS: true,
-                        //         canvas: aCanvas,
-                        //         width:640,
-                        //         height:1138
-                        //     }
-                        // ).then(function (canvas) {
-                        //     self.screenShotImage = canvas.toDataURL("image/png");
-
-                        //     self.isShooted = true;
-                        //     self.screenShotIcon = false;
-                        // });
+                        aCanvas.width = document.body.offsetWidth * window.devicePixelRatio;
+                        aCanvas.height = document.body.offsetHeight * window.devicePixelRatio;
+                        
+//                         ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+                        
+                        let width = aCanvas.width;
+                        let height = aCanvas.height;
+                        let pixelRatio = window.devicePixelRatio;
+                        let startX = -Number(aVideo.style.marginLeft.replace('px',''));
+                        let startY = -Number(aVideo.style.marginTop.replace('px',''));
+                        let videoWidth = Number(aVideo.style.width.replace('px',''));
+                        let videoHeight = Number(aVideo.style.height.replace('px',''));
+                        console.log('pixel', window.devicePixelRatio);
+                        console.log(startX);
+                        console.log(startY);
+                        console.log('videoStyleWidth', videoWidth);
+                        console.log('videoWidth', aVideo.style.width);
+                        console.log('videoHeight', aVideo.style.height);
+                        
+                        ctx.mozImageSmoothingEnabled = false;
+                        ctx.webkitImageSmoothingEnabled = false;
+                        ctx.msImageSmoothingEnabled = false;
+                        ctx.imageSmoothingEnabled = false;
+                        ctx.drawImage(aVideo, 
+                            startX, startY,
+                            videoWidth - 2 * startX,
+                            videoHeight - 2 * startY, 0, 0, aCanvas.width, aCanvas.height);
+                        
+                        self.screenShotImage = aCanvas.toDataURL("image/png", 1.0);
+                        self.isShooted = true;
+                        self.screenShotIcon = false;
                     },
                     hideImage(){
                         this.isShooted = false;
@@ -168,12 +168,12 @@
                         document.getElementById('screenShot').style.display='block';
                     },
                     switchCamera(){
-                        window.location.href="./ar-user.html"
+                        window.location.href="./ar.html"
                     }
                 }
             }
         );
-    </script>
+    </script>    
 </body>
 
 </html>

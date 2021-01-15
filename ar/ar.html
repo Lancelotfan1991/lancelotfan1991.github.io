@@ -49,23 +49,10 @@
             }
         ];
 
-        // AFRAME.registerComponent('shot', {
-        //     init: function() {
-        //         document.getElementById('takePicture').addEventListener(
-        //             'mousedown',
-        //             ()=>{
-        //                 document.querySelector('a-scene').components.screenshot.getCanvas('perspective');
-        //                 document.querySelector('a-scene').components.screenshot.capture('perspective')
-        //             }
-        //         )
-        //     }
-        // });    
-
         for(let i = 0; i < 6; i ++) {
             AFRAME.registerComponent('markerhandler' + i, {
                 init: function () {
                     const marker = this.el;
-                    const self = this;
                     this.el.addEventListener('markerFound', () => {
                         document.getElementById('debuginfo').innerHTML='marker found ' + i;
                         document.getElementById('content').style.display='block';
@@ -78,6 +65,19 @@
                 }
             });
         }
+
+        AFRAME.registerComponent('markerhandlerbaize', {
+                init: function () {
+                    const marker = this.el;
+                    this.el.addEventListener('markerFound', () => {
+                        document.getElementById('debuginfo').innerHTML='marker baize found ';
+                    });
+                    this.el.addEventListener('markerLost', () => {
+                        document.getElementById('debuginfo').innerHTML='marker found ';
+                        document.getElementById('content').style.display='none';
+                    });
+                }
+            });
     </script>
 
     <a-scene
@@ -85,6 +85,11 @@
         renderer="logarithmicDepthBuffer: true;"
         embedded
         arjs='trackingMethod: best; debugUIEnabled: false;sourceType: webcam;'>
+        
+        <a-assets>
+          <a-asset-item id="tree" src="./resource/model/baize.gltf"></a-asset-item>
+        </a-assets>
+        <a-entity gltf-model="#tree" scale='0.1 0.1 0.1' position='0.5 -1 -5' rotation='0 -180 0'></a-entity>
         
         <a-nft
           markerhandler0
@@ -146,7 +151,19 @@
           smoothThreshold="5"
         ></a-nft>
 
-        <a-entity camera zoom='0.5'></a-entity>
+        <a-nft
+          markerhandlerbaize
+          type="nft"
+          url="./ar/resource/nft-marker/baize/baize"
+          smooth="true"
+          smoothCount="10"
+          smoothTolerance=".01"
+          smoothThreshold="5"
+        >
+          
+        </a-nft>
+
+        <a-entity camera ></a-entity>
     </a-scene>
 
     <div id='app' >
@@ -155,6 +172,8 @@
             <img class='takepicture' id='takePicture' src='./resource/shoot.png' v-on:click='takePicture'/>
             <img class='switchcamera' id='switchcamera' src="./resource/switch-camera.png" v-on:click="switchCamera" alt="">
         </div>
+
+        <div id='debuginfo' style='position: fixed; bottom: 40px;left: 0px; width:100%; text-align: left;font-size: 10px;color:white'>debuginfo: empty</div>
 
         <div class='screenShotDiv' v-show='isShooted'>
             <canvas id='canvas' class='screenShot'></canvas>
@@ -208,7 +227,7 @@
                         ctx.drawImage(aVideo, 
                             startX, startY,
                             videoWidth - 2 * startX,
-                            videoHeight - 2 * startY, 0, 0, aCanvas.width / window.devicePixelRatio, aCanvas.height / window.devicePixelRatio);
+                            videoHeight - 2 * startY, 0, 0, aCanvas.width, aCanvas.height);
                         
                         self.screenShotImage = aCanvas.toDataURL("image/png", 1.0);
                         self.isShooted = true;
