@@ -54,12 +54,12 @@
                 init: function () {
                     const marker = this.el;
                     this.el.addEventListener('markerFound', () => {
-                        document.getElementById('debuginfo').innerHTML='marker found ' + i;
+                        // document.getElementById('debuginfo').innerHTML='marker found ' + i;
                         document.getElementById('content').style.display='block';
                         document.getElementById('content').innerHTML=departMentInfo[i].content;
                     });
                     this.el.addEventListener('markerLost', () => {
-                        document.getElementById('debuginfo').innerHTML='marker found ' + i;
+                        // document.getElementById('debuginfo').innerHTML='marker found ' + i;
                         document.getElementById('content').style.display='none';
                     });
                 }
@@ -70,10 +70,10 @@
                 init: function () {
                     const marker = this.el;
                     this.el.addEventListener('markerFound', () => {
-                        document.getElementById('debuginfo').innerHTML='marker baize found ';
+                        // document.getElementById('debuginfo').innerHTML='marker baize found ';
                     });
                     this.el.addEventListener('markerLost', () => {
-                        document.getElementById('debuginfo').innerHTML='marker found ';
+                        // document.getElementById('debuginfo').innerHTML='marker found ';
                         document.getElementById('content').style.display='none';
                     });
                 }
@@ -87,10 +87,9 @@
         arjs='trackingMethod: best; debugUIEnabled: false;sourceType: webcam;'>
         
         <a-assets>
-          <a-asset-item id="tree" src="./resource/model/baize.gltf"></a-asset-item>
+          <a-asset-item id="tree" src="./resource/model/baize3new.gltf"></a-asset-item>
         </a-assets>
-        <a-entity gltf-model="#tree" scale='0.1 0.1 0.1' position='0.5 -1 -5' rotation='0 -180 0'></a-entity>
-        
+
         <a-nft
           markerhandler0
           type="nft"
@@ -173,7 +172,7 @@
             <img class='switchcamera' id='switchcamera' src="./resource/switch-camera.png" v-on:click="switchCamera" alt="">
         </div>
 
-        <div id='debuginfo' style='position: fixed; bottom: 40px;left: 0px; width:100%; text-align: left;font-size: 10px;color:white'>debuginfo: empty</div>
+        <!-- <div id='debuginfo' style='position: fixed; bottom: 40px;left: 0px; width:100%; text-align: left;font-size: 10px;color:white'>debuginfo: empty</div> -->
 
         <div class='screenShotDiv' v-show='isShooted'>
             <canvas id='canvas' class='screenShot'></canvas>
@@ -204,6 +203,7 @@
                         aCanvas.width = document.body.offsetWidth * window.devicePixelRatio;
                         aCanvas.height = document.body.offsetHeight * window.devicePixelRatio;
                         
+                        let aframeCanvas = document.querySelector('a-scene').components.screenshot.getCanvas('perspective');
 //                         ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
                         
                         let width = aCanvas.width;
@@ -228,6 +228,10 @@
                             startX, startY,
                             videoWidth - 2 * startX,
                             videoHeight - 2 * startY, 0, 0, aCanvas.width, aCanvas.height);
+
+                        ctx.drawImage(aframeCanvas,
+                            0,0,aframeCanvas.width,aframeCanvas.height,0,0,aCanvas.width,aCanvas.height
+                        );
                         
                         self.screenShotImage = aCanvas.toDataURL("image/png", 1.0);
                         self.isShooted = true;
