@@ -194,7 +194,10 @@
                         const aCanvas = document.getElementById('canvas');
                         const ctx = aCanvas.getContext('2d');
                         // canvas在设置高度时，会清空重新渲染，如果不这么做，那么多次拍照，得到的都是同一张照片
-                        aCanvas.height = aCanvas.height;
+                        aCanvas.width = document.body.offsetWidth * window.devicePixelRatio;
+                        aCanvas.height = document.body.offsetHeight * window.devicePixelRatio;
+                        
+                        ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
                         
                         let width = aCanvas.width;
                         let height = aCanvas.height;
@@ -215,7 +218,7 @@
                         ctx.msImageSmoothingEnabled = false;
                         ctx.imageSmoothingEnabled = false;
                         ctx.drawImage(aVideo, 
-                            startX, 0,
+                            startX, startY,
                             videoWidth - 2 * startX,
                             videoHeight - 2 * startY, 0, 0, aCanvas.width, aCanvas.height);
                         
