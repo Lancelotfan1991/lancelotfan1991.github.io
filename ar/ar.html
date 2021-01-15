@@ -220,7 +220,7 @@
                         ctx.drawImage(aVideo, 
                             startX, startY,
                             videoWidth - 2 * startX,
-                            videoHeight - 2 * startY, 0, 0, aCanvas.width, aCanvas.height);
+                            videoHeight - 2 * startY, 0, 0, aCanvas.width / window.devicePixelRatio, aCanvas.height / window.devicePixelRatio);
                         
                         self.screenShotImage = aCanvas.toDataURL("image/png", 1.0);
                         self.isShooted=true;
