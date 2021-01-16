@@ -1781,7 +1781,6 @@ ARjs.Source.prototype.onResizeElement = function () {
     var _this = this
     var screenWidth = window.innerWidth
     var screenHeight = window.innerHeight
-
     // sanity check
     console.assert(arguments.length === 0)
 
@@ -1805,8 +1804,8 @@ ARjs.Source.prototype.onResizeElement = function () {
     if (screenAspect < sourceAspect) {
         // compute newWidth and set .width/.marginLeft
         var newWidth = sourceAspect * screenHeight
-        this.domElement.style.width = newWidth + 'px'
-        this.domElement.style.marginLeft = -(newWidth - screenWidth) / 2 + 'px'
+        this.domElement.style.width = newWidth / 3 + 'px'
+        // this.domElement.style.marginLeft = -(newWidth - screenWidth) / 2 + 'px'
 
         // init style.height/.marginTop to normal value
         this.domElement.style.height = screenHeight + 'px'
