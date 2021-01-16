@@ -8,6 +8,19 @@
 </head>
 
 <body>
+  <script>
+    AFRAME.registerComponent('color-randomizer', {
+      play: function() {
+        this.el.addEventListener('drag-drop', function(evt) {
+          evt.detail.dropped.setAttribute('material', 'color',
+            '#'+(Math.random()*0xFFFFFF<<0).toString(16))
+           // notify super-hands that the gesture was accepted
+          evt.preventDefault()
+        })
+      }
+    })
+  </script>
+
   <a-scene>
     <a-assets></a-assets>
     <a-entity>
@@ -16,6 +29,6 @@
       <a-entity sphere-collider="objects: a-box" super-hands hand-controls="hand: right"></a-entity>
     </a-entity>
     <!-- hover & drag-drop won't have any obvious effect without some additional event handlers or components. See the examples page for more -->
-    <a-box hoverable grabbable stretchable draggable dropppable color="blue" position="0 1 -2"></a-box>
+    <a-box hoverable grabbable stretchable draggable dropppable color="blue" color-randomizer position="0 1 -2"></a-box>
   </a-scene>
 </body>

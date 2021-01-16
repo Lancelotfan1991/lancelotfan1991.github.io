@@ -1656,19 +1656,20 @@ ARjs.Source.prototype._initSourceWebcam = function (onReady, onError) {
 
     // get available devices
     navigator.mediaDevices.enumerateDevices().then(function (devices) {
+        console.log(document.body.offsetWidth,document.body.offsetHeight)
         var userMediaConstraints = {
             audio: false,
             video: {
                 facingMode: 'user',
                 width: {
-                    ideal: _this.parameters.sourceWidth,
+                    ideal: document.body.offsetWidth,
                     // min: 1024,
-                    max: 640
+                    max: 1920
                 },
                 height: {
-                    ideal: _this.parameters.sourceHeight,
+                    ideal: document.body.offsetHeight,
                     // min: 776,
-                    max: 1138
+                    max: 1080
                 }
             }
         };
