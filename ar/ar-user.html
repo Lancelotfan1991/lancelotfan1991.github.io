@@ -9,8 +9,8 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="./style.css?v=0.39">
     <script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
-    <script src="./libs/super-hand.js"></script>
-    <script src="./libs/aframe-extras.js"></script>
+<!--     <script src="./libs/super-hand.js"></script>
+    <script src="./libs/aframe-extras.js"></script> -->
 </head>
 
 <body style='margin : 0px; overflow: hidden;width: 100%; height: 100%;background-color: black;'>
@@ -78,13 +78,40 @@
                         document.getElementById('content').style.display='none';
                     });
                 }
-            });  
+            });
+        
+        handleRotation(event) {
+            if (isMarkerVisible) {
+              el.object3D.rotation.y +=
+                event.detail.positionChange.x * rotationFactor;
+
+              el.object3D.rotation.x +=
+                event.detail.positionChange.y * rotationFactor;
+        }
+        
+        handleScale(event) {
+            if (isMarkerVisible) {
+              this.scaleFactor *=
+                1 + event.detail.spreadChange / event.detail.startSpread;
+
+              this.scaleFactor = Math.min(
+                Math.max(this.scaleFactor, this.data.minScale),
+                this.data.maxScale
+              );
+
+              el.object3D.scale.x = scaleFactor * initialScale.x;
+              el.object3D.scale.y = scaleFactor * initialScale.y;
+              el.object3D.scale.z = scaleFactor * initialScale.z;
+            }
+          }    
+      }
     </script>
 
     <a-scene
         vr-mode-ui="enabled: false;"
         renderer="logarithmicDepthBuffer: true;"
         embedded
+        gesture-detector
         arjs='trackingMethod: best; debugUIEnabled: false;sourceType: webcam;'>
         
         <a-assets>
@@ -92,7 +119,11 @@
         </a-assets>
 
         <a-entity gltf-model="#tree" 
-          stretchable draggable dropppable
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                class="clickable"
+                gesture-handler="minScale: 0.25; maxScale: 10"  
         scale='0.0006 0.0006 0.0006' position='0.5 1 -5' rotation='0 -180 0'></a-entity>
     </a-scene>
 
@@ -114,6 +145,8 @@
     </div>
 
     <script>
+
+        
         const app = new Vue(
             {
                 el: '#app',
