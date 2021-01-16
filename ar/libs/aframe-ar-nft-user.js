@@ -1802,6 +1802,15 @@ ARjs.Source.prototype.onResizeElement = function () {
     // if(this._guessPerformanceLabel() == 'phone-normal'){
     //    return;
     // }
+    const width = Number(this.domElement.style.width.replace('px',''));
+    const height = Number(this.domElement.style.height.replace('px',''));
+    const pixelRatio = window.devicePixelRatio;
+
+    // this.domElement.style.width = sourceWidth * pixelRatio + 'px';
+    // this.domElement.style.height = sourceHeight * pixelRatio + 'px';
+
+    this.domElement.style.width = screenWidth + 'px';
+    this.domElement.style.height = screenHeight  + 'px';
 
     // // if screenAspect < sourceAspect, then change the width, else change the height
     // if (screenAspect < sourceAspect) {
