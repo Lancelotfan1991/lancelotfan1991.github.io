@@ -1799,20 +1799,12 @@ ARjs.Source.prototype.onResizeElement = function () {
     var sourceAspect = sourceWidth / sourceHeight
     // compute screenAspect
     var screenAspect = screenWidth / screenHeight
-    // if(this._guessPerformanceLabel() == 'phone-normal'){
-    //    return;
-    // }
-    const width = Number(this.domElement.style.width.replace('px',''));
-    const height = Number(this.domElement.style.height.replace('px',''));
-    const pixelRatio = window.devicePixelRatio;
 
-    // this.domElement.style.width = sourceWidth * pixelRatio + 'px';
-    // this.domElement.style.height = sourceHeight * pixelRatio + 'px';
+    this.domElement.style.width = screenWidth * 1.5+ 'px';
+    this.domElement.style.height = screenHeight * 1.5+ 'px';
+    this.domElement.style.marginLeft = -0.25 * screenWidth + 'px'
 
-    this.domElement.style.width = screenWidth + 'px';
-    this.domElement.style.height = screenHeight  + 'px';
-
-    // // if screenAspect < sourceAspect, then change the width, else change the height
+    // if screenAspect < sourceAspect, then change the width, else change the height
     // if (screenAspect < sourceAspect) {
     //     // compute newWidth and set .width/.marginLeft
     //     var newWidth = sourceAspect * screenHeight
