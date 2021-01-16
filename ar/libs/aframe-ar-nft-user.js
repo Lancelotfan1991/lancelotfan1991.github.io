@@ -1799,27 +1799,30 @@ ARjs.Source.prototype.onResizeElement = function () {
     var sourceAspect = sourceWidth / sourceHeight
     // compute screenAspect
     var screenAspect = screenWidth / screenHeight
+    // if(this._guessPerformanceLabel() == 'phone-normal'){
+    //    return;
+    // }
 
-    // if screenAspect < sourceAspect, then change the width, else change the height
-    if (screenAspect < sourceAspect) {
-        // compute newWidth and set .width/.marginLeft
-        var newWidth = sourceAspect * screenHeight
-        this.domElement.style.width = newWidth / 3 + 'px'
-        // this.domElement.style.marginLeft = -(newWidth - screenWidth) / 2 + 'px'
+    // // if screenAspect < sourceAspect, then change the width, else change the height
+    // if (screenAspect < sourceAspect) {
+    //     // compute newWidth and set .width/.marginLeft
+    //     var newWidth = sourceAspect * screenHeight
+    //     this.domElement.style.width = newWidth + 'px'
+    //     this.domElement.style.marginLeft = -(newWidth - screenWidth) / 2 + 'px'
 
-        // init style.height/.marginTop to normal value
-        this.domElement.style.height = screenHeight + 'px'
-        this.domElement.style.marginTop = '0px'
-    } else {
-        // compute newHeight and set .height/.marginTop
-        var newHeight = 1 / (sourceAspect / screenWidth)
-        this.domElement.style.height = newHeight + 'px'
-        this.domElement.style.marginTop = -(newHeight - screenHeight) / 2 + 'px'
+    //     // init style.height/.marginTop to normal value
+    //     this.domElement.style.height = screenHeight + 'px'
+    //     this.domElement.style.marginTop = '0px'
+    // } else {
+    //     // compute newHeight and set .height/.marginTop
+    //     var newHeight = 1 / (sourceAspect / screenWidth)
+    //     this.domElement.style.height = newHeight + 'px'
+    //     this.domElement.style.marginTop = -(newHeight - screenHeight) / 2 + 'px'
 
-        // init style.width/.marginLeft to normal value
-        this.domElement.style.width = screenWidth + 'px'
-        this.domElement.style.marginLeft = '0px'
-    }
+    //     // init style.width/.marginLeft to normal value
+    //     this.domElement.style.width = screenWidth + 'px'
+    //     this.domElement.style.marginLeft = '0px'
+    // }
 }
 /*
 ARjs.Source.prototype.copyElementSizeTo = function(otherElement){
