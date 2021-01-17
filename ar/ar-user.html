@@ -159,8 +159,9 @@
                             videoHeight, 0, 0, aCanvas.width, aCanvas.height);
                         console.log('afw',aframeCanvas.width);
                         console.log('afh',aframeCanvas.height);
+                        let left = (aframeCanvas.width-aCanvas.width)/2;
                         ctx.drawImage(aframeCanvas,
-                            (aframeCanvas.width-aCanvas.width)/2,
+                            left,
                             0,
                             aCanvas.width * 1.15,aCanvas.height * 0.9,0,0,aCanvas.width,aCanvas.height
                         );
