@@ -1662,14 +1662,14 @@ ARjs.Source.prototype._initSourceWebcam = function (onReady, onError) {
             video: {
                 facingMode: 'user',
                 width: {
-                    ideal: document.body.offsetWidth,
-                    // min: 1024,
+                    ideal: 750,
+                    min: 1024,
                     max: 1920
                 },
                 height: {
-                    ideal: document.body.offsetHeight,
-                    // min: 776,
-                    max: 1080
+                  ideal: 667,
+                  min: 667,
+                  max: 1920
                 }
             }
         };

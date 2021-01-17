@@ -1374,7 +1374,7 @@ ARjs.Profile.prototype.performance = function (label) {
     if (label === 'default') {
         label = this._guessPerformanceLabel()
     }
-    console.log(label);
+
     if (label === 'desktop-fast') {
         this.contextParameters.canvasWidth = 640 * 3
         this.contextParameters.canvasHeight = 480 * 3
