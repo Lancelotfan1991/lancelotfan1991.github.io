@@ -51,14 +51,14 @@
             }
         ];
 
-        for(let i = 0; i < 6; i ++) {
+        for(let i = 0; i < 7; i ++) {
             AFRAME.registerComponent('markerhandler' + i, {
                 init: function () {
                     const marker = this.el;
                     this.el.addEventListener('markerFound', () => {
                         // document.getElementById('debuginfo').innerHTML='marker found ' + i;
                         document.getElementById('content').style.display='block';
-                        document.getElementById('content').innerHTML=departMentInfo[i].content;
+                        document.getElementById('content').innerHTML=departMentInfo[i%6].content;
                     });
                     this.el.addEventListener('markerLost', () => {
                         // document.getElementById('debuginfo').innerHTML='marker found ' + i;
@@ -168,7 +168,7 @@
           type="pattern"
           url="./resource/nft-marker/pattern-ORANGE (1).patt"
           preset='custom'
-          markerhandler5
+          markerhandler6
         >
           <a-entity gltf-model="#tree" 
            scale='0.0008 0.0008 0.0008' position='0.5 1 -5' rotation='0 -180 0'></a-entity>
