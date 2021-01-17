@@ -100,7 +100,7 @@
             <img class='switchcamera' id='switchcamera' src="./resource/switch-camera.png" v-on:click="switchCamera" alt="">
         </div>
 
-        <div id='debuginfo' style='position: fixed; bottom: 10px;left: 0px; width:100%; text-align: left;font-size: 5px;color:white'>debuginfo: version:5.6</div>
+        <div id='debuginfo' style='position: fixed; bottom: 10px;left: 0px; width:100%; text-align: left;font-size: 5px;color:white'>debuginfo: version:5.7</div>
 
         <div class='screenShotDiv' v-show='isShooted'>
             <canvas id='canvas' class='screenShot'></canvas>
@@ -161,8 +161,8 @@
                         console.log('afh',aframeCanvas.height);
                         ctx.drawImage(aframeCanvas,
                             (aframeCanvas.width-aCanvas.width)/2,
-                            0,
-                            aCanvas.width,aframeCanvas.height,0,0,aCanvas.width,aCanvas.height
+                            (aframeCanvas.height-aCanvas.height)/2,
+                            aCanvas.width,aCanvas.height,0,0,aCanvas.width,aCanvas.height
                         );
                         
                         self.screenShotImage = aCanvas.toDataURL("image/png", 1.0);
