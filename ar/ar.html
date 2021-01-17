@@ -247,14 +247,19 @@
                             0, 0,
                             videoWidth,
                             videoHeight, 0, 0, aCanvas.width, aCanvas.height);
+                        console.log('afw',aframeCanvas.width);
+                        console.log('afh',aframeCanvas.height);
+                        ctx.drawImage(aframeCanvas,
+                            (aframeCanvas.width-aCanvas.width)/2,
+                            0,
+                            aCanvas.width,aCanvas.height,0,0,aCanvas.width,aCanvas.height
+                        );
 
-                        // ctx.drawImage(document.body,
-                        //     0,0,aframeCanvas.width,aframeCanvas.height,0,0,aCanvas.width,aCanvas.height
-                        // );
+                        let aframeCanvasData = aframeCanvas.toDataURL('image/png');
                         
                         self.screenShotImage = aCanvas.toDataURL("image/png", 1.0);
                         let image = new Image();
-                        image.src = self.screenShotImage;
+                        image.src = aframeCanvasData;
                         document.body.appendChild(image);
                         self.isShooted = true;
                         self.screenShotIcon = false;
