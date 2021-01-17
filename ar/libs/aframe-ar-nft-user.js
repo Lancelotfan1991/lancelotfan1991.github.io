@@ -1656,7 +1656,7 @@ ARjs.Source.prototype._initSourceWebcam = function (onReady, onError) {
 
     // get available devices
     navigator.mediaDevices.enumerateDevices().then(function (devices) {
-        console.log(document.body.offsetWidth,document.body.offsetHeight)
+
         var userMediaConstraints = {
             audio: false,
             video: {

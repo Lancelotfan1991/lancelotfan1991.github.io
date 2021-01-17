@@ -1780,7 +1780,6 @@ ARjs.Source.prototype.onResizeElement = function () {
     var _this = this
     var screenWidth = window.innerWidth
     var screenHeight = window.innerHeight
-
     // sanity check
     console.assert(arguments.length === 0)
 
@@ -1798,8 +1797,6 @@ ARjs.Source.prototype.onResizeElement = function () {
     // compute sourceAspect
     var sourceAspect = sourceWidth / sourceHeight
     // compute screenAspect
-    var screenAspect = screenWidth / screenHeight
-
     var screenAspect = screenWidth / screenHeight
     this.domElement.style.height = screenHeight * 1.5+ 'px';
     this.domElement.style.marginTop = -0.25 * screenHeight + 'px'
