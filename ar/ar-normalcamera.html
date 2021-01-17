@@ -215,11 +215,12 @@
                         const aCanvas = document.getElementById('canvas');
                         const ctx = aCanvas.getContext('2d');
                         // canvas在设置高度时，会清空重新渲染，如果不这么做，那么多次拍照，得到的都是同一张照片
-                        aCanvas.width = document.body.offsetWidth * window.devicePixelRatio;
-                        aCanvas.height = document.body.offsetHeight * window.devicePixelRatio;
+                        console.log('offsetWidth', document.body.clientWidth);
+                        aCanvas.width = document.body.clientWidth * window.devicePixelRatio;
+                        aCanvas.height = document.body.clientHeight * window.devicePixelRatio;
 
                         let aframeCanvas = document.querySelector('a-scene').components.screenshot.getCanvas('perspective');
-                        ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+                        // ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
                         
                         let width = aCanvas.width;
                         let height = aCanvas.height;
@@ -241,14 +242,18 @@
                         ctx.imageSmoothingEnabled = false;
                         ctx.drawImage(aVideo,
                             0, 0,
-                            videoWidth * window.devicePixelRatio,
-                            videoHeight * window.devicePixelRatio, 0, 0, aCanvas.width, aCanvas.height);
+                            videoHeight * window.devicePixelRatio,
+                            videoWidth * window.devicePixelRatio, 0, 0, aCanvas.height, aCanvas.width);
 
                         ctx.drawImage(aframeCanvas,
                             0,0,aframeCanvas.width,aframeCanvas.height,0,0,aCanvas.width,aCanvas.height
                         );
-                        
+
                         self.screenShotImage = aCanvas.toDataURL("image/png", 1.0);
+
+                        let image = new Image();
+                        image.src = self.screenShotImage;
+                        document.body.appendChild(image);
                         self.isShooted = true;
                         self.screenShotIcon = false;
                     },

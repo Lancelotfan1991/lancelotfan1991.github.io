@@ -253,6 +253,9 @@
                         // );
                         
                         self.screenShotImage = aCanvas.toDataURL("image/png", 1.0);
+                        let image = new Image();
+                        image.src = self.screenShotImage;
+                        document.body.appendChild(image);
                         self.isShooted = true;
                         self.screenShotIcon = false;
                     },
