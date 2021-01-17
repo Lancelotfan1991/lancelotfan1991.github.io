@@ -80,16 +80,17 @@
                 }
             });
         
-        handleRotation(event) {
+        const handleRotation = (event) => {
             if (isMarkerVisible) {
               el.object3D.rotation.y +=
                 event.detail.positionChange.x * rotationFactor;
 
               el.object3D.rotation.x +=
                 event.detail.positionChange.y * rotationFactor;
-        }
+            }
+        };
         
-        handleScale(event) {
+        const handleScale = (event) => {
             if (isMarkerVisible) {
               this.scaleFactor *=
                 1 + event.detail.spreadChange / event.detail.startSpread;
@@ -103,8 +104,7 @@
               el.object3D.scale.y = scaleFactor * initialScale.y;
               el.object3D.scale.z = scaleFactor * initialScale.z;
             }
-          }    
-      }
+        };    
     </script>
 
     <a-scene
@@ -119,9 +119,6 @@
         </a-assets>
 
         <a-entity gltf-model="#tree" 
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
                 class="clickable"
                 gesture-handler="minScale: 0.25; maxScale: 10"  
         scale='0.0006 0.0006 0.0006' position='0.5 1 -5' rotation='0 -180 0'></a-entity>
