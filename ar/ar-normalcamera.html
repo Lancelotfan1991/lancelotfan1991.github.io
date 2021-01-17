@@ -170,7 +170,7 @@
         <a-marker
           markerhandlerbaize
           type="pattern"
-          url="./ar/resource/pattern-baize.patt"
+          url="./resource/nft-marker/pattern-BAIZE.patt"
           preset='custom'
         >
           <a-entity gltf-model="#tree" 
@@ -217,9 +217,9 @@
                         // canvas在设置高度时，会清空重新渲染，如果不这么做，那么多次拍照，得到的都是同一张照片
                         aCanvas.width = document.body.offsetWidth * window.devicePixelRatio;
                         aCanvas.height = document.body.offsetHeight * window.devicePixelRatio;
-                        
+
                         let aframeCanvas = document.querySelector('a-scene').components.screenshot.getCanvas('perspective');
-//                         ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+                        ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
                         
                         let width = aCanvas.width;
                         let height = aCanvas.height;
@@ -239,7 +239,7 @@
                         ctx.webkitImageSmoothingEnabled = false;
                         ctx.msImageSmoothingEnabled = false;
                         ctx.imageSmoothingEnabled = false;
-                        ctx.drawImage(aVideo, 
+                        ctx.drawImage(aVideo,
                             0, 0,
                             videoWidth * window.devicePixelRatio,
                             videoHeight * window.devicePixelRatio, 0, 0, aCanvas.width, aCanvas.height);
