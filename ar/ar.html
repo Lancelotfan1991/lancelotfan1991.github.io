@@ -51,7 +51,7 @@
             }
         ];
 
-        for(let i = 0; i < 7; i ++) {
+        for(let i = 0; i < 12; i ++) {
             AFRAME.registerComponent('markerhandler' + i, {
                 init: function () {
                     const marker = this.el;
@@ -164,20 +164,10 @@
            scale='0.0008 0.0008 0.0008' position='0.5 1 -5' rotation='0 -180 0'></a-entity>
         </a-nft>
 
-        <a-marker
-          type="pattern"
-          url="./resource/nft-marker/pattern-simpleb.patt"
-          preset='custom'
+        <a-nft
           markerhandler6
-        >
-          <a-entity gltf-model="#tree" 
-           scale='0.0008 0.0008 0.0008' position='0.5 1 -5' rotation='0 -180 0'></a-entity>
-        </a-marker>
-        
-        <a-nft
-          markerhandler0
           type="nft"
-          url="./ar/resource/nft-marker/mae/mae"
+          url="./ar/resource/new-nft-marker/mae7"
           smooth="true"
           smoothCount="10"
           smoothTolerance=".01"
@@ -185,9 +175,9 @@
         ></a-nft>
 
         <a-nft
-          markerhandler1
+          markerhandler7
           type="nft"
-          url="./ar/resource/fset/xepress"
+          url="./ar/resource/new-nft-marker/xexpress"
           smooth="true"
           smoothCount="10"
           smoothTolerance=".01"
@@ -195,9 +185,9 @@
         ></a-nft>
 
         <a-nft
-          markerhandler2
+          markerhandler8
           type="nft"
-          url="./ar/resource/fset/Snipaste_2021-01-14_16-22-54"
+          url="./ar/resource/new-nft-marker/xsuite"
           smooth="true"
           smoothCount="10"
           smoothTolerance=".01"
@@ -205,9 +195,9 @@
         ></a-nft>
 
         <a-nft
-          markerhandler3
+          markerhandler9
           type="nft"
-          url="./ar/resource/nft-marker/xturbo/xturbo"
+          url="./ar/resource/new-nft-marker/xTurbo"
           smooth="true"
           smoothCount="10"
           smoothTolerance=".01"
@@ -215,9 +205,9 @@
         ></a-nft>
 
         <a-nft
-          markerhandler4
+          markerhandler19
           type="nft"
-          url="./ar/resource/nft-marker/dopra/dopra"
+          url="./ar/resource/new-nft-marker/dopra2"
           smooth="true"
           smoothCount="10"
           smoothTolerance=".01"
@@ -225,9 +215,9 @@
         ></a-nft>
 
         <a-nft
-          markerhandler5
+          markerhandler11
           type="nft"
-          url="./ar/resource/nft-marker/ai/ai"
+          url="./ar/resource/new-nft-marker/ai3"
           smooth="true"
           smoothCount="10"
           smoothTolerance=".01"
@@ -244,7 +234,7 @@
             <img class='switchcamera' id='switchcamera' src="./resource/switch-camera.png" v-on:click="switchCamera" alt="">
         </div>
 
-        <!-- <div id='debuginfo' style='position: fixed; bottom: 40px;left: 0px; width:100%; text-align: left;font-size: 10px;color:white'>debuginfo: empty</div> -->
+        <div id='debuginfo' style='position: fixed; bottom: 40px;left: 0px; width:100%; text-align: left;font-size: 10px;color:white'>debuginfo: 10:34</div>
 
         <div class='screenShotDiv' v-show='isShooted'>
             <canvas id='canvas' class='screenShot'></canvas>
