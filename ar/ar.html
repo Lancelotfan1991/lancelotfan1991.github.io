@@ -6,12 +6,8 @@
     <script
         src="https://cdn.jsdelivr.net/gh/aframevr/aframe@9be0a6b94b61740c6fc4d2a1e74d744c38be4c61/dist/aframe-master.min.js"></script>
     <script src="./libs/aframe-ar.js"></script>
-    <script src="./libs/vconsole.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <link rel="stylesheet" href="./style.css?v=0.39">
-    <script>
-        var vConsole = new VConsole();
-    </script>
+    <link rel="stylesheet" href="./style.css?v=0.50">
 </head>
 
 <body style='margin : 0px; overflow: hidden;width: 100%; height: 100%;'>
@@ -234,7 +230,7 @@
             <img class='switchcamera' id='switchcamera' src="./resource/switch-camera.png" v-on:click="switchCamera" alt="">
         </div>
 
-        <div id='debuginfo' style='position: fixed; bottom: 40px;left: 0px; width:100%; text-align: left;font-size: 10px;color:white'>debuginfo: 10:34</div>
+        <!-- <div id='debuginfo' style='position: fixed; bottom: 40px;left: 0px; width:100%; text-align: left;font-size: 10px;color:white'>debuginfo: 10:34</div> -->
 
         <div class='screenShotDiv' v-show='isShooted'>
             <canvas id='canvas' class='screenShot'></canvas>
