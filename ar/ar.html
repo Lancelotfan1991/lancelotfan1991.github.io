@@ -7,7 +7,7 @@
         src="https://cdn.jsdelivr.net/gh/aframevr/aframe@9be0a6b94b61740c6fc4d2a1e74d744c38be4c61/dist/aframe-master.min.js"></script>
     <script src="./libs/aframe-ar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <link rel="stylesheet" href="./style.css?v=0.50">
+    <link rel="stylesheet" href="./style.css?v=0.56">
 </head>
 
 <body style='margin : 0px; overflow: hidden;width: 100%; height: 100%;'>
@@ -46,8 +46,8 @@
                 link: ''
             }
         ];
-
-        for(let i = 0; i < 12; i ++) {
+        
+        for(let i = 0; i < 18; i ++) {
             AFRAME.registerComponent('markerhandler' + i, {
                 init: function () {
                     const marker = this.el;
@@ -58,7 +58,9 @@
                     });
                     this.el.addEventListener('markerLost', () => {
                         // document.getElementById('debuginfo').innerHTML='marker found ' + i;
-                        document.getElementById('content').style.display='none';
+                        setTimeout(()=>{
+                            document.getElementById('content').style.display='none';
+                        },4000);
                     });
                 }
             });
@@ -148,7 +150,7 @@
           smoothThreshold="5"
         ></a-nft>
 
-        <a-nft
+        <!-- <a-nft
           type="nft"
           url="./ar/resource/nft-marker/baize/baize2"
           smooth="true"
@@ -158,7 +160,7 @@
         >
           <a-entity gltf-model="#tree" 
            scale='0.0008 0.0008 0.0008' position='0.5 1 -5' rotation='0 -180 0'></a-entity>
-        </a-nft>
+        </a-nft> -->
 
         <a-nft
           markerhandler6
@@ -201,7 +203,7 @@
         ></a-nft>
 
         <a-nft
-          markerhandler19
+          markerhandler10
           type="nft"
           url="./ar/resource/new-nft-marker/dopra2"
           smooth="true"
@@ -219,7 +221,47 @@
           smoothTolerance=".01"
           smoothThreshold="5"
         ></a-nft>
+
+        <a-nft
+          markerhandler12
+          type="nft"
+          url="./ar/resource/new-new-nft-marker/mae"
+          smooth="true"
+          smoothCount="10"
+          smoothTolerance=".01"
+          smoothThreshold="5"
+        ></a-nft>
+
+        <a-nft
+          markerhandler13
+          type="nft"
+          url="./ar/resource/new-new-nft-marker/xexpress2"
+          smooth="true"
+          smoothCount="10"
+          smoothTolerance=".01"
+          smoothThreshold="5"
+        ></a-nft>
         
+        <a-nft
+          markerhandler14
+          type="nft"
+          url="./ar/resource/new-new-nft-marker/xsuite"
+          smooth="true"
+          smoothCount="10"
+          smoothTolerance=".01"
+          smoothThreshold="5"
+        ></a-nft>
+
+        <a-nft
+          markerhandler16
+          type="nft"
+          url="./ar/resource/new-new-nft-marker/dopra"
+          smooth="true"
+          smoothCount="10"
+          smoothTolerance=".01"
+          smoothThreshold="5"
+        ></a-nft>
+
         <!-- <a-entity camera ></a-entity> -->
     </a-scene>
 
