@@ -46,7 +46,7 @@ AFRAME.registerComponent('markers_start',{
 		var sceneEl = document.querySelector('a-scene');
 		
 		//list of the markers
-		for(var i=1; i< 7; i++)
+		for(var i=1; i< 2; i++)
 		{
 			var url="resource/pattern-Individual_Blocks-"+i+".patt";
 			markersURLArray.push(url);
@@ -54,7 +54,7 @@ AFRAME.registerComponent('markers_start',{
 			//console.log(url);
 		}
 
-		for(var k=0; k< 7; k++)
+		for(var k=0; k< 2; k++)
 		{
 			var markerEl = document.createElement('a-marker');
 			markerEl.setAttribute('type','pattern');
