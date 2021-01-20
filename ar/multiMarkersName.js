@@ -86,7 +86,7 @@ AFRAME.registerComponent('registerevents', {
         marker.addEventListener("markerFound", ()=> {
             var markerId = marker.id;
             console.log('Marker Found: ', markerId);
-            document.getElementById('debuginfo').innerHTML = 'marker found ' + markerId;
+            // document.getElementById('debuginfo').innerHTML = 'marker found ' + markerId;
             document.getElementById('content').style.display = 'block';
             document.getElementById('content').innerHTML = departMentInfo[Number(markerId) - 1].content;
             
@@ -102,7 +102,7 @@ AFRAME.registerComponent('registerevents', {
         marker.addEventListener("markerLost",() =>{
             var markerId = marker.id;
             console.log('Marker Lost: ', markerId);
-            document.getElementById('debuginfo').innerHTML = 'marker lost' + markerId;
+            // document.getElementById('debuginfo').innerHTML = 'marker lost' + markerId;
             // 避免因为手机抖动导致的文字立即消失的问题
             flag = setTimeout(() => {
                 document.getElementById('content').style.display = 'none';
