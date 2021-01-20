@@ -19,7 +19,7 @@
 <body style='margin : 0px; overflow: hidden;width: 100%; height: 100%;'>
     <p class='content' id='content'></p>
 
-    <a-scene markers_start vr-mode-ui="enabled: false" color-space="sRGB" embedded renderer
+    <a-scene markers_start vr-mode-ui="enabled: false" color-space="sRGB" embedded renderer="logarithmicDepthBuffer: true;"
         arjs='debugUIEnabled: false; sourceType: webcam; patternRatio: 0.85; trackingMethod: best;'>
         <a-entity camera>
             <a-cursor> </a-cursor>
