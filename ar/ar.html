@@ -90,13 +90,13 @@
         vr-mode-ui="enabled: false;"
         renderer="logarithmicDepthBuffer: true;precision: medium;"
         embedded
-        arjs='trackingMethod: best; debugUIEnabled: false;sourceType: webcam;detectionMode: mono_and_matrix; matrixCodeType: 4x4;'>
+        arjs='trackingMethod: best; debugUIEnabled: false;sourceType: webcam;detectionMode: mono_and_matrix; matrixCodeType: 4x4_BCH_13_9_3;'>
         
         <a-assets>
           <a-asset-item id="tree" src="./resource/model/baize3new.gltf"></a-asset-item>
         </a-assets>
 
-        <a-nft
+<!--         <a-nft
           markerhandler0
           type="nft"
           url="./ar/resource/nft-marker/mae/mae"
@@ -154,7 +154,7 @@
           smoothCount="10"
           smoothTolerance=".01"
           smoothThreshold="5"
-        ></a-nft>
+        ></a-nft> -->
 
         <!-- <a-nft
           type="nft"
@@ -168,7 +168,7 @@
            scale='0.0008 0.0008 0.0008' position='0.5 1 -5' rotation='0 -180 0'></a-entity>
         </a-nft> -->
 
-        <a-nft
+<!--         <a-nft
           markerhandler6
           type="nft"
           url="./ar/resource/new-nft-marker/mae7"
@@ -266,7 +266,7 @@
           smoothCount="10"
           smoothTolerance=".01"
           smoothThreshold="5"
-        ></a-nft>
+        ></a-nft> -->
 
          <a-marker markerhandler15 type='barcode' value='107'>
              <a-entity gltf-model="#tree"
@@ -283,7 +283,7 @@
             <img class='switchcamera' id='switchcamera' src="./resource/switch-camera.png" v-on:click="switchCamera" alt="">
         </div>
 
-        <div id='debuginfo' style='position: fixed; bottom: 20px;left: 0px; width:100%; text-align: left;font-size: 10px;color:white'>debuginfo: 10:37</div>
+        <div id='debuginfo' style='position: fixed; bottom: 20px;left: 0px; width:100%; text-align: left;font-size: 10px;color:white'>debuginfo: 10:38</div>
 
         <div class='screenShotDiv' v-show='isShooted'>
             <canvas id='canvas' class='screenShot'></canvas>
