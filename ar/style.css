@@ -45,15 +45,18 @@ body{
     position: fixed;
     top: 50px;
     right: 10px;
-    line-height: 34px;
+    line-height: 30px;
     padding: 20px 20px;
     margin: 10px;
     text-align: left;
 
     color:#fff;
+    font-family: 'Microsoft YaHei';
     font-size: 20px;
     font-weight:800;
-    text-shadow:
+    -webkit-text-stroke: 1px #0093df;
+    opacity: 0.8;
+    /* text-shadow:
         1px 0px #009807,
         1px 2px #006705,
         3px 1px #009807,
@@ -74,7 +77,7 @@ body{
         11px 10px #006705,
         13px 9px #009807,
         12px 11px #006705,
-        15px 10px #009807
+        15px 10px #009807 */
 }
 
 .cross {
@@ -89,16 +92,16 @@ body{
 /*底部功能按钮 css*/
 .takepicture {
     position: fixed;
-    bottom: 150px;
+    bottom: 100px;
     left: 50%;
-    transform: translateX(-42.5px);
+    transform: translateX(-50px);
     width: 85px;
     height: 85px;
 }
 
 .switchcamera {
     position: fixed;
-    bottom: 170px;
+    bottom: 120px;
     width: 30px;
     height: 30px;
     transform: translateX(-15px);
@@ -107,9 +110,9 @@ body{
 
 .breathe-div {
     position: fixed;
-    bottom: 120px;
+    bottom: 100px;
     left: 50%;
-    transform: translateX(-42.5px);
+    transform: translateX(-50px);
     width: 85px;
     height: 85px;
     border: 1px solid #2b92d4;
@@ -171,8 +174,8 @@ body{
 
 .screenShot {
     position: fixed;
-    width: 70%;
-    height: 70%;
+    width: 80vw;
+    height: 80vh;
     left: 50%;
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
@@ -180,17 +183,18 @@ body{
 
 .hint {
     position: fixed;
-    bottom: 5vh;
+    bottom: 8vh;
     width: 100%;
-    font-size: 20px;
+    font-size: 15px;
     text-align: center;
 }
 
 .delete {
     position: fixed;
     bottom: 2vh;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     left: 50%;
     transform: translateX(-50%);
 }
+
