@@ -50,7 +50,7 @@ AFRAME.registerComponent('markers_start',{
 		{
 			var url="resource/pattern-Individual_Blocks-"+i+".patt";
 			markersURLArray.push(url);
-			markersNameArray.push(i);
+			markersNameArray.push('Marker_'+i);
 			//console.log(url);
 		}
 
