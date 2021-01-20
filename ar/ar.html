@@ -84,7 +84,7 @@
         vr-mode-ui="enabled: false;"
         renderer="logarithmicDepthBuffer: true;"
         embedded
-        arjs='trackingMethod: best; debugUIEnabled: false;sourceType: webcam;detectionMode: mono_and_matrix; matrixCodeType: 5x5;labelingMode: black_region'>
+        arjs='trackingMethod: best; debugUIEnabled: false;sourceType: webcam;detectionMode: mono_and_matrix; matrixCodeType: 5x5;'>
         
         <a-assets>
           <a-asset-item id="tree" src="./resource/model/baize3new.gltf"></a-asset-item>
@@ -277,7 +277,7 @@
             <img class='switchcamera' id='switchcamera' src="./resource/switch-camera.png" v-on:click="switchCamera" alt="">
         </div>
 
-        <div id='debuginfo' style='position: fixed; bottom: 40px;left: 0px; width:100%; text-align: left;font-size: 10px;color:white'>debuginfo: 10:34</div>
+        <div id='debuginfo' style='position: fixed; bottom: 20px;left: 0px; width:100%; text-align: left;font-size: 10px;color:white'>debuginfo: 10:35</div>
 
         <div class='screenShotDiv' v-show='isShooted'>
             <canvas id='canvas' class='screenShot'></canvas>
