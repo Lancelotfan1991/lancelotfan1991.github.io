@@ -5,12 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1.0">
     <script
         src="https://cdn.jsdelivr.net/gh/aframevr/aframe@9be0a6b94b61740c6fc4d2a1e74d744c38be4c61/dist/aframe-master.min.js"></script>
-    <script src="./libs/aframe-ar.js"></script>
+    <script src="./libs/aframe-ar-nft.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="./libs/vconsole.min.js"></script>
-    <script>
-        new VConsole();
-    </script>
     <link rel="stylesheet" href="./style.css?v=0.56">
 </head>
 
@@ -51,19 +47,17 @@
             }
         ];
         
-        const array = ['mae', 'xexpress', 'xsuite', 'dopra', 'xturbo', 'ai'];
         for(let i = 0; i < 18; i ++) {
             AFRAME.registerComponent('markerhandler' + i, {
                 init: function () {
                     const marker = this.el;
                     this.el.addEventListener('markerFound', () => {
-                        document.getElementById('debuginfo').innerHTML= 'marker found ' + i;
+                        // document.getElementById('debuginfo').innerHTML='marker found ' + i;
                         document.getElementById('content').style.display='block';
-                        document.getElementById('content').innerHTML= departMentInfo[i%6].content;
+                        document.getElementById('content').innerHTML=departMentInfo[i%6].content;
                     });
                     this.el.addEventListener('markerLost', () => {
-                        document.getElementById('debuginfo').innerHTML= 'marker lost' + i;
-                        // 避免因为手机抖动导致的文字立即消失的问题
+                        // document.getElementById('debuginfo').innerHTML='marker found ' + i;
                         setTimeout(()=>{
                             document.getElementById('content').style.display='none';
                         },4000);
@@ -88,15 +82,15 @@
 
     <a-scene
         vr-mode-ui="enabled: false;"
-        renderer="logarithmicDepthBuffer: true;precision: medium;"
+        renderer="logarithmicDepthBuffer: true;"
         embedded
-        arjs='trackingMethod: best; debugUIEnabled: false;sourceType: webcam;detectionMode: mono_and_matrix; matrixCodeType: 4x4_BCH_13_9_3;'>
+        arjs='trackingMethod: best; debugUIEnabled: false;sourceType: webcam;'>
         
         <a-assets>
           <a-asset-item id="tree" src="./resource/model/baize3new.gltf"></a-asset-item>
         </a-assets>
 
-<!--         <a-nft
+        <a-nft
           markerhandler0
           type="nft"
           url="./ar/resource/nft-marker/mae/mae"
@@ -154,7 +148,7 @@
           smoothCount="10"
           smoothTolerance=".01"
           smoothThreshold="5"
-        ></a-nft> -->
+        ></a-nft>
 
         <!-- <a-nft
           type="nft"
@@ -168,7 +162,7 @@
            scale='0.0008 0.0008 0.0008' position='0.5 1 -5' rotation='0 -180 0'></a-entity>
         </a-nft> -->
 
-<!--         <a-nft
+        <a-nft
           markerhandler6
           type="nft"
           url="./ar/resource/new-nft-marker/mae7"
@@ -266,14 +260,9 @@
           smoothCount="10"
           smoothTolerance=".01"
           smoothThreshold="5"
-        ></a-nft> -->
+        ></a-nft>
 
-         <a-marker markerhandler15 type='barcode' value='107'>
-             <a-entity gltf-model="#tree"
-                scale='0.0008 0.0008 0.0008' position='0.5 1 -5' rotation='0 -180 0'></a-entity>
-         </a-marker>
-
-        <a-entity camera ></a-entity>
+        <!-- <a-entity camera ></a-entity> -->
     </a-scene>
 
     <div id='app' >
@@ -283,7 +272,7 @@
             <img class='switchcamera' id='switchcamera' src="./resource/switch-camera.png" v-on:click="switchCamera" alt="">
         </div>
 
-        <div id='debuginfo' style='position: fixed; bottom: 20px;left: 0px; width:100%; text-align: left;font-size: 10px;color:white'>debuginfo: 10:39</div>
+        <!-- <div id='debuginfo' style='position: fixed; bottom: 40px;left: 0px; width:100%; text-align: left;font-size: 10px;color:white'>debuginfo: 10:34</div> -->
 
         <div class='screenShotDiv' v-show='isShooted'>
             <canvas id='canvas' class='screenShot'></canvas>
