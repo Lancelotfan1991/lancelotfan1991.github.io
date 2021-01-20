@@ -1,7 +1,7 @@
 <html lang="en">
 <head class="a-fullscreen">
     <meta charset="UTF-8">
-    <title>AR展示活动</title>
+    <title>公共开发上研分部业务介绍</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1.0">
     <script
         src="https://cdn.jsdelivr.net/gh/aframevr/aframe@9be0a6b94b61740c6fc4d2a1e74d744c38be4c61/dist/aframe-master.min.js"></script>
@@ -15,67 +15,6 @@
 
 <body style='margin : 0px; overflow: hidden;width: 100%; height: 100%;background-color: black;'>
     
-    <script>
-        const departMentInfo = [
-            {
-                department: 'MAE',
-                content: `MAE是面向5G时代移动网络的自动化引擎，助力实现移动网络的三大超越：1) Beyond Efficiency: 10x运维效率提升；2) Beyond Performance: 20%的频谱效率提升：从不可能到可能；优化从静态到动态；从粗放到精细化；从非实时到实时；3) Beyond New Service：5x发放效率提升；业务发放从weeks到Days；通过联合运营商开放合作，面向场景逐级演进，实现移动网络完全自动驾驶。`,
-                link: ''
-            },
-            {
-                department: 'xExpress',
-                content: '高效建网的xExpress系列包含Site Express、Feature Express和Radio Express，简化了原本操作复杂、数量庞大的建网工作，支持大批量、流水线式、自动化的建站和特性开通。',
-                link: ''
-            },
-            {
-                department: 'xSuite',
-                content: '敏捷业务的xSuite系列包含WTTx Suite、切片运维管理、室内可视化，支持快速精准的发放业务。',
-                link: ''
-            },
-            {
-                department: 'xTurbo',
-                content: '智能运维的xTurbo系列包含Alarm Turbo、Capacity Turbo和Power Turbo，提供智能化的排障、网优、节能能力。',
-                link: ''
-            },
-            {
-                department: 'Dopra',
-                content: 'DOPRA业务包含SSP、VISP、VPP、FSP、SiteAI、AutoTBP，分布杭州、上海、东莞三地域，上海地域交付VISP，AutoTBP,提供轻量级弹性协议栈、IP路由、IP协议安全、拓展集中路径控制引擎、车载安全协议，构筑边缘组网极简竞争力。',
-                link: ''
-            },
-            {
-                department: 'AI',
-                content: 'Beyond Intelligence：从自动化到智能化，面向云化AI打造自学习自管理的网络，编织一张会思考的"网"，让沟通畅行无阻。',
-                link: ''
-            }
-        ];
-
-        const handleRotation = (event) => {
-            if (isMarkerVisible) {
-              el.object3D.rotation.y +=
-                event.detail.positionChange.x * rotationFactor;
-
-              el.object3D.rotation.x +=
-                event.detail.positionChange.y * rotationFactor;
-            }
-        };
-        
-        const handleScale = (event) => {
-            if (isMarkerVisible) {
-              this.scaleFactor *=
-                1 + event.detail.spreadChange / event.detail.startSpread;
-
-              this.scaleFactor = Math.min(
-                Math.max(this.scaleFactor, this.data.minScale),
-                this.data.maxScale
-              );
-
-              el.object3D.scale.x = scaleFactor * initialScale.x;
-              el.object3D.scale.y = scaleFactor * initialScale.y;
-              el.object3D.scale.z = scaleFactor * initialScale.z;
-            }
-        };    
-    </script>
-
     <a-scene
         vr-mode-ui="enabled: false;"
         renderer="logarithmicDepthBuffer: true;"
