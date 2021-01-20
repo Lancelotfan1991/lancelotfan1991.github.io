@@ -47,17 +47,19 @@
             }
         ];
         
+        const array = ['mae', 'xexpress', 'xsuite', 'dopra', 'xturbo', 'ai'];
         for(let i = 0; i < 18; i ++) {
             AFRAME.registerComponent('markerhandler' + i, {
                 init: function () {
                     const marker = this.el;
                     this.el.addEventListener('markerFound', () => {
-                        // document.getElementById('debuginfo').innerHTML='marker found ' + i;
+                        document.getElementById('debuginfo').innerHTML= 'marker found ' + i;
                         document.getElementById('content').style.display='block';
-                        document.getElementById('content').innerHTML=departMentInfo[i%6].content;
+                        document.getElementById('content').innerHTML= departMentInfo[i%6].content;
                     });
                     this.el.addEventListener('markerLost', () => {
-                        // document.getElementById('debuginfo').innerHTML='marker found ' + i;
+                        document.getElementById('debuginfo').innerHTML= 'marker lost' + i;
+                        // 避免因为手机抖动导致的文字立即消失的问题
                         setTimeout(()=>{
                             document.getElementById('content').style.display='none';
                         },4000);
@@ -84,7 +86,7 @@
         vr-mode-ui="enabled: false;"
         renderer="logarithmicDepthBuffer: true;"
         embedded
-        arjs='trackingMethod: best; debugUIEnabled: false;sourceType: webcam;detectionMode: mono_and_matrix; matrixCodeType: 5x5_bch_22_12_5;'>
+        arjs='trackingMethod: best; debugUIEnabled: false;sourceType: webcam;detectionMode: mono_and_matrix; matrixCodeType: 4x4_bch_13_9_3;'>
         
         <a-assets>
           <a-asset-item id="tree" src="./resource/model/baize3new.gltf"></a-asset-item>
@@ -262,11 +264,11 @@
           smoothThreshold="5"
         ></a-nft>
 
-         <a-marker markerhandler15 type='barcode' value='1014'>
-            
-        </a-marker>
+         <a-marker markerhandler15 type='barcode' value='107'>
+             <a-entity gltf-model="#tree"
+                scale='0.0008 0.0008 0.0008' position='0.5 1 -5' rotation='0 -180 0'></a-entity>
+         </a-marker>
 
-        
         <!-- <a-entity camera ></a-entity> -->
     </a-scene>
 
