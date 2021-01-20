@@ -37,7 +37,7 @@
     </a-scene>
 
     <div id='app'>
-        <div id='screenShot' v-show='screenShotIcon'>
+        <div id='screenShot' style="display:none">
             <div class="breathe-div"></div>
             <img class='takepicture' id='takePicture' src='./resource/shoot.png' v-on:click='takePicture' />
             <img class='switchcamera' id='switchcamera' src="./resource/switch-camera.png" v-on:click="switchCamera"
@@ -62,7 +62,6 @@
             {
                 el: '#app',
                 data: {
-                    screenShotIcon: true,
                     isShooted: false,
                     screenShotImage: '',
                 },
@@ -114,7 +113,6 @@
                         self.screenShotImage = aCanvas.toDataURL("image/png", 1.0);
 
                         self.isShooted = true;
-                        self.screenShotIcon = false;
                     },
                     hideImage() {
                         this.isShooted = false;

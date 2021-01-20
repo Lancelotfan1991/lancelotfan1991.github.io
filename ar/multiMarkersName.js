@@ -73,7 +73,9 @@ AFRAME.registerComponent('markers_start',{
 			// textEl.object3D.rotation.set(-90, 0, 0);
 
 			// markerEl.appendChild(textEl);
-		}
+        }
+        
+        document.getElementById('screenShot').style.display = 'block';
 	}
 });
 
