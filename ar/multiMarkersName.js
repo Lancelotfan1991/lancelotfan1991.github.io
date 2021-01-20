@@ -64,15 +64,15 @@ AFRAME.registerComponent('markers_start',{
 			markerEl.setAttribute('registerevents','');
 			sceneEl.appendChild(markerEl);
 
-			//Adding text to each marker
-			var textEl = document.createElement('a-entity');
+			// Adding text to each marker
+			// var textEl = document.createElement('a-entity');
 			
-			textEl.setAttribute('id','text');
-			textEl.setAttribute('text',{color: 'red', align: 'center', value:markersNameArray[k], width: '2.5'});
-			textEl.object3D.position.set(0, 0.7, 0);
-			textEl.object3D.rotation.set(-90, 0, 0);
+			// textEl.setAttribute('id','text');
+			// textEl.setAttribute('text',{color: 'red', align: 'center', value:markersNameArray[k], width: '2.5'});
+			// textEl.object3D.position.set(0, 0.7, 0);
+			// textEl.object3D.rotation.set(-90, 0, 0);
 
-			markerEl.appendChild(textEl);
+			// markerEl.appendChild(textEl);
 		}
 	}
 });
@@ -90,6 +90,10 @@ AFRAME.registerComponent('registerevents', {
             document.getElementById('content').style.display = 'block';
             document.getElementById('content').innerHTML = departMentInfo[Number(markerId) - 1].content;
             
+            if (markerId === '7') {
+                document.getElementById('content').style.display = 'none';
+            }
+
             if (flag) { 
                 clearTimeout(flag);
             }

@@ -1,289 +1,63 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>AR展示活动</title>
+    <title>公共开发上研分部业务介绍</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1.0">
     <script
         src="https://cdn.jsdelivr.net/gh/aframevr/aframe@9be0a6b94b61740c6fc4d2a1e74d744c38be4c61/dist/aframe-master.min.js"></script>
-    <script src="./libs/aframe-ar-nft.js"></script>
+    <script src="./libs/aframe-ar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <link rel="stylesheet" href="./style.css?v=0.56">
+    <script src="./libs/vconsole.min.js"></script>
+    <script>
+        new VConsole();
+    </script>
+    <link rel="stylesheet" href="./style.css?v=12.4">
+    <script src="multiMarkersName.js?v=12.4"></script>
 </head>
 
 <body style='margin : 0px; overflow: hidden;width: 100%; height: 100%;'>
     <p class='content' id='content'></p>
 
-    <script>
-        const departMentInfo = [
-            {
-                department: 'MAE',
-                content: `MAE是面向5G时代移动网络的自动化引擎，助力实现移动网络的三大超越：1) Beyond Efficiency: 10x运维效率提升；2) Beyond Performance: 20%的频谱效率提升：从不可能到可能；优化从静态到动态；从粗放到精细化；从非实时到实时；3) Beyond New Service：5x发放效率提升；业务发放从weeks到Days；通过联合运营商开放合作，面向场景逐级演进，实现移动网络完全自动驾驶。`,
-                link: ''
-            },
-            {
-                department: 'xExpress',
-                content: '高效建网的xExpress系列包含Site Express、Feature Express和Radio Express，简化了原本操作复杂、数量庞大的建网工作，支持大批量、流水线式、自动化的建站和特性开通。',
-                link: ''
-            },
-            {
-                department: 'xSuite',
-                content: '敏捷业务的xSuite系列包含WTTx Suite、切片运维管理、室内可视化，支持快速精准的发放业务。',
-                link: ''
-            },
-            {
-                department: 'xTurbo',
-                content: '智能运维的xTurbo系列包含Alarm Turbo、Capacity Turbo和Power Turbo，提供智能化的排障、网优、节能能力。',
-                link: ''
-            },
-            {
-                department: 'Dopra',
-                content: 'DOPRA业务包含SSP、VISP、VPP、FSP、SiteAI、AutoTBP，分布杭州、上海、东莞三地域，上海地域交付VISP，AutoTBP,提供轻量级弹性协议栈、IP路由、IP协议安全、拓展集中路径控制引擎、车载安全协议，构筑边缘组网极简竞争力。',
-                link: ''
-            },
-            {
-                department: 'AI',
-                content: 'Beyond Intelligence：从自动化到智能化，面向云化AI打造自学习自管理的网络，编织一张会思考的"网"，让沟通畅行无阻。',
-                link: ''
-            }
-        ];
-        
-        for(let i = 0; i < 18; i ++) {
-            AFRAME.registerComponent('markerhandler' + i, {
-                init: function () {
-                    const marker = this.el;
-                    this.el.addEventListener('markerFound', () => {
-                        // document.getElementById('debuginfo').innerHTML='marker found ' + i;
-                        document.getElementById('content').style.display='block';
-                        document.getElementById('content').innerHTML=departMentInfo[i%6].content;
-                    });
-                    this.el.addEventListener('markerLost', () => {
-                        // document.getElementById('debuginfo').innerHTML='marker found ' + i;
-                        setTimeout(()=>{
-                            document.getElementById('content').style.display='none';
-                        },4000);
-                    });
-                }
-            });
-        }
+    <a-scene markers_start vr-mode-ui="enabled: false" color-space="sRGB" embedded renderer="gammaOutput: true"
+        arjs='debugUIEnabled: false; sourceType: webcam; patternRatio: 0.85; trackingMethod: best;'>
+        <a-entity camera>
+            <a-cursor> </a-cursor>
+        </a-entity>
 
-        // AFRAME.registerComponent('markerhandlerbaize', {
-        //         init: function () {
-        //             const marker = this.el;
-        //             this.el.addEventListener('markerFound', () => {
-        //                 // document.getElementById('debuginfo').innerHTML='marker baize found ';
-        //             });
-        //             this.el.addEventListener('markerLost', () => {
-        //                 // document.getElementById('debuginfo').innerHTML='marker found ';
-        //                 document.getElementById('content').style.display='none';
-        //             });
-        //         }
-        //     });
-    </script>
-
-    <a-scene
-        vr-mode-ui="enabled: false;"
-        renderer="logarithmicDepthBuffer: true;"
-        embedded
-        arjs='trackingMethod: best; debugUIEnabled: false;sourceType: webcam;'>
-        
         <a-assets>
-          <a-asset-item id="tree" src="./resource/model/baize3new.gltf"></a-asset-item>
+            <a-asset-item id="tree" src="./resource/model/baize3new.gltf"></a-asset-item>
         </a-assets>
 
-        <a-nft
-          markerhandler0
-          type="nft"
-          url="./ar/resource/nft-marker/mae/mae"
-          smooth="true"
-          smoothCount="10"
-          smoothTolerance=".01"
-          smoothThreshold="5"
-        ></a-nft>
-
-        <a-nft
-          markerhandler1
-          type="nft"
-          url="./ar/resource/fset/xepress"
-          smooth="true"
-          smoothCount="10"
-          smoothTolerance=".01"
-          smoothThreshold="5"
-        ></a-nft>
-
-        <a-nft
-          markerhandler2
-          type="nft"
-          url="./ar/resource/fset/Snipaste_2021-01-14_16-22-54"
-          smooth="true"
-          smoothCount="10"
-          smoothTolerance=".01"
-          smoothThreshold="5"
-        ></a-nft>
-
-        <a-nft
-          markerhandler3
-          type="nft"
-          url="./ar/resource/nft-marker/xturbo/xturbo"
-          smooth="true"
-          smoothCount="10"
-          smoothTolerance=".01"
-          smoothThreshold="5"
-        ></a-nft>
-
-        <a-nft
-          markerhandler4
-          type="nft"
-          url="./ar/resource/nft-marker/dopra/dopra"
-          smooth="true"
-          smoothCount="10"
-          smoothTolerance=".01"
-          smoothThreshold="5"
-        ></a-nft>
-
-        <a-nft
-          markerhandler5
-          type="nft"
-          url="./ar/resource/nft-marker/ai/ai"
-          smooth="true"
-          smoothCount="10"
-          smoothTolerance=".01"
-          smoothThreshold="5"
-        ></a-nft>
-
-        <!-- <a-nft
-          type="nft"
-          url="./ar/resource/nft-marker/baize/baize2"
-          smooth="true"
-          smoothCount="10"
-          smoothTolerance=".01"
-          smoothThreshold="5"
-        >
-          <a-entity gltf-model="#tree" 
-           scale='0.0008 0.0008 0.0008' position='0.5 1 -5' rotation='0 -180 0'></a-entity>
-        </a-nft> -->
-
-        <a-nft
-          markerhandler6
-          type="nft"
-          url="./ar/resource/new-nft-marker/mae7"
-          smooth="true"
-          smoothCount="10"
-          smoothTolerance=".01"
-          smoothThreshold="5"
-        ></a-nft>
-
-        <a-nft
-          markerhandler7
-          type="nft"
-          url="./ar/resource/new-nft-marker/xexpress"
-          smooth="true"
-          smoothCount="10"
-          smoothTolerance=".01"
-          smoothThreshold="5"
-        ></a-nft>
-
-        <a-nft
-          markerhandler8
-          type="nft"
-          url="./ar/resource/new-nft-marker/xsuite"
-          smooth="true"
-          smoothCount="10"
-          smoothTolerance=".01"
-          smoothThreshold="5"
-        ></a-nft>
-
-        <a-nft
-          markerhandler9
-          type="nft"
-          url="./ar/resource/new-nft-marker/xTurbo"
-          smooth="true"
-          smoothCount="10"
-          smoothTolerance=".01"
-          smoothThreshold="5"
-        ></a-nft>
-
-        <a-nft
-          markerhandler10
-          type="nft"
-          url="./ar/resource/new-nft-marker/dopra2"
-          smooth="true"
-          smoothCount="10"
-          smoothTolerance=".01"
-          smoothThreshold="5"
-        ></a-nft>
-
-        <a-nft
-          markerhandler11
-          type="nft"
-          url="./ar/resource/new-nft-marker/ai3"
-          smooth="true"
-          smoothCount="10"
-          smoothTolerance=".01"
-          smoothThreshold="5"
-        ></a-nft>
-
-        <a-nft
-          markerhandler12
-          type="nft"
-          url="./ar/resource/new-new-nft-marker/mae"
-          smooth="true"
-          smoothCount="10"
-          smoothTolerance=".01"
-          smoothThreshold="5"
-        ></a-nft>
-
-        <a-nft
-          markerhandler13
-          type="nft"
-          url="./ar/resource/new-new-nft-marker/xexpress2"
-          smooth="true"
-          smoothCount="10"
-          smoothTolerance=".01"
-          smoothThreshold="5"
-        ></a-nft>
-        
-        <a-nft
-          markerhandler14
-          type="nft"
-          url="./ar/resource/new-new-nft-marker/xsuite"
-          smooth="true"
-          smoothCount="10"
-          smoothTolerance=".01"
-          smoothThreshold="5"
-        ></a-nft>
-
-        <a-nft
-          markerhandler16
-          type="nft"
-          url="./ar/resource/new-new-nft-marker/dopra"
-          smooth="true"
-          smoothCount="10"
-          smoothTolerance=".01"
-          smoothThreshold="5"
-        ></a-nft>
-
-        <!-- <a-entity camera ></a-entity> -->
+        <a-marker type='pattern' url='./resource/pattern-Individual_Blocks-7.patt' id='7'>
+            <a-entity gltf-model="#tree" scale='0.0008 0.0008 0.0008' position='0 0.2 0' rotation='90 -180 0'>
+            </a-entity>
+            <a-text value='Hello I am BaiZe!' position='1, 0.7, 0' rotation='-90, 0, 0' align='center' width='4.5'></a-text>
+        </a-marker>
     </a-scene>
 
-    <div id='app' >
+    <div id='app'>
         <div id='screenShot' v-show='screenShotIcon'>
             <div class="breathe-div"></div>
-            <img class='takepicture' id='takePicture' src='./resource/shoot.png' v-on:click='takePicture'/>
-            <img class='switchcamera' id='switchcamera' src="./resource/switch-camera.png" v-on:click="switchCamera" alt="">
+            <img class='takepicture' id='takePicture' src='./resource/shoot.png' v-on:click='takePicture' />
+            <img class='switchcamera' id='switchcamera' src="./resource/switch-camera.png" v-on:click="switchCamera"
+                alt="">
         </div>
 
-        <!-- <div id='debuginfo' style='position: fixed; bottom: 40px;left: 0px; width:100%; text-align: left;font-size: 10px;color:white'>debuginfo: 10:34</div> -->
+        <!-- <div id='debuginfo'
+            style='position: fixed; bottom: 20px;left: 0px; width:100%; text-align: left;font-size: 10px;color:white'>
+            debuginfo: 12.2, 模式：标记模式</div> -->
 
         <div class='screenShotDiv' v-show='isShooted'>
             <canvas id='canvas' class='screenShot'></canvas>
             <img class='screenShot' :src="screenShotImage" alt="">
             <p class='hint'>长按图片可保存至手机</p>
-            <img src="./resource/delete.png" class='delete' v-on:click="hideImage"/>
+            <img src="./resource/delete.png" class='delete' v-on:click="hideImage" />
         </div>
     </div>
 
     <script>
-        console.log('version 5');
+        console.log('version 12.4');
         const app = new Vue(
             {
                 el: '#app',
@@ -293,68 +67,68 @@
                     screenShotImage: '',
                 },
                 methods: {
-                    takePicture(){
+                    takePicture() {
                         const self = this;
-                        document.getElementById('screenShot').style.display='none';
-                      
+                        document.getElementById('screenShot').style.display = 'none';
+
                         const aVideo = document.getElementById('arjs-video');
                         const aCanvas = document.getElementById('canvas');
                         const ctx = aCanvas.getContext('2d');
                         // canvas在设置高度时，会清空重新渲染，如果不这么做，那么多次拍照，得到的都是同一张照片
                         aCanvas.width = document.body.clientWidth * window.devicePixelRatio;
                         aCanvas.height = document.body.clientHeight * window.devicePixelRatio;
-                        
+
                         let aframeCanvas = document.querySelector('a-scene').components.screenshot.getCanvas('perspective');
-//                         ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-                        
+                        //                         ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+
                         let width = aCanvas.width;
                         let height = aCanvas.height;
                         let pixelRatio = window.devicePixelRatio;
-                        let startX = -Number(aVideo.style.marginLeft.replace('px',''));
-                        let startY = -Number(aVideo.style.marginTop.replace('px',''));
-                        let videoWidth = Number(aVideo.style.width.replace('px',''));
-                        let videoHeight = Number(aVideo.style.height.replace('px',''));
+                        let startX = -Number(aVideo.style.marginLeft.replace('px', ''));
+                        let startY = -Number(aVideo.style.marginTop.replace('px', ''));
+                        let videoWidth = Number(aVideo.style.width.replace('px', ''));
+                        let videoHeight = Number(aVideo.style.height.replace('px', ''));
                         console.log('pixel', window.devicePixelRatio);
                         console.log(startX);
                         console.log(startY);
                         console.log('videoStyleWidth', videoWidth);
                         console.log('videoWidth', aVideo.style.width);
                         console.log('videoHeight', aVideo.style.height);
-                        
+
                         ctx.mozImageSmoothingEnabled = false;
                         ctx.webkitImageSmoothingEnabled = false;
                         ctx.msImageSmoothingEnabled = false;
                         ctx.imageSmoothingEnabled = false;
-                        ctx.drawImage(aVideo, 
+                        ctx.drawImage(aVideo,
                             0, 0,
                             videoWidth,
                             videoHeight, 0, 0, aCanvas.width, aCanvas.height);
-                        console.log('afw',aframeCanvas.width);
-                        console.log('afh',aframeCanvas.height);
+                        console.log('afw', aframeCanvas.width);
+                        console.log('afh', aframeCanvas.height);
                         ctx.drawImage(aframeCanvas,
-                            (aframeCanvas.width-aCanvas.width)/2,
+                            (aframeCanvas.width - aCanvas.width) / 2,
                             0,
-                            aCanvas.width,aCanvas.height,0,0,aCanvas.width,aCanvas.height
+                            aCanvas.width, aCanvas.height, 0, 0, aCanvas.width, aCanvas.height
                         );
-                        
+
                         self.screenShotImage = aCanvas.toDataURL("image/png", 1.0);
 
                         self.isShooted = true;
                         self.screenShotIcon = false;
                     },
-                    hideImage(){
+                    hideImage() {
                         this.isShooted = false;
                         this.screenShotImage = "";
                         this.screenShotIcon = true;
-                        document.getElementById('screenShot').style.display='block';
+                        document.getElementById('screenShot').style.display = 'block';
                     },
-                    switchCamera(){
-                        window.location.href="./ar-user.html"
+                    switchCamera() {
+                        window.location.href = "./ar-user.html"
                     }
                 }
             }
         );
-    </script>    
+    </script>
 </body>
 
 </html>
