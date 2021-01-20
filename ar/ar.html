@@ -20,9 +20,9 @@
     <p class='content' id='content'></p>
 
     <a-scene markers_start vr-mode-ui="enabled: false" color-space="sRGB" embedded renderer="logarithmicDepthBuffer: true;"
-        arjs='debugUIEnabled: false; sourceType: webcam; patternRatio: 0.85; trackingMethod: best;'>
+        arjs='debugUIEnabled: false; sourceType: webcam; patternRatio: 0.85; trackingMethod: best;detectionMode: mono_and_matrix; matrixCodeType: 4x4_BCH_13_9_3;'>
         <a-entity camera>
-            <a-cursor> </a-cursor>
+            <!-- <a-cursor> </a-cursor> -->
         </a-entity>
 
         <a-assets>
@@ -33,6 +33,30 @@
             <a-entity gltf-model="#tree" scale='0.001 0.001 0.001' position='0 0.2 0' rotation='90 -180 0'>
             </a-entity>
             <a-text value='Hello,I am BAIZE!' position='0, 0.6, 0' rotation='-90, 0, 0' align='center' width='3.5' color='#0093df' transparent="0.8"></a-text>
+        </a-marker>
+
+        <a-marker markerhandler0 type='barcode' value='101'>
+
+        </a-marker>
+
+        <a-marker markerhandler1 type='barcode' value='102'>
+
+        </a-marker>
+
+        <a-marker markerhandler2 type='barcode' value='103'>
+
+        </a-marker>
+
+        <a-marker markerhandler3 type='barcode' value='104'>
+
+        </a-marker>
+
+        <a-marker markerhandler4 type='barcode' value='105'>
+
+        </a-marker>
+
+        <a-marker markerhandler5 type='barcode' value='106'>
+
         </a-marker>
     </a-scene>
 

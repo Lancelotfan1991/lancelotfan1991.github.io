@@ -80,6 +80,29 @@ AFRAME.registerComponent('markers_start',{
 });
 
 
+for(let i = 0; i < 6; i ++) {
+    AFRAME.registerComponent('markerhandler' + i, {
+        init: function () {
+            this.el.addEventListener('markerFound', () => {
+                // document.getElementById('debuginfo').innerHTML= 'marker found ' + i;
+                document.getElementById('content').style.display='block';
+                document.getElementById('content').innerHTML = departMentInfo[i].content;
+                
+                if (flag) { 
+                    clearTimeout(flag);
+                }
+            });
+            this.el.addEventListener('markerLost', () => {
+                // document.getElementById('debuginfo').innerHTML= 'marker lost' + i;
+                // 避免因为手机抖动导致的文字立即消失的问题
+                flag = setTimeout(()=>{
+                    document.getElementById('content').style.display='none';
+                },4000);
+            });
+        }
+    });
+}
+
 //Detect marker found and lost
 AFRAME.registerComponent('registerevents', {
     init: function () {
