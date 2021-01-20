@@ -12,14 +12,14 @@
     <script>
         new VConsole();
     </script>
-    <link rel="stylesheet" href="./style.css?v=0.56">
-    <script src="multiMarkersName.js?v=12.2"></script>
+    <link rel="stylesheet" href="./style.css?v=12">
+    <script src="multiMarkersName.js?v=12"></script>
 </head>
 
 <body style='margin : 0px; overflow: hidden;width: 100%; height: 100%;'>
     <p class='content' id='content'></p>
 
-    <a-scene markers_start vr-mode-ui="enabled: false" color-space="sRGB" renderer="gammaOutput: true" embedded
+    <a-scene markers_start vr-mode-ui="enabled: false" color-space="sRGB" embedded
         arjs='debugUIEnabled: false; sourceType: webcam; patternRatio: 0.85; trackingMethod: best;'>
         <a-entity camera>
             <a-cursor> </a-cursor>
@@ -45,7 +45,7 @@
 
         <div id='debuginfo'
             style='position: fixed; bottom: 20px;left: 0px; width:100%; text-align: left;font-size: 10px;color:white'>
-            debuginfo: 12.2, 模式：标记模式</div>
+            debuginfo: 12.3, 模式：标记模式</div>
 
         <div class='screenShotDiv' v-show='isShooted'>
             <canvas id='canvas' class='screenShot'></canvas>
